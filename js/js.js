@@ -1,12 +1,12 @@
 ﻿
 $(function () {
-echarts_1();
-echarts_2();
+// echarts_1();
+// echarts_2();
 echarts_4();
-echarts_31();
-echarts_32();
-echarts_33();
-echarts_5();
+// echarts_31();
+// echarts_32();
+// echarts_33();
+// echarts_5();
 echarts_6();
 function echarts_1() {
         // 基于准备好的dom，初始化echarts实例
@@ -296,167 +296,78 @@ function echarts_5() {
     }
 	
 function echarts_4() {
-        // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('echart4'));
+    // 初始化 ECharts 实例
+    var myChart = echarts.init(document.getElementById('echart4'));
 
-    option = {
-	    tooltip: {
-        trigger: 'axis',
-        axisPointer: {
-            lineStyle: {
-                color: '#dddc6b'
-            }
-        }
-    },
-		    legend: {
-    top:'0%',
-        data:['安卓','IOS'],
-                textStyle: {
-           color: 'rgba(255,255,255,.5)',
-			fontSize:'12',
-        }
-    },
-    grid: {
-        left: '10',
-		top: '30',
-        right: '10',
-        bottom: '10',
-        containLabel: true
-    },
+    var data = {
+        physics: [
+            [1, 220],
+            [2, 250],
+            [3, 200],
+            [4, 180]
+        ],
+        chemistry: [
+            [1, 180],
+            [2, 160],
+            [3, 190],
+            [4, 210]
+        ],
+        physicsDisplay: true,
+        chemistryDisplay: true
+    };
 
-    xAxis: [{
-        type: 'category',
-        boundaryGap: false,
-axisLabel:  {
-                textStyle: {
- 					color: "rgba(255,255,255,.6)",
-					fontSize:12,
-                },
+    function toggleLines() {
+        data.physicsDisplay = !data.physicsDisplay;
+        data.chemistryDisplay = !data.chemistryDisplay;
+        renderChart();
+    }
+
+    function renderChart() {
+        var option = {
+            xAxis: {
+                type: 'category',
+                data: ['Q1', 'Q2', 'Q3', 'Q4'],
+                axisLine: {
+                    lineStyle: {
+                        color: '#8f99be'
+                    }
+                }
+
             },
-        axisLine: {
-			lineStyle: { 
-				color: 'rgba(255,255,255,.2)'
-			}
-
-        },
-
-   data: ['01', '02', '03', '04', '05', '06', '07', '08', '09', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24']
-
-    }, {
-
-        axisPointer: {show: false},
-        axisLine: {  show: false},
-        position: 'bottom',
-        offset: 20,
-
-       
-
-    }],
-
-    yAxis: [{
-        type: 'value',
-        axisTick: {show: false},
-        axisLine: {
-            lineStyle: {
-                color: 'rgba(255,255,255,.1)'
-            }
-        },
-       axisLabel:  {
-                textStyle: {
- 					color: "rgba(255,255,255,.6)",
-					fontSize:12,
-                },
+            yAxis: {
+                type: 'value',
+                axisLine: {
+                    lineStyle: {
+                        color: '#8f99be'
+                    }
+                }
             },
+            series: [
+                {
+                    name: 'Physics',
+                    type: 'line',
+                    data: data.physics,
+                    show: data.physicsDisplay,
+                    lineStyle: {
+                        color: '#f6b4c0'
+                    }
+                },
+                {
+                    name: 'Chemistry',
+                    type: 'line',
+                    data: data.chemistry,
+                    show: data.chemistryDisplay,
+                    lineStyle: {
+                        color: '#f7c777'
+                    }
+                }
+            ]
+        };
 
-        splitLine: {
-            lineStyle: {
-                 color: 'rgba(255,255,255,.1)'
-            }
-        }
-    }],
-    series: [
-		{
-        name: '安卓',
-        type: 'line',
-         smooth: true,
-        symbol: 'circle',
-        symbolSize: 5,
-        showSymbol: false,
-        lineStyle: {
-			
-            normal: {
-				color: '#0184d5',
-                width: 2
-            }
-        },
-        areaStyle: {
-            normal: {
-                color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
-                    offset: 0,
-                    color: 'rgba(1, 132, 213, 0.4)'
-                }, {
-                    offset: 0.8,
-                    color: 'rgba(1, 132, 213, 0.1)'
-                }], false),
-                shadowColor: 'rgba(0, 0, 0, 0.1)',
-            }
-        },
-			itemStyle: {
-			normal: {
-				color: '#0184d5',
-				borderColor: 'rgba(221, 220, 107, .1)',
-				borderWidth: 12
-			}
-		},
-        data: [3, 4, 3, 4, 3, 4, 3, 6, 2, 4, 2, 4,3, 4, 3, 4, 3, 4, 3, 6, 2, 4, 2, 4]
-
-    }, 
-{
-        name: 'IOS',
-        type: 'line',
-        smooth: true,
-        symbol: 'circle',
-        symbolSize: 5,
-        showSymbol: false,
-        lineStyle: {
-			
-            normal: {
-				color: '#00d887',
-                width: 2
-            }
-        },
-        areaStyle: {
-            normal: {
-                color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
-                    offset: 0,
-                    color: 'rgba(0, 216, 135, 0.4)'
-                }, {
-                    offset: 0.8,
-                    color: 'rgba(0, 216, 135, 0.1)'
-                }], false),
-                shadowColor: 'rgba(0, 0, 0, 0.1)',
-            }
-        },
-			itemStyle: {
-			normal: {
-				color: '#00d887',
-				borderColor: 'rgba(221, 220, 107, .1)',
-				borderWidth: 12
-			}
-		},
-        data: [5, 3, 5, 6, 1, 5, 3, 5, 6, 4, 6, 4, 8, 3, 5, 6, 1, 5, 3, 7, 2, 5, 1, 4]
-
-    }, 
-	
-		 ]
-
-};
-      
-        // 使用刚指定的配置项和数据显示图表。
         myChart.setOption(option);
-        window.addEventListener("resize",function(){
-            myChart.resize();
-        });
+    }
+
+    renderChart();
     }
 function echarts_6() {
         // 基于准备好的dom，初始化echarts实例
