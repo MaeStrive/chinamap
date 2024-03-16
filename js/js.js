@@ -82,10 +82,20 @@ function echarts_996() {
             xAxis: {
               type: 'category',
               boundaryGap: true,
-              data: ['2020三季度', '2020四季度', '2021一季度', '2021二季度', '2021三季度', '2021四季度', '2022一季度']
+              data: ['2020三季度', '2020四季度', '2021一季度', '2021二季度', '2021三季度', '2021四季度', '2022一季度'],
+              axisLine: {
+                lineStyle: {
+                    color: 'white' // 这里设置横坐标轴线的颜色为红色
+                }
+            }
             },
             yAxis: {
-              type: 'value'
+              type: 'value',
+              axisLine: {
+                lineStyle: {
+                    color: 'white' // 这里设置横坐标轴线的颜色为红色
+                }
+            }
             },
             series: [
               {
