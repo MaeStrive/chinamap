@@ -1,5 +1,5 @@
 $(function () {
-    var myChart = echarts.init(document.getElementById('contextmenu'));
+    var myChart1 = echarts.init(document.getElementById('contextmenu'));
     //默认展示牛肉
     var info2 = niuroudata
     // var info2 = []
@@ -10,7 +10,7 @@ $(function () {
         info2 = niuroudata
         structs_datas = []
         format_struct_data(info2.children, structs_datas);
-        myChart.setOption(
+        myChart1.setOption(
             (option = {
                 tooltip: {
                     formatter: function (info) {
@@ -42,10 +42,6 @@ $(function () {
                                         a.name +
                                         "}"
                                     );
-                                    // return [
-                                    //     '<div><h1>' + a.name + '</h1></div>',
-                                    //     '<div><p>' + a.value + '</></div>',
-                                    // ].join('');
                                 },
                                 textStyle: {
                                     // color: '',  label的字体颜色
@@ -54,18 +50,6 @@ $(function () {
                                 },
                                 rich: RICH,
                             },
-                            // emphasis: {
-                            //     show: true,
-                            //     position: 'insideTopLeft',
-                            //     formatter: function(a) {
-                            //         console.log('formatter===label======', a);
-                            //         return a.name + "" + "资产数量 : " + a.data.value + "等级得分";
-                            //     },
-                            //     textStyle: {
-                            //         fontSize: '14',
-                            //         fontWeight: 'bold'
-                            //     }
-                            // }
                         },
                         levels: [
                             {
@@ -175,7 +159,7 @@ $(function () {
     }
 
     format_struct_data(info2.children, structs_datas);
-    myChart.setOption(
+    myChart1.setOption(
         (option = {
             tooltip: {
                 formatter: function (info) {
@@ -291,6 +275,6 @@ $(function () {
     document.oncontextmenu = function () {
         return false;
     };
-    myChart.on("contextmenu", showMenu);
+    myChart1.on("contextmenu", showMenu);
 
 })

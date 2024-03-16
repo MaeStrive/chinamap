@@ -5,53 +5,54 @@ $(function () {
         clearData()
         // alert("瞎点")
         // 修改数据项，这里将北京市的颜色修改为红色
-        for (var i = 0; i < option.series[0].data.length; i++) {
-            let data = baomi.find(item => item.name === option.series[0].data[i].name)
+        for (var i = 0; i < optionmap.series[0].data.length; i++) {
+            let data = baomi.find(item => item.name === optionmap.series[0].data[i].name)
             if (data) {
-                option.series[0].data[i].itemStyle = {
+                optionmap.series[0].data[i].itemStyle = {
                     normal: {
                         color: struct_colors[Math.floor(Math.random() * 20)]
                     }
                 };
-                option.series[0].data[i].value = data.value
+                optionmap.series[0].data[i].value = data.value
             } else {
                 // console.log
             }
         }
         // 更新地图
-        myChart.setOption(option);
+        myChart.setOption(optionmap);
     })
 
     $(".niuniu").click(function () {
+        console.log(optionmap)
         clearData()
         // alert("瞎点")
         // 修改数据项，这里将北京市的颜色修改为红色
-        for (var i = 0; i < option.series[0].data.length; i++) {
-            let data = niuniu.find(item => item.name === option.series[0].data[i].name)
+        for (var i = 0; i < optionmap.series[0].data.length; i++) {
+            let data = niuniu.find(item => item.name === optionmap.series[0].data[i].name)
             if (data) {
-                option.series[0].data[i].itemStyle = {
+                optionmap.series[0].data[i].itemStyle = {
                     normal: {
                         color: struct_colors[Math.floor(Math.random() * 20)]
                     }
                 };
-                option.series[0].data[i].value = data.value
+                optionmap.series[0].data[i].value = data.value
             } else {
                 // console.log
             }
         }
         // 更新地图
-        myChart.setOption(option);
+        myChart.setOption(optionmap);
     })
 
 
     function clearData() {
-        for (var i = 0; i < option.series[0].data.length; i++) {
-            option.series[0].data[i].itemStyle = {
+        for (var i = 0; i < optionmap.series[0].data.length; i++) {
+            optionmap.series[0].data[i].itemStyle = {
                 normal: {
                     color: 'white'
                 }
             };
-            option.series[0].data[i].value = 0
+            optionmap.series[0].data[i].value = 0
 
         }
     }
@@ -292,7 +293,7 @@ $(function () {
             {name: '南海诸岛', value: 0},
         ];
 
-        option = {
+        optionmap = {
             tooltip: {
                 trigger: 'item',
                 formatter: function (params) {
@@ -343,7 +344,7 @@ $(function () {
             }]
         };
 
-        myChart.setOption(option);
+        myChart.setOption(optionmap);
         window.addEventListener("resize", function () {
             myChart.resize();
         });
