@@ -70,7 +70,6 @@ $(function () {
                 $('#customModal').modal('show');
                 var div = $("<div></div>")
                 // 定义表格数据
-                div.append(divbutton)
                 if (params.name == '天津') {
                     var tableData = [
                         ["#", "Indoor TSP", "Indoor PM2.5", "Outdoor TSP", "Outdoor PM2.5",
@@ -99,6 +98,7 @@ $(function () {
                     div.append(table)
                     $("#mapmodel").append(div);
                 } else {
+                    div.append(divbutton)
                     var table11 = "<table class=\"table table-bordered table-striped\" style=\"\">\n" +
                         "    <tbody>\n" +
                         "    <tr>\n" +
