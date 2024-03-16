@@ -903,7 +903,7 @@ var muchangdata = {
                                 {name: "气体成分CO2、N2、CO", value: 1},
                             ]
                         },
-                        
+
                     ],
                 },
                 {
@@ -1314,93 +1314,91 @@ var muchangdata = {
             ]
         },
         {
-            name: "舍区地面垫料标准", 
+            name: "舍区地面垫料标准",
             children: [
                 {
-                    name: "物理危害", 
-                    children: [
-                  ]
+                    name: "物理危害",
+                    children: []
                 },
                 {
-                    name: "生物危害", 
-                    children: [
-                  ]
+                    name: "生物危害",
+                    children: []
                 }
             ]
         },
         {
-            name: "工作服消毒记录", 
+            name: "工作服消毒记录",
             children: [
                 {
-                    name: "时间", 
+                    name: "时间",
                     value: 1
                 },
                 {
-                    name: "方法", 
+                    name: "方法",
                     value: 1
                 },
                 {
-                    name: "持续时间", 
+                    name: "持续时间",
                     value: 1
                 },
                 {
-                    name: "浓度", 
-                    value: 1
-                }
-            ]
-        },
-        {
-            name: "场地消毒记录", 
-            children: [
-                {
-                    name: "时间", 
-                    value: 1
-                },
-                {
-                    name: "方法", 
-                    value: 1
-                },
-                {
-                    name: "持续时间", 
-                    value: 1
-                },
-                {
-                    name: "浓度", 
+                    name: "浓度",
                     value: 1
                 }
             ]
         },
         {
-            name: "运载车辆消毒记录", 
+            name: "场地消毒记录",
             children: [
                 {
-                    name: "配方", 
+                    name: "时间",
                     value: 1
                 },
                 {
-                    name: "时间", 
+                    name: "方法",
                     value: 1
                 },
                 {
-                    name: "浓度", 
+                    name: "持续时间",
+                    value: 1
+                },
+                {
+                    name: "浓度",
                     value: 1
                 }
             ]
         },
         {
-            name: "牧场光照", 
+            name: "运载车辆消毒记录",
             children: [
                 {
-                    name: ">7h", 
+                    name: "配方",
+                    value: 1
+                },
+                {
+                    name: "时间",
+                    value: 1
+                },
+                {
+                    name: "浓度",
                     value: 1
                 }
             ]
         },
         {
-            name: "土壤", 
+            name: "牧场光照",
             children: [
                 {
-                    name: "物理危害", 
+                    name: ">7h",
+                    value: 1
+                }
+            ]
+        },
+        {
+            name: "土壤",
+            children: [
+                {
+                    name: "物理危害",
                     children: [
                         {
                             name: "重金属",
@@ -1413,7 +1411,7 @@ var muchangdata = {
                                             children: [
                                                 {
                                                     name: "≤0.3mg/kg",
-                                                    value:"1"
+                                                    value: "1"
                                                 }
                                             ]
                                         },
@@ -1422,7 +1420,7 @@ var muchangdata = {
                                             children: [
                                                 {
                                                     name: "≤0.3mg/kg",
-                                                    value:"1"
+                                                    value: "1"
                                                 }
                                             ]
                                         },
@@ -1431,7 +1429,7 @@ var muchangdata = {
                                             children: [
                                                 {
                                                     name: "≤0.6mg/kg",
-                                                    value:"1"
+                                                    value: "1"
                                                 }
                                             ]
                                         }
@@ -1445,7 +1443,7 @@ var muchangdata = {
                                             children: [
                                                 {
                                                     name: "≤30mg/kg",
-                                                    value:"1"
+                                                    value: "1"
                                                 }
                                             ]
                                         },
@@ -1454,7 +1452,7 @@ var muchangdata = {
                                             children: [
                                                 {
                                                     name: "≤25mg/kg",
-                                                    value:"1"
+                                                    value: "1"
                                                 }
                                             ]
                                         },
@@ -1463,7 +1461,7 @@ var muchangdata = {
                                             children: [
                                                 {
                                                     name: "≤20mg/kg",
-                                                    value:"1"
+                                                    value: "1"
                                                 }
                                             ]
                                         }
@@ -1477,7 +1475,7 @@ var muchangdata = {
                                             children: [
                                                 {
                                                     name: "≤50mg/kg",
-                                                    value:"1"
+                                                    value: "1"
                                                 }
                                             ]
                                         },
@@ -1486,7 +1484,7 @@ var muchangdata = {
                                             children: [
                                                 {
                                                     name: "≤100mg/kg",
-                                                    value:"1"
+                                                    value: "1"
                                                 }
                                             ]
                                         },
@@ -1495,7 +1493,7 @@ var muchangdata = {
                                             children: [
                                                 {
                                                     name: "≤100mg/kg",
-                                                    value:"1"
+                                                    value: "1"
                                                 }
                                             ]
                                         }
@@ -1509,7 +1507,7 @@ var muchangdata = {
                                             children: [
                                                 {
                                                     name: "≤250mg/kg",
-                                                    value:"1"
+                                                    value: "1"
                                                 }
                                             ]
                                         },
@@ -1518,7 +1516,7 @@ var muchangdata = {
                                             children: [
                                                 {
                                                     name: "≤300mg/kg",
-                                                    value:"1"
+                                                    value: "1"
                                                 }
                                             ]
                                         },
@@ -1527,7 +1525,7 @@ var muchangdata = {
                                             children: [
                                                 {
                                                     name: "≤350mg/kg",
-                                                    value:"1"
+                                                    value: "1"
                                                 }
                                             ]
                                         }
@@ -1541,7 +1539,7 @@ var muchangdata = {
                                             children: [
                                                 {
                                                     name: "≤250mg/kg",
-                                                    value:"1"
+                                                    value: "1"
                                                 }
                                             ]
                                         },
@@ -1550,7 +1548,7 @@ var muchangdata = {
                                             children: [
                                                 {
                                                     name: "≤300mg/kg",
-                                                    value:"1"
+                                                    value: "1"
                                                 }
                                             ]
                                         },
@@ -1559,7 +1557,7 @@ var muchangdata = {
                                             children: [
                                                 {
                                                     name: "≤350mg/kg",
-                                                    value:"1"
+                                                    value: "1"
                                                 }
                                             ]
                                         }
@@ -1573,7 +1571,7 @@ var muchangdata = {
                                             children: [
                                                 {
                                                     name: "≤200mg/kg",
-                                                    value:"1"
+                                                    value: "1"
                                                 }
                                             ]
                                         },
@@ -1582,7 +1580,7 @@ var muchangdata = {
                                             children: [
                                                 {
                                                     name: "≤250mg/kg",
-                                                    value:"1"
+                                                    value: "1"
                                                 }
                                             ]
                                         },
@@ -1591,7 +1589,7 @@ var muchangdata = {
                                             children: [
                                                 {
                                                     name: "≤300mg/kg",
-                                                    value:"1"
+                                                    value: "1"
                                                 }
                                             ]
                                         }
@@ -1603,7 +1601,7 @@ var muchangdata = {
                     ]
                 },
                 {
-                    name: "生物危害", 
+                    name: "生物危害",
                     children: [
                         {
                             name: "大肠杆菌",
@@ -1613,7 +1611,7 @@ var muchangdata = {
                                     children: [
                                         {
                                             name: "≤2g/L",
-                                            value:"1"
+                                            value: "1"
                                         }
                                     ]
                                 },
@@ -1622,7 +1620,7 @@ var muchangdata = {
                                     children: [
                                         {
                                             name: "≤50g/L",
-                                            value:"1"
+                                            value: "1"
                                         }
                                     ]
                                 }
@@ -1636,7 +1634,7 @@ var muchangdata = {
                                     children: [
                                         {
                                             name: "≤1万个/g",
-                                            value:"1"
+                                            value: "1"
                                         }
                                     ]
                                 },
@@ -1645,7 +1643,7 @@ var muchangdata = {
                                     children: [
                                         {
                                             name: "≤5万个/g",
-                                            value:"1"
+                                            value: "1"
                                         }
                                     ]
                                 }
@@ -1653,14 +1651,14 @@ var muchangdata = {
                         }
                     ]
                 }
-                   
+
             ]
         },
         {
-            name: "废弃物危害", 
+            name: "废弃物危害",
             children: [
                 {
-                    name: "水", 
+                    name: "水",
                     children: [
                         {
                             name: "化学危害",
@@ -1670,7 +1668,7 @@ var muchangdata = {
                                     children: [
                                         {
                                             name: "≤2g/L",
-                                            value:"1"
+                                            value: "1"
                                         }
                                     ]
                                 },
@@ -1679,7 +1677,7 @@ var muchangdata = {
                                     children: [
                                         {
                                             name: "≤50g/L",
-                                            value:"1"
+                                            value: "1"
                                         }
                                     ]
                                 }
@@ -1693,7 +1691,7 @@ var muchangdata = {
                                     children: [
                                         {
                                             name: "≤1万个/g",
-                                            value:"1"
+                                            value: "1"
                                         }
                                     ]
                                 },
@@ -1702,7 +1700,7 @@ var muchangdata = {
                                     children: [
                                         {
                                             name: "≤5万个/g",
-                                            value:"1"
+                                            value: "1"
                                         }
                                     ]
                                 }
@@ -1716,7 +1714,7 @@ var muchangdata = {
                                     children: [
                                         {
                                             name: "≤1万个/g",
-                                            value:"1"
+                                            value: "1"
                                         }
                                     ]
                                 },
@@ -1725,7 +1723,7 @@ var muchangdata = {
                                     children: [
                                         {
                                             name: "≤5万个/g",
-                                            value:"1"
+                                            value: "1"
                                         }
                                     ]
                                 }
@@ -1734,7 +1732,7 @@ var muchangdata = {
                     ]
                 },
                 {
-                    name: "废渣", 
+                    name: "废渣",
                     children: [
                         {
                             name: "生物危害",
@@ -1744,7 +1742,7 @@ var muchangdata = {
                                     children: [
                                         {
                                             name: "≤10^5",
-                                            value:"1"
+                                            value: "1"
                                         }
                                     ]
                                 },
@@ -1753,7 +1751,7 @@ var muchangdata = {
                                     children: [
                                         {
                                             name: "≥95%",
-                                            value:"1"
+                                            value: "1"
                                         }
                                     ]
                                 }
@@ -1762,7 +1760,7 @@ var muchangdata = {
                     ]
                 },
                 {
-                    name: "恶臭污染物", 
+                    name: "恶臭污染物",
                     children: [
                         {
                             name: "气体",
@@ -1772,7 +1770,7 @@ var muchangdata = {
                                     children: [
                                         {
                                             name: "70",
-                                            value:"1"
+                                            value: "1"
                                         }
                                     ]
                                 }
@@ -1783,14 +1781,14 @@ var muchangdata = {
             ]
         },
         {
-            name: "新动物入场隔离时间", 
+            name: "新动物入场隔离时间",
             children: [
                 {
                     name: "大动物",
                     children: [
                         {
                             name: "≥45d",
-                            value:"1"
+                            value: "1"
                         }
                     ]
                 },
@@ -1799,17 +1797,17 @@ var muchangdata = {
                     children: [
                         {
                             name: "≥30d",
-                            value:"1"
+                            value: "1"
                         }
                     ]
                 }
             ]
         },
         {
-            name: "环境", 
+            name: "环境",
             children: [
                 {
-                    name: "空气", 
+                    name: "空气",
                     children: [
                         {
                             name: "气体",
@@ -1819,7 +1817,7 @@ var muchangdata = {
                                     children: [
                                         {
                                             name: "70",
-                                            value:"1"
+                                            value: "1"
                                         }
                                     ]
                                 }
@@ -1828,7 +1826,7 @@ var muchangdata = {
                     ]
                 },
                 {
-                    name: "畜禽饮用水", 
+                    name: "畜禽饮用水",
                     children: [
                         {
                             name: "气体",
@@ -1838,15 +1836,15 @@ var muchangdata = {
                                     children: [
                                         {
                                             name: "70",
-                                            value:"1"
+                                            value: "1"
                                         }
                                     ]
                                 }
                             ]
                         }
                     ]
-                },{
-                    name: "土壤", 
+                }, {
+                    name: "土壤",
                     children: [
                         {
                             name: "气体",
@@ -1856,26 +1854,7 @@ var muchangdata = {
                                     children: [
                                         {
                                             name: "70",
-                                            value:"1"
-                                        }
-                                    ]
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    name: "畜禽粪便", 
-                    children: [
-                        {
-                            name: "气体",
-                            children: [
-                                {
-                                    name: "臭气浓度",
-                                    children: [
-                                        {
-                                            name: "70",
-                                            value:"1"
+                                            value: "1"
                                         }
                                     ]
                                 }
@@ -1884,7 +1863,7 @@ var muchangdata = {
                     ]
                 },
                 {
-                    name: "温度", 
+                    name: "畜禽粪便",
                     children: [
                         {
                             name: "气体",
@@ -1894,7 +1873,7 @@ var muchangdata = {
                                     children: [
                                         {
                                             name: "70",
-                                            value:"1"
+                                            value: "1"
                                         }
                                     ]
                                 }
@@ -1903,7 +1882,7 @@ var muchangdata = {
                     ]
                 },
                 {
-                    name: "湿度（相对）", 
+                    name: "温度",
                     children: [
                         {
                             name: "气体",
@@ -1913,7 +1892,7 @@ var muchangdata = {
                                     children: [
                                         {
                                             name: "70",
-                                            value:"1"
+                                            value: "1"
                                         }
                                     ]
                                 }
@@ -1922,7 +1901,7 @@ var muchangdata = {
                     ]
                 },
                 {
-                    name: "风速", 
+                    name: "湿度（相对）",
                     children: [
                         {
                             name: "气体",
@@ -1932,7 +1911,7 @@ var muchangdata = {
                                     children: [
                                         {
                                             name: "70",
-                                            value:"1"
+                                            value: "1"
                                         }
                                     ]
                                 }
@@ -1941,7 +1920,7 @@ var muchangdata = {
                     ]
                 },
                 {
-                    name: "照度", 
+                    name: "风速",
                     children: [
                         {
                             name: "气体",
@@ -1951,7 +1930,7 @@ var muchangdata = {
                                     children: [
                                         {
                                             name: "70",
-                                            value:"1"
+                                            value: "1"
                                         }
                                     ]
                                 }
@@ -1960,7 +1939,26 @@ var muchangdata = {
                     ]
                 },
                 {
-                    name: "噪声", 
+                    name: "照度",
+                    children: [
+                        {
+                            name: "气体",
+                            children: [
+                                {
+                                    name: "臭气浓度",
+                                    children: [
+                                        {
+                                            name: "70",
+                                            value: "1"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    name: "噪声",
                     children: [
                         {
                             name: "禽",
@@ -1970,7 +1968,7 @@ var muchangdata = {
                                     children: [
                                         {
                                             name: "60dB",
-                                            value:"1"
+                                            value: "1"
                                         }
                                     ]
                                 },
@@ -1979,7 +1977,7 @@ var muchangdata = {
                                     children: [
                                         {
                                             name: "80dB",
-                                            value:"1"
+                                            value: "1"
                                         }
                                     ]
                                 }
@@ -1990,7 +1988,7 @@ var muchangdata = {
                             children: [
                                 {
                                     name: "80dB",
-                                    value:"1"
+                                    value: "1"
                                 }
                             ]
                         },
@@ -1999,7 +1997,7 @@ var muchangdata = {
                             children: [
                                 {
                                     name: "75dB",
-                                    value:"1"
+                                    value: "1"
                                 }
                             ]
                         }
@@ -2010,14 +2008,14 @@ var muchangdata = {
             ]
         },
         {
-            name: "养殖档案、防疫档案保存时间", 
+            name: "养殖档案、防疫档案保存时间",
             children: [
                 {
                     name: "商品禽",
                     children: [
                         {
                             name: "2年",
-                            value:"1"
+                            value: "1"
                         }
                     ]
                 },
@@ -2026,7 +2024,7 @@ var muchangdata = {
                     children: [
                         {
                             name: "20年",
-                            value:"1"
+                            value: "1"
                         }
                     ]
                 }
@@ -2035,17 +2033,73 @@ var muchangdata = {
     ],
 };
 
-
+// 云南
+// 江苏
+// 河南
+// 山东
+// 安徽
+// 山西
+// 河北
+// 陕西
 //提前定义苞米
 var baomi = [
-    {name: '新疆', value: 100}, {name: '江苏', value: 20},
-    {name: '浙江', value: 60}, {name: '江西', value: 30},
-    {name: '湖北', value: 40}, {name: '广西', value: 20},
-    {name: '甘肃', value: 10}, {name: '山西', value: 10},
-    {name: '内蒙古', value: 60}, {name: '陕西', value: 40},
+    {name: '云南', value: 100}, {name: '河北', value: 20},
+    {name: '江苏', value: 60}, {name: '陕西', value: 30},
+    {name: '河南', value: 40},
+    {name: '安徽', value: 10},
+    {name: '山西', value: 60},
+    {name: '山东', value: 60},
 ]
 
+var baomititle = ["#", "DON", "AFB1", "AFB2", "AFG1", "AFG2", "FB1"]
 
+var yunnandata = [
+    baomititle,
+    ["红河州开运市", 4.59, 2.18, 6.44, 0.34, 1.14, 746.06,],
+    ["昆明市石村县", 84.18, 3.36, 1.12, 0.18, 1.05, 14.79,],
+    ["曲靖市沾益区", 37.59, 1.69, 2.08, 0.36, 0.68, 42.66,],
+    ["砚山县", 74.57, 3.63, 1.87, 0.23, 2.22, 877.74],
+    ["丘北县", 39.02, 4.15, 1.20, 0.55, 0.80, 2877.58],
+    ["红河州弥勒市朋普镇", 3.32, 19.06, 1.92, 0.35, 0.87, 292.60],
+]
+
+var shandongdata = [
+    baomititle,
+    ["菏泽市巨野县龙堌镇", 1.49, 32.90, 6.40, 0.15, 1.18, 225.09],
+    ["菏泽市定陶区冉堌镇", 1.62, 17.26, 3.72, 0.09, 0.49, 240.00],
+]
+
+var jiangsudata = [
+    baomititle,
+    ["盐城市响水县双港镇老舍社区", 4.94, 2.44, 5.31, 0.76, 1.65, 1895.70],
+    ["盐城市滨海县振东乡干河村", 18.00, 2.52, 4.67, 0.22, 1.47, 1431.70],
+    ["连云港市东海县东辛农场", 12.71, 1.97, 4.78, 0.18, 0.94, 1486.19],
+    ["连云港市东海县东海本地", 8.38, 1.23, 5.90, 0.13, 1.00, 419.92],
+]
+
+var hebeidata = [
+    baomititle,
+    ["海兴县赵毛陶镇翟褚村1", 8.46, 2.25, 9.08, 0.34, 0.62, 340.50],
+    ["海兴县赵毛陶镇翟褚村2", 2.06, 1.03, 1.20, 0.14, 0.26, 562.58],
+    ["海兴县赵毛陶镇翟褚村3", 5.86, 1.93, 8.18, 0.81, 2.49, 3135.25],
+    ["海兴县赵毛陶镇翟褚村4", 0.27, 0.71, 0.40, 0.21, 0.36, 862.64],
+]
+
+var shanxidata = [
+    baomititle,
+    ["海兴县赵毛陶镇翟褚村1", 8.46, 2.25, 9.08, 0.34, 0.62, 340.50],
+    ["海兴县赵毛陶镇翟褚村2", 2.06, 1.03, 1.20, 0.14, 0.26, 562.58],
+    ["海兴县赵毛陶镇翟褚村3", 5.86, 1.93, 8.18, 0.81, 2.49, 3135.25],
+    ["海兴县赵毛陶镇翟褚村4", 0.27, 0.71, 0.40, 0.21, 0.36, 862.64],
+]
+
+var shuju = [
+    {value: yunnandata, name: "云南"},
+    {value: shandongdata, name: "山东"},
+    {value: jiangsudata, name: "江苏"},
+    {value: hebeidata, name: "河北"},
+    {value: shanxidata, name: "山西"},
+]
 var niuniu = [
     {name: '广西', value: 100},
     {name: '天津', value: 100},
@@ -2074,4 +2128,6 @@ var struct_colors = [
     "#4fca96",
     "#4cc686",
 ];
+
+
 
