@@ -70,3 +70,33 @@
 .modal-title{
     text-align: center;font-weight: 700;font-size: 24px;margin-bottom: 2px;
 }
+
+.niurou{
+    background-color: #f7c777;
+    border-color: #f7c777;
+}
+
+.muchang{
+    background-color: #21a366;
+    border-color: #21a366;
+}
+
+.yufei{
+    background-color: #fbb9c5;
+    border-color: #fbb9c5;
+}
+
+.tuzai{
+    background-color: #6e6e6e;
+    border-color: #6e6e6e;
+}
+
+.lenglian{
+    background-color: #5fc9f7;
+    border-color: #5fc9f7;
+}
+
+.zaiqian{
+    background-color: #f77a57;
+    border-color: #f77a57;
+}
