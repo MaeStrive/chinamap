@@ -1,13 +1,152 @@
 ﻿
 $(function () {
+    echarts_996();
 // echarts_1();
 // echarts_2();
-echarts_4();
+// echarts_4();
 // echarts_31();
 // echarts_32();
 // echarts_33();
 // echarts_5();
 // echarts_6();
+
+function echarts_996() {
+    // 初始化 ECharts 实例
+    var myChart = echarts.init(document.getElementById('echart4'));
+
+    var data = {
+        physics: [
+            [1, 220],
+            [2, 250],
+            [3, 200],
+            [4, 180]
+        ],
+        chemistry: [
+            [1, 180],
+            [2, 160],
+            [3, 190],
+            [4, 210]
+        ],
+        physicsDisplay: true,
+        chemistryDisplay: true
+    };
+
+    function toggleLines() {
+        data.physicsDisplay = !data.physicsDisplay;
+        data.chemistryDisplay = !data.chemistryDisplay;
+        renderChart();
+    }
+
+    function renderChart() {
+        var option;
+        option = {
+            title: {
+            //   text: '毒素危害总数据',
+            //   backgroundColor: '#333',
+            },
+            
+            tooltip: {
+              trigger: 'axis'
+            },
+            legend: {
+              data: ['Naphthalene', 'Acenaphthene', 'PCB52', 'PCB101', 'OA','Escherichia coli','Vibrio parahaemolyticus'],
+              textStyle:{
+                color:'white'
+            },
+              
+                // type:'plain',
+                
+                // orient: 'vertical',
+                // x: 'left',
+                // y2: 30,
+                // data:[
+                //     {name:'小组1',textStyle:{color:'red'}},
+                //     {name:'小组2',textStyle:{color:'blue'}},
+                //     {name:'小组3',textStyle:{color:'yellow'}},
+                //     {name:'小组4',textStyle:{color:'red'}},
+                //     {name:'小组5',textStyle:{color:'white'}}
+                // ]
+            
+            },
+            grid: {
+              left: '3%',
+              right: '4%',
+              bottom: '3%',
+              containLabel: true
+            },
+            toolbox: {
+              feature: {
+                saveAsImage: {}
+              }
+            },
+            xAxis: {
+              type: 'category',
+              boundaryGap: true,
+              data: ['2020三季度', '2020四季度', '2021一季度', '2021二季度', '2021三季度', '2021四季度', '2022一季度']
+            },
+            yAxis: {
+              type: 'value'
+            },
+            series: [
+              {
+                name: 'Naphthalene',
+                type: 'line',
+                // stack: 'Total',
+                data: [0, 9.86, 0, 0, 4.81, 0, 0],
+                itemStyle: {
+                    normal : {  
+                        color: "red",//图例的颜色
+                        lineStyle:{  
+                            color:'white'//线的颜色
+                        }  
+                    } 
+                },
+                
+              },
+              {
+                name: 'Acenaphthene',
+                type: 'line',
+                // stack: 'Total',
+                data: [4.12, 5.18, 8.63, 14.9, 7.38, 4.055, 4.49]
+              },
+              {
+                name: 'PCB52',
+                type: 'line',
+                // stack: 'Total',
+                data: [0, 0.47, 1.03, 0.72, 0.69, 1.375, 0.87]
+              },
+              {
+                name: 'PCB101',
+                type: 'line',
+                // stack: 'Total',
+                data: [0, 0, 0.347, 0.71, 0.737, 5.34, 7.53]
+              },
+              {
+                name: 'OA',
+                type: 'line',
+                // stack: 'Total',
+                data: [87.05, 8.91, 0, 0, 68.117, 26.3, 0]
+              },
+              {
+                name: 'Escherichia coli',
+                type: 'line',
+                // stack: 'Total',
+                data: [1.41, 0.977, 2.06, 1.867, 5.62, 5.535, 2.85]
+              },
+              {
+                name: 'Vibrio parahaemolyticus',
+                type: 'line',
+                // stack: 'Total',
+                data: [4.67, 0, 0, 1.067, 15.757, 5.85, 0.71]
+              }
+            ]
+          };
+
+        myChart.setOption(option);
+    }
+
+    renderChart();
+    }
 function echarts_1() {
         // 基于准备好的dom，初始化echarts实例
         var myChart = echarts.init(document.getElementById('echart1'));
