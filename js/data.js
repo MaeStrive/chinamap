@@ -889,6 +889,1153 @@ var niuroudata = {
     ],
 };
 
+
+var muchangdata = {
+    name: "牧场",
+    children: [
+        {
+            name: "饮水",
+            children: [
+                {
+                    name: "物理危害", children: [
+                        {
+                            name: "重金属", children: [
+                                {name: "气体成分CO2、N2、CO", value: 1},
+                            ]
+                        },
+                        
+                    ],
+                },
+                {
+                    name: "化学危害", children: [
+                        {
+                            name: "温度", children: [
+                                {name: "小于12度", value: 1},
+                            ]
+                        },
+                    ]
+                },
+                {
+                    name: "感官性状", children: [
+                        {
+                            name: "温度", children: [
+                                {name: "小于12度", value: 1},
+                            ]
+                        },
+                    ]
+                },
+                {
+                    name: "生物危害", children: [
+                        {
+                            name: "温度", children: [
+                                {name: "小于12度", value: 1},
+                            ]
+                        },
+                    ]
+                },
+            ]
+        },
+        {
+            name: "饲料",
+            children: [
+                {
+                    name: "物理危害", children: [
+                        {
+                            name: "水分", children: [
+                                {
+                                    name: "≤95%", value: 1,
+                                }
+                            ],
+                        },
+                        {
+                            name: "蛋白质", children: [
+                                {
+                                    name: "≥4%", value: 1,
+                                }
+                            ],
+                        },
+                        {
+                            name: "铅", children: [
+                                {
+                                    name: "≤0.2mg/kg", value: 1,
+                                }
+                            ],
+                        },
+                        {
+                            name: "无机砷", children: [
+                                {
+                                    name: "≤0.05mg/kg", value: 1,
+                                }
+                            ],
+                        },
+                    ],
+                },
+                {
+                    name: "生物危害", children: [
+                        {
+                            name: "恩诺沙星", children: [
+                                {
+                                    name: "牛肉/羊肉", children: [
+                                        {
+                                            name: "肌肉", children: [
+                                                {
+                                                    name: "≤0.1", value: 1,
+                                                }
+                                            ],
+                                        },
+                                        {
+                                            name: "肝", children: [
+                                                {
+                                                    name: "≤0.3", value: 1,
+                                                }
+                                            ],
+                                        },
+                                        {
+                                            name: "肾", children: [
+                                                {
+                                                    name: "≤0.2", value: 1,
+                                                }
+                                            ],
+                                        },
+                                    ],
+                                }
+                            ],
+                        },
+                        {
+                            name: "庆大霉素", children: [
+                                {
+                                    name: "牛肉/猪肉", children: [
+                                        {
+                                            name: "肌肉", children: [
+                                                {
+                                                    name: "≤0.1", value: 1,
+                                                }
+                                            ],
+                                        },
+                                        {
+                                            name: "肝", children: [
+                                                {
+                                                    name: "≤0.2", value: 1,
+                                                }
+                                            ],
+                                        },
+                                        {
+                                            name: "脂肪", children: [
+                                                {
+                                                    name: "≤0.1", value: 1,
+                                                }
+                                            ],
+                                        },
+                                        {
+                                            name: "肾", children: [
+                                                {
+                                                    name: "≤1", value: 1,
+                                                }
+                                            ],
+                                        },
+                                    ],
+                                }
+                            ],
+                        },
+                        {
+                            name: "土霉素", children: [
+                                {
+                                    name: "畜禽可食性组织", children: [
+                                        {
+                                            name: "肌肉", children: [
+                                                {
+                                                    name: "≤0.1", value: 1,
+                                                }
+                                            ],
+                                        },
+                                        {
+                                            name: "肝", children: [
+                                                {
+                                                    name: "≤0.3", value: 1,
+                                                }
+                                            ],
+                                        },
+                                        {
+                                            name: "脂肪", children: [
+                                                {
+                                                    name: "≤0.1", value: 1,
+                                                }
+                                            ],
+                                        },
+                                        {
+                                            name: "肾", children: [
+                                                {
+                                                    name: "≤0.6", value: 1,
+                                                }
+                                            ],
+                                        },
+                                    ],
+                                }
+                            ],
+                        },
+                        {
+                            name: "四环素", children: [
+                                {
+                                    name: "畜禽可食性组织", children: [
+                                        {
+                                            name: "肌肉", children: [
+                                                {
+                                                    name: "≤0.1", value: 1,
+                                                }
+                                            ],
+                                        },
+                                        {
+                                            name: "肝", children: [
+                                                {
+                                                    name: "≤0.3", value: 1,
+                                                }
+                                            ],
+                                        },
+                                        {
+                                            name: "肾", children: [
+                                                {
+                                                    name: "≤0.6", value: 1,
+                                                }
+                                            ],
+                                        },
+                                    ],
+                                }
+                            ],
+                        },
+                        {
+                            name: "青霉素", children: [
+                                {
+                                    name: "牛/羊/猪", children: [
+                                        {
+                                            name: "肌肉", children: [
+                                                {
+                                                    name: "≤0.05", value: 1,
+                                                }
+                                            ],
+                                        },
+                                        {
+                                            name: "肝", children: [
+                                                {
+                                                    name: "≤0.05", value: 1,
+                                                }
+                                            ],
+                                        },
+                                        {
+                                            name: "肾", children: [
+                                                {
+                                                    name: "≤0.05", value: 1,
+                                                }
+                                            ],
+                                        },
+                                    ],
+                                }
+                            ],
+                        },
+                        {
+                            name: "链霉素", children: [
+                                {
+                                    name: "牛/羊/猪/禽", children: [
+                                        {
+                                            name: "肌肉", children: [
+                                                {
+                                                    name: "≤0.5", value: 1,
+                                                }
+                                            ],
+                                        },
+                                        {
+                                            name: "肝", children: [
+                                                {
+                                                    name: "≤0.5", value: 1,
+                                                }
+                                            ],
+                                        },
+                                        {
+                                            name: "肾", children: [
+                                                {
+                                                    name: "≤1", value: 1,
+                                                }
+                                            ],
+                                        },
+                                        {
+                                            name: "脂肪", children: [
+                                                {
+                                                    name: "≤0.5", value: 1,
+                                                }
+                                            ],
+                                        },
+                                    ],
+                                }
+                            ],
+                        },
+                        {
+                            name: "泰乐菌素", children: [
+                                {
+                                    name: "牛/猪/禽", children: [
+                                        {
+                                            name: "肌肉", children: [
+                                                {
+                                                    name: "≤0.1", value: 1,
+                                                }
+                                            ],
+                                        },
+                                        {
+                                            name: "肝", children: [
+                                                {
+                                                    name: "≤0.1", value: 1,
+                                                }
+                                            ],
+                                        },
+                                        {
+                                            name: "肾", children: [
+                                                {
+                                                    name: "≤0.1", value: 1,
+                                                }
+                                            ],
+                                        },
+                                    ],
+                                }
+                            ],
+                        },
+                        {
+                            name: "氯氢吡啶", children: [
+                                {
+                                    name: "牛/羊", children: [
+                                        {
+                                            name: "肌肉", children: [
+                                                {
+                                                    name: "≤0.2", value: 1,
+                                                }
+                                            ],
+                                        },
+                                        {
+                                            name: "肝", children: [
+                                                {
+                                                    name: "≤3", value: 1,
+                                                }
+                                            ],
+                                        },
+                                        {
+                                            name: "肾", children: [
+                                                {
+                                                    name: "≤1.5", value: 1,
+                                                }
+                                            ],
+                                        },
+                                    ],
+                                },
+                                {
+                                    name: "猪", children: [
+                                        {
+                                            name: "可食性组织", children: [
+                                                {
+                                                    name: "≤0.2", value: 1,
+                                                }
+                                            ],
+                                        },
+                                    ],
+                                },
+                                {
+                                    name: "禽", children: [
+                                        {
+                                            name: "肌肉", children: [
+                                                {
+                                                    name: "≤5", value: 1,
+                                                }
+                                            ],
+                                        },
+                                        {
+                                            name: "肝", children: [
+                                                {
+                                                    name: "≤1.5", value: 1,
+                                                }
+                                            ],
+                                        },
+                                        {
+                                            name: "肾", children: [
+                                                {
+                                                    name: "≤1.5", value: 1,
+                                                }
+                                            ],
+                                        },
+                                    ],
+                                },
+                            ],
+                        },
+                        {
+                            name: "喹乙醇", children: [
+                                {
+                                    name: "猪", children: [
+                                        {
+                                            name: "肌肉", children: [
+                                                {
+                                                    name: "≤0.004", value: 1,
+                                                }
+                                            ],
+                                        },
+                                        {
+                                            name: "肝", children: [
+                                                {
+                                                    name: "≤0.05", value: 1,
+                                                }
+                                            ],
+                                        },
+                                    ],
+                                },
+                            ],
+                        },
+                        {
+                            name: "磺胺类", children: [
+                                {
+                                    name: "畜禽", children: [
+                                        {
+                                            name: "可食性组织", children: [
+                                                {
+                                                    name: "≤0.1", value: 1,
+                                                }
+                                            ],
+                                        },
+                                    ],
+                                },
+                            ],
+                        },
+                        {
+                            name: "乙烯雌酚", children: [
+                                {
+                                    name: "畜禽", children: [
+                                        {
+                                            name: "不得检出（检出限0.05）", value: 1,
+                                        },
+                                    ],
+                                },
+                            ],
+                        },
+                    ],
+                }
+            ]
+        },
+        {
+            name: "舍区地面垫料标准", 
+            children: [
+                {
+                    name: "物理危害", 
+                    children: [
+                  ]
+                },
+                {
+                    name: "生物危害", 
+                    children: [
+                  ]
+                }
+            ]
+        },
+        {
+            name: "工作服消毒记录", 
+            children: [
+                {
+                    name: "时间", 
+                    value: 1
+                },
+                {
+                    name: "方法", 
+                    value: 1
+                },
+                {
+                    name: "持续时间", 
+                    value: 1
+                },
+                {
+                    name: "浓度", 
+                    value: 1
+                }
+            ]
+        },
+        {
+            name: "场地消毒记录", 
+            children: [
+                {
+                    name: "时间", 
+                    value: 1
+                },
+                {
+                    name: "方法", 
+                    value: 1
+                },
+                {
+                    name: "持续时间", 
+                    value: 1
+                },
+                {
+                    name: "浓度", 
+                    value: 1
+                }
+            ]
+        },
+        {
+            name: "运载车辆消毒记录", 
+            children: [
+                {
+                    name: "配方", 
+                    value: 1
+                },
+                {
+                    name: "时间", 
+                    value: 1
+                },
+                {
+                    name: "浓度", 
+                    value: 1
+                }
+            ]
+        },
+        {
+            name: "牧场光照", 
+            children: [
+                {
+                    name: ">7h", 
+                    value: 1
+                }
+            ]
+        },
+        {
+            name: "土壤", 
+            children: [
+                {
+                    name: "物理危害", 
+                    children: [
+                        {
+                            name: "重金属",
+                            children: [
+                                {
+                                    name: "镉",
+                                    children: [
+                                        {
+                                            name: "缓冲区",
+                                            children: [
+                                                {
+                                                    name: "≤0.3mg/kg",
+                                                    value:"1"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            name: "场区",
+                                            children: [
+                                                {
+                                                    name: "≤0.3mg/kg",
+                                                    value:"1"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            name: "舍区",
+                                            children: [
+                                                {
+                                                    name: "≤0.6mg/kg",
+                                                    value:"1"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    name: "砷",
+                                    children: [
+                                        {
+                                            name: "缓冲区",
+                                            children: [
+                                                {
+                                                    name: "≤30mg/kg",
+                                                    value:"1"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            name: "场区",
+                                            children: [
+                                                {
+                                                    name: "≤25mg/kg",
+                                                    value:"1"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            name: "舍区",
+                                            children: [
+                                                {
+                                                    name: "≤20mg/kg",
+                                                    value:"1"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    name: "铜",
+                                    children: [
+                                        {
+                                            name: "缓冲区",
+                                            children: [
+                                                {
+                                                    name: "≤50mg/kg",
+                                                    value:"1"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            name: "场区",
+                                            children: [
+                                                {
+                                                    name: "≤100mg/kg",
+                                                    value:"1"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            name: "舍区",
+                                            children: [
+                                                {
+                                                    name: "≤100mg/kg",
+                                                    value:"1"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    name: "铅",
+                                    children: [
+                                        {
+                                            name: "缓冲区",
+                                            children: [
+                                                {
+                                                    name: "≤250mg/kg",
+                                                    value:"1"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            name: "场区",
+                                            children: [
+                                                {
+                                                    name: "≤300mg/kg",
+                                                    value:"1"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            name: "舍区",
+                                            children: [
+                                                {
+                                                    name: "≤350mg/kg",
+                                                    value:"1"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    name: "铬",
+                                    children: [
+                                        {
+                                            name: "缓冲区",
+                                            children: [
+                                                {
+                                                    name: "≤250mg/kg",
+                                                    value:"1"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            name: "场区",
+                                            children: [
+                                                {
+                                                    name: "≤300mg/kg",
+                                                    value:"1"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            name: "舍区",
+                                            children: [
+                                                {
+                                                    name: "≤350mg/kg",
+                                                    value:"1"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    name: "锌",
+                                    children: [
+                                        {
+                                            name: "缓冲区",
+                                            children: [
+                                                {
+                                                    name: "≤200mg/kg",
+                                                    value:"1"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            name: "场区",
+                                            children: [
+                                                {
+                                                    name: "≤250mg/kg",
+                                                    value:"1"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            name: "舍区",
+                                            children: [
+                                                {
+                                                    name: "≤300mg/kg",
+                                                    value:"1"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+
+                        }
+                    ]
+                },
+                {
+                    name: "生物危害", 
+                    children: [
+                        {
+                            name: "大肠杆菌",
+                            children: [
+                                {
+                                    name: "缓冲区",
+                                    children: [
+                                        {
+                                            name: "≤2g/L",
+                                            value:"1"
+                                        }
+                                    ]
+                                },
+                                {
+                                    name: "场区",
+                                    children: [
+                                        {
+                                            name: "≤50g/L",
+                                            value:"1"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            name: "细菌总数",
+                            children: [
+                                {
+                                    name: "缓冲区",
+                                    children: [
+                                        {
+                                            name: "≤1万个/g",
+                                            value:"1"
+                                        }
+                                    ]
+                                },
+                                {
+                                    name: "场区",
+                                    children: [
+                                        {
+                                            name: "≤5万个/g",
+                                            value:"1"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+                   
+            ]
+        },
+        {
+            name: "废弃物危害", 
+            children: [
+                {
+                    name: "水", 
+                    children: [
+                        {
+                            name: "化学危害",
+                            children: [
+                                {
+                                    name: "缓冲区",
+                                    children: [
+                                        {
+                                            name: "≤2g/L",
+                                            value:"1"
+                                        }
+                                    ]
+                                },
+                                {
+                                    name: "场区",
+                                    children: [
+                                        {
+                                            name: "≤50g/L",
+                                            value:"1"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            name: "物理危害",
+                            children: [
+                                {
+                                    name: "缓冲区",
+                                    children: [
+                                        {
+                                            name: "≤1万个/g",
+                                            value:"1"
+                                        }
+                                    ]
+                                },
+                                {
+                                    name: "场区",
+                                    children: [
+                                        {
+                                            name: "≤5万个/g",
+                                            value:"1"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            name: "生物危害",
+                            children: [
+                                {
+                                    name: "缓冲区",
+                                    children: [
+                                        {
+                                            name: "≤1万个/g",
+                                            value:"1"
+                                        }
+                                    ]
+                                },
+                                {
+                                    name: "场区",
+                                    children: [
+                                        {
+                                            name: "≤5万个/g",
+                                            value:"1"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    name: "废渣", 
+                    children: [
+                        {
+                            name: "生物危害",
+                            children: [
+                                {
+                                    name: "粪大肠菌群个数",
+                                    children: [
+                                        {
+                                            name: "≤10^5",
+                                            value:"1"
+                                        }
+                                    ]
+                                },
+                                {
+                                    name: "蛔虫卵死亡率",
+                                    children: [
+                                        {
+                                            name: "≥95%",
+                                            value:"1"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    name: "恶臭污染物", 
+                    children: [
+                        {
+                            name: "气体",
+                            children: [
+                                {
+                                    name: "臭气浓度",
+                                    children: [
+                                        {
+                                            name: "70",
+                                            value:"1"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            name: "新动物入场隔离时间", 
+            children: [
+                {
+                    name: "大动物",
+                    children: [
+                        {
+                            name: "≥45d",
+                            value:"1"
+                        }
+                    ]
+                },
+                {
+                    name: "小动物",
+                    children: [
+                        {
+                            name: "≥30d",
+                            value:"1"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            name: "环境", 
+            children: [
+                {
+                    name: "空气", 
+                    children: [
+                        {
+                            name: "气体",
+                            children: [
+                                {
+                                    name: "臭气浓度",
+                                    children: [
+                                        {
+                                            name: "70",
+                                            value:"1"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    name: "畜禽饮用水", 
+                    children: [
+                        {
+                            name: "气体",
+                            children: [
+                                {
+                                    name: "臭气浓度",
+                                    children: [
+                                        {
+                                            name: "70",
+                                            value:"1"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },{
+                    name: "土壤", 
+                    children: [
+                        {
+                            name: "气体",
+                            children: [
+                                {
+                                    name: "臭气浓度",
+                                    children: [
+                                        {
+                                            name: "70",
+                                            value:"1"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    name: "畜禽粪便", 
+                    children: [
+                        {
+                            name: "气体",
+                            children: [
+                                {
+                                    name: "臭气浓度",
+                                    children: [
+                                        {
+                                            name: "70",
+                                            value:"1"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    name: "温度", 
+                    children: [
+                        {
+                            name: "气体",
+                            children: [
+                                {
+                                    name: "臭气浓度",
+                                    children: [
+                                        {
+                                            name: "70",
+                                            value:"1"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    name: "湿度（相对）", 
+                    children: [
+                        {
+                            name: "气体",
+                            children: [
+                                {
+                                    name: "臭气浓度",
+                                    children: [
+                                        {
+                                            name: "70",
+                                            value:"1"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    name: "风速", 
+                    children: [
+                        {
+                            name: "气体",
+                            children: [
+                                {
+                                    name: "臭气浓度",
+                                    children: [
+                                        {
+                                            name: "70",
+                                            value:"1"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    name: "照度", 
+                    children: [
+                        {
+                            name: "气体",
+                            children: [
+                                {
+                                    name: "臭气浓度",
+                                    children: [
+                                        {
+                                            name: "70",
+                                            value:"1"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    name: "噪声", 
+                    children: [
+                        {
+                            name: "禽",
+                            children: [
+                                {
+                                    name: "雏",
+                                    children: [
+                                        {
+                                            name: "60dB",
+                                            value:"1"
+                                        }
+                                    ]
+                                },
+                                {
+                                    name: "成",
+                                    children: [
+                                        {
+                                            name: "80dB",
+                                            value:"1"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            name: "猪",
+                            children: [
+                                {
+                                    name: "80dB",
+                                    value:"1"
+                                }
+                            ]
+                        },
+                        {
+                            name: "牛",
+                            children: [
+                                {
+                                    name: "75dB",
+                                    value:"1"
+                                }
+                            ]
+                        }
+                    ]
+                }
+
+
+            ]
+        },
+        {
+            name: "养殖档案、防疫档案保存时间", 
+            children: [
+                {
+                    name: "商品禽",
+                    children: [
+                        {
+                            name: "2年",
+                            value:"1"
+                        }
+                    ]
+                },
+                {
+                    name: "牛",
+                    children: [
+                        {
+                            name: "20年",
+                            value:"1"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+};
+
+
 //提前定义苞米
 var baomi = [
     {name: '新疆', value: 100}, {name: '江苏', value: 20},
