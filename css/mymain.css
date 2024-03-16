@@ -100,3 +100,11 @@
     background-color: #f77a57;
     border-color: #f77a57;
 }
+
+.niubutton{
+    width:15%;
+    font-size: 16px;
+    /*line-height: 5%;*/
+    height: 50px;
+    padding: 0;
+}

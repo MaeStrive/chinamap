@@ -1,57 +1,63 @@
 $(function () {
     var myChart
+    var innierdiv1 = $("<div id='innerdiv1' style='display: block'></div>")
+    var innierdiv2 = $("<div id='innerdiv2' style='display: none'></div>")
+    var divbutton = $("<div style='text-align: center'><button class=\"btn btn-primary niubutton\" id='but1'>奶样检测结果</button>&emsp;&emsp;&emsp;" +
+        "<button class=\"btn btn-info niubutton\" id='but2'>夏季试验微生物检测结果</button></div>")
     map();
     $(".baomi").click(function () {
         clearData()
         // alert("瞎点")
         // 修改数据项，这里将北京市的颜色修改为红色
-        for (var i = 0; i < option.series[0].data.length; i++) {
-            let data = baomi.find(item => item.name === option.series[0].data[i].name)
+        for (var i = 0; i < optionmap.series[0].data.length; i++) {
+            let data = baomi.find(item => item.name === optionmap.series[0].data[i].name)
             if (data) {
-                option.series[0].data[i].itemStyle = {
+                optionmap.series[0].data[i].itemStyle = {
                     normal: {
                         color: struct_colors[Math.floor(Math.random() * 20)]
                     }
                 };
-                option.series[0].data[i].value = data.value
+                optionmap.series[0].data[i].value = data.value
             } else {
                 // console.log
             }
         }
         // 更新地图
-        myChart.setOption(option);
+        myChart.setOption(optionmap);
     })
 
     $(".niuniu").click(function () {
+        console.log(optionmap)
         clearData()
         // alert("瞎点")
         // 修改数据项，这里将北京市的颜色修改为红色
-        for (var i = 0; i < option.series[0].data.length; i++) {
-            let data = niuniu.find(item => item.name === option.series[0].data[i].name)
+        for (var i = 0; i < optionmap.series[0].data.length; i++) {
+            let data = niuniu.find(item => item.name === optionmap.series[0].data[i].name)
             if (data) {
-                option.series[0].data[i].itemStyle = {
+                optionmap.series[0].data[i].itemStyle = {
                     normal: {
                         color: struct_colors[Math.floor(Math.random() * 20)]
                     }
                 };
-                option.series[0].data[i].value = data.value
+                optionmap.series[0].data[i].value = data.value
             } else {
                 // console.log
             }
         }
         // 更新地图
-        myChart.setOption(option);
+        myChart.setOption(optionmap);
     })
 
 
+
     function clearData() {
-        for (var i = 0; i < option.series[0].data.length; i++) {
-            option.series[0].data[i].itemStyle = {
+        for (var i = 0; i < optionmap.series[0].data.length; i++) {
+            optionmap.series[0].data[i].itemStyle = {
                 normal: {
                     color: 'white'
                 }
             };
-            option.series[0].data[i].value = 0
+            optionmap.series[0].data[i].value = 0
 
         }
     }
@@ -92,6 +98,7 @@ $(function () {
                     div.append(table)
                     $("#mapmodel").append(div);
                 } else {
+                    div.append(divbutton)
                     var table11 = "<table class=\"table table-bordered table-striped\" style=\"\">\n" +
                         "    <tbody>\n" +
                         "    <tr>\n" +
@@ -252,7 +259,519 @@ $(function () {
                         "    </tr>\n" +
                         "    </tbody>\n" +
                         "</table>"
-                    div.append(table11)
+                    var table12 = "<table  class=\"table table-bordered table-striped\" style=\"\">\n" +
+                        "    <tbody>\n" +
+                        "    <tr>\n" +
+                        "        <td rowspan=\"2\">样品名称\n" +
+                        "        </td>\n" +
+                        "        <td rowspan=\"2\">采样点</td>\n" +
+                        "        <td rowspan=\"2\">编号</td>\n" +
+                        "        <td rowspan=\"2\">送检批次</td>\n" +
+                        "        <td rowspan=\"2\">取样编号</td>\n" +
+                        "        <td colspan=\"2\">大肠菌群(CFU/mL）</td>\n" +
+                        "        <td colspan=\"2\">菌落总数（CFU/mL)</td>\n" +
+                        "        <td></td>\n" +
+                        "    </tr>\n" +
+                        "    <tr>\n" +
+                        "        <td >采样时间<br>\n" +
+                        "            （2022/4/11）\n" +
+                        "        </td>\n" +
+                        "        <td>采样时间<br>\n" +
+                        "            （2022/8/2）\n" +
+                        "        </td>\n" +
+                        "        <td>采样时间<br>\n" +
+                        "            （2022/4/11）\n" +
+                        "        </td>\n" +
+                        "        <td >采样时间<br>\n" +
+                        "            （2022/8/2）\n" +
+                        "        </td>\n" +
+                        "        <td></td>\n" +
+                        "    </tr>\n" +
+                        "    <tr >\n" +
+                        "        <td rowspan=\"9\" >原料奶<br>\n" +
+                        "            （样品数量200mL）\n" +
+                        "        </td>\n" +
+                        "        <td rowspan=\"3\" >泌乳牛栏\n" +
+                        "        </td>\n" +
+                        "        <td >A11</td>\n" +
+                        "        <td >A</td>\n" +
+                        "        <td >1</td>\n" +
+                        "        <td ><font >&lt;1</font></td>\n" +
+                        "        <td ><font >&lt;1</font></td>\n" +
+                        "        <td >27</td>\n" +
+                        "        <td ><font >5.3×10</font><font\n" +
+                        "                ><sup>2</sup></font></td>\n" +
+                        "        <td ></td>\n" +
+                        "    </tr>\n" +
+                        "    <tr >\n" +
+                        "        <td   >A12\n" +
+                        "        </td>\n" +
+                        "        <td >A</td>\n" +
+                        "        <td >2</td>\n" +
+                        "        <td ><font >&lt;1</font></td>\n" +
+                        "        <td ><font >&lt;1</font></td>\n" +
+                        "        <td >9</td>\n" +
+                        "        <td ><font >4.9×10</font><font\n" +
+                        "                ><sup>2</sup></font></td>\n" +
+                        "        <td ></td>\n" +
+                        "    </tr>\n" +
+                        "    <tr >\n" +
+                        "        <td   >A13\n" +
+                        "        </td>\n" +
+                        "        <td >A</td>\n" +
+                        "        <td >3</td>\n" +
+                        "        <td ><font >&lt;1</font></td>\n" +
+                        "        <td ><font >&lt;1</font></td>\n" +
+                        "        <td >17</td>\n" +
+                        "        <td ><font >6.3×10</font><font\n" +
+                        "                ><sup>2</sup></font></td>\n" +
+                        "        <td ></td>\n" +
+                        "    </tr>\n" +
+                        "    <tr >\n" +
+                        "        <td rowspan=\"3\" >挤奶栏\n" +
+                        "        </td>\n" +
+                        "        <td >A21</td>\n" +
+                        "        <td >A</td>\n" +
+                        "        <td >1</td>\n" +
+                        "        <td ><font >5.5×10</font><font\n" +
+                        "                ><sup>2</sup></font></td>\n" +
+                        "        <td ><font >9.2×10</font><font\n" +
+                        "                ><sup>2</sup></font></td>\n" +
+                        "        <td ><font >1.9×10</font><font\n" +
+                        "                ><sup>4</sup></font></td>\n" +
+                        "        <td ><font >1.3×10</font><font\n" +
+                        "                ><sup>5</sup></font></td>\n" +
+                        "        <td ></td>\n" +
+                        "    </tr>\n" +
+                        "    <tr >\n" +
+                        "        <td   >A22\n" +
+                        "        </td>\n" +
+                        "        <td >A</td>\n" +
+                        "        <td >2</td>\n" +
+                        "        <td ><font >4.6×10</font><font\n" +
+                        "                ><sup>2</sup></font></td>\n" +
+                        "        <td ><font >5.9×10</font><font\n" +
+                        "                ><sup>2</sup></font></td>\n" +
+                        "        <td ><font >2.7×10</font><font\n" +
+                        "                ><sup>4</sup></font></td>\n" +
+                        "        <td ><font >7.7×10</font><font\n" +
+                        "                ><sup>4</sup></font></td>\n" +
+                        "        <td ></td>\n" +
+                        "    </tr>\n" +
+                        "    <tr >\n" +
+                        "        <td   >A23\n" +
+                        "        </td>\n" +
+                        "        <td >A</td>\n" +
+                        "        <td >3</td>\n" +
+                        "        <td ><font >6.2×10</font><font\n" +
+                        "                ><sup>2</sup></font></td>\n" +
+                        "        <td ><font >8.7×10</font><font\n" +
+                        "                ><sup>2</sup></font></td>\n" +
+                        "        <td ><font >1.9×10</font><font\n" +
+                        "                ><sup>4</sup></font></td>\n" +
+                        "        <td ><font >7.4×10</font><font\n" +
+                        "                ><sup>4</sup></font></td>\n" +
+                        "        <td ></td>\n" +
+                        "    </tr>\n" +
+                        "    <tr >\n" +
+                        "        <td rowspan=\"3\" >储奶罐\n" +
+                        "        </td>\n" +
+                        "        <td >A31</td>\n" +
+                        "        <td >A</td>\n" +
+                        "        <td >1</td>\n" +
+                        "        <td >17</td>\n" +
+                        "        <td ><font >4.3×10</font><font\n" +
+                        "                ><sup>2</sup></font></td>\n" +
+                        "        <td ><font >5.7×10</font><font\n" +
+                        "                ><sup>3</sup></font></td>\n" +
+                        "        <td ><font >1.3×10</font><font\n" +
+                        "                ><sup>5</sup></font></td>\n" +
+                        "        <td ></td>\n" +
+                        "    </tr>\n" +
+                        "    <tr >\n" +
+                        "        <td   >A32\n" +
+                        "        </td>\n" +
+                        "        <td >A</td>\n" +
+                        "        <td >2</td>\n" +
+                        "        <td >11</td>\n" +
+                        "        <td ><font >4.1×10</font><font\n" +
+                        "                ><sup>2</sup></font></td>\n" +
+                        "        <td ><font >4.5×10</font><font\n" +
+                        "                ><sup>3</sup></font></td>\n" +
+                        "        <td ><font >1.5×10</font><font\n" +
+                        "                ><sup>5</sup></font></td>\n" +
+                        "        <td ></td>\n" +
+                        "    </tr>\n" +
+                        "    <tr >\n" +
+                        "        <td   >A33\n" +
+                        "        </td>\n" +
+                        "        <td >A</td>\n" +
+                        "        <td >3</td>\n" +
+                        "        <td >20</td>\n" +
+                        "        <td ><font >1.0×10</font><font\n" +
+                        "                ><sup>3</sup></font></td>\n" +
+                        "        <td ><font >4.5×10</font><font\n" +
+                        "                ><sup>3</sup></font></td>\n" +
+                        "        <td ><font >2.3×10</font><font\n" +
+                        "                ><sup>5</sup></font></td>\n" +
+                        "        <td ></td>\n" +
+                        "    </tr>\n" +
+                        "    </tbody>\n" +
+                        "</table>"
+                    var table21 = "<table class=\"table table-bordered table-striped\">\n" +
+                        "    <tbody>\n" +
+                        "    <tr>\n" +
+                        "        <td >样品名称</td>\n" +
+                        "        <td >采样点</td>\n" +
+                        "        <td >编号</td>\n" +
+                        "        <td >送检批次</td>\n" +
+                        "        <td >取样编号</td>\n" +
+                        "        <td>采样时间</td>\n" +
+                        "        <td >大肠菌群(CFU/g）</td>\n" +
+                        "        <td >菌落总数（CFU/g)</td>\n" +
+                        "    </tr>\n" +
+                        "    <tr >\n" +
+                        "        <td rowspan=\"9\" >原料奶<br>\n" +
+                        "            （样品数量200mL）\n" +
+                        "        </td>\n" +
+                        "        <td rowspan=\"3\" >泌乳牛栏</td>\n" +
+                        "        <td >A11</td>\n" +
+                        "        <td >A</td>\n" +
+                        "        <td >1</td>\n" +
+                        "        <td rowspan=\"9\" >2022/8/2</td>\n" +
+                        "        <td ><font >&lt;1</font></td>\n" +
+                        "        <td ><font >5.3×10</font><font\n" +
+                        "                ><sup>2</sup></font></td>\n" +
+                        "    </tr>\n" +
+                        "    <tr >\n" +
+                        "        <td >A12\n" +
+                        "        </td>\n" +
+                        "        <td >A</td>\n" +
+                        "        <td >2</td>\n" +
+                        "        <td ><font >&lt;1</font></td>\n" +
+                        "        <td ><font >4.9×10</font><font\n" +
+                        "                ><sup>2</sup></font></td>\n" +
+                        "    </tr>\n" +
+                        "    <tr >\n" +
+                        "        <td >A13\n" +
+                        "        </td>\n" +
+                        "        <td >A</td>\n" +
+                        "        <td >3</td>\n" +
+                        "        <td ><font >&lt;1</font></td>\n" +
+                        "        <td ><font >6.3×10</font><font\n" +
+                        "                ><sup>2</sup></font></td>\n" +
+                        "    </tr>\n" +
+                        "    <tr >\n" +
+                        "        <td rowspan=\"3\" >挤奶栏</td>\n" +
+                        "        <td >A21</td>\n" +
+                        "        <td >A</td>\n" +
+                        "        <td >1</td>\n" +
+                        "        <td ><font >9.2×10</font><font\n" +
+                        "                ><sup>2</sup></font></td>\n" +
+                        "        <td ><font >1.3×10</font><font\n" +
+                        "                ><sup>5</sup></font></td>\n" +
+                        "    </tr>\n" +
+                        "    <tr >\n" +
+                        "        <td >A22\n" +
+                        "        </td>\n" +
+                        "        <td >A</td>\n" +
+                        "        <td >2</td>\n" +
+                        "        <td ><font >5.9×10</font><font\n" +
+                        "                ><sup>2</sup></font></td>\n" +
+                        "        <td ><font >7.7×10</font><font\n" +
+                        "                ><sup>4</sup></font></td>\n" +
+                        "    </tr>\n" +
+                        "    <tr >\n" +
+                        "        <td >A23\n" +
+                        "        </td>\n" +
+                        "        <td >A</td>\n" +
+                        "        <td >3</td>\n" +
+                        "        <td ><font >8.7×10</font><font\n" +
+                        "                ><sup>2</sup></font></td>\n" +
+                        "        <td ><font >7.4×10</font><font\n" +
+                        "                ><sup>4</sup></font></td>\n" +
+                        "    </tr>\n" +
+                        "    <tr >\n" +
+                        "        <td rowspan=\"3\" >储奶罐</td>\n" +
+                        "        <td >A31</td>\n" +
+                        "        <td >A</td>\n" +
+                        "        <td >1</td>\n" +
+                        "        <td ><font >4.3×10</font><font\n" +
+                        "                ><sup>2</sup></font></td>\n" +
+                        "        <td ><font >1.3×10</font><font\n" +
+                        "                ><sup>5</sup></font></td>\n" +
+                        "    </tr>\n" +
+                        "    <tr >\n" +
+                        "        <td >A32\n" +
+                        "        </td>\n" +
+                        "        <td >A</td>\n" +
+                        "        <td >2</td>\n" +
+                        "        <td ><font >4.1×10</font><font\n" +
+                        "                ><sup>2</sup></font></td>\n" +
+                        "        <td ><font >1.5×10</font><font\n" +
+                        "                ><sup>5</sup></font></td>\n" +
+                        "    </tr>\n" +
+                        "    <tr >\n" +
+                        "        <td >A33\n" +
+                        "        </td>\n" +
+                        "        <td >A</td>\n" +
+                        "        <td >3</td>\n" +
+                        "        <td ><font >1.0×10</font><font\n" +
+                        "                ><sup>3</sup></font></td>\n" +
+                        "        <td ><font >2.3×10</font><font\n" +
+                        "                ><sup>5</sup></font></td>\n" +
+                        "    </tr>\n" +
+                        "    <tr >\n" +
+                        "        <td rowspan=\"3\" >饲料<br>\n" +
+                        "            （样品数量500g）\n" +
+                        "        </td>\n" +
+                        "        <td rowspan=\"3\" >泌乳牛栏</td>\n" +
+                        "        <td >B11</td>\n" +
+                        "        <td >B</td>\n" +
+                        "        <td >1</td>\n" +
+                        "        <td rowspan=\"3\" >2022/8/2</td>\n" +
+                        "        <td ><font >6.1×10</font><font\n" +
+                        "                ><sup>4</sup></font></td>\n" +
+                        "        <td ><font >1.4×10</font><font\n" +
+                        "                ><sup>7</sup></font></td>\n" +
+                        "    </tr>\n" +
+                        "    <tr >\n" +
+                        "        <td >B12\n" +
+                        "        </td>\n" +
+                        "        <td >B</td>\n" +
+                        "        <td >2</td>\n" +
+                        "        <td ><font >1.1×10</font><font\n" +
+                        "                ><sup>5</sup></font></td>\n" +
+                        "        <td ><font >2.3×10</font><font\n" +
+                        "                ><sup>7</sup></font></td>\n" +
+                        "    </tr>\n" +
+                        "    <tr >\n" +
+                        "        <td >B13\n" +
+                        "        </td>\n" +
+                        "        <td >B</td>\n" +
+                        "        <td >3</td>\n" +
+                        "        <td ><font >1.1×10</font><font\n" +
+                        "                ><sup>5</sup></font></td>\n" +
+                        "        <td ><font >2.4×10</font><font\n" +
+                        "                ><sup>7</sup></font></td>\n" +
+                        "    </tr>\n" +
+                        "    <tr >\n" +
+                        "        <td rowspan=\"3\" >牛床垫料<br>\n" +
+                        "            （样品数量500g）\n" +
+                        "        </td>\n" +
+                        "        <td rowspan=\"3\" >泌乳牛栏</td>\n" +
+                        "        <td >C11</td>\n" +
+                        "        <td >C</td>\n" +
+                        "        <td >1</td>\n" +
+                        "        <td rowspan=\"3\" >2022/8/2</td>\n" +
+                        "        <td ><font >5.4×10</font><font\n" +
+                        "                ><sup>4</sup></font></td>\n" +
+                        "        <td ><font >7.3×10</font><font\n" +
+                        "                ><sup>7</sup></font></td>\n" +
+                        "    </tr>\n" +
+                        "    <tr >\n" +
+                        "        <td >C12\n" +
+                        "        </td>\n" +
+                        "        <td >C</td>\n" +
+                        "        <td >2</td>\n" +
+                        "        <td ><font >1.1×10</font><font\n" +
+                        "                ><sup>5</sup></font></td>\n" +
+                        "        <td ><font >9.2×10</font><font\n" +
+                        "                ><sup>7</sup></font></td>\n" +
+                        "    </tr>\n" +
+                        "    <tr >\n" +
+                        "        <td >C13\n" +
+                        "        </td>\n" +
+                        "        <td >C</td>\n" +
+                        "        <td >3</td>\n" +
+                        "        <td ><font >1.3×10</font><font\n" +
+                        "                ><sup>5</sup></font></td>\n" +
+                        "        <td ><font >6.4×10</font><font\n" +
+                        "                ><sup>7</sup></font></td>\n" +
+                        "    </tr></tbody></table>"
+                    var table22 = "<table class=\"table table-bordered table-striped\"><tbody>  <tr >\n" +
+                        "        <td >样品名称</td>\n" +
+                        "        <td >采样点</td>\n" +
+                        "        <td >编号</td>\n" +
+                        "        <td >送检批次</td>\n" +
+                        "        <td >取样编号</td>\n" +
+                        "        <td >采样时间</td>\n" +
+                        "        <td ><font >总大肠菌群(MPN/100mL）</font>\n" +
+                        "        </td>\n" +
+                        "        <td ><font >菌落总数（CFU/mL)</font>\n" +
+                        "        </td>\n" +
+                        "    </tr>\n" +
+                        "    <tr >\n" +
+                        "        <td rowspan=\"6\" >水<br>\n" +
+                        "            （样品数量500mL）\n" +
+                        "        </td>\n" +
+                        "        <td rowspan=\"3\" >泌乳牛栏</td>\n" +
+                        "        <td >D11</td>\n" +
+                        "        <td >D</td>\n" +
+                        "        <td >1</td>\n" +
+                        "        <td rowspan=\"6\" >2022/8/2\n" +
+                        "        </td>\n" +
+                        "        <td >49</td>\n" +
+                        "        <td ><font >8.8×10</font><font\n" +
+                        "                ><sup>4</sup></font></td>\n" +
+                        "    </tr>\n" +
+                        "    <tr >\n" +
+                        "        <td >D12\n" +
+                        "        </td>\n" +
+                        "        <td >D</td>\n" +
+                        "        <td >2</td>\n" +
+                        "        <td >46</td>\n" +
+                        "        <td ><font >3.6×10</font><font\n" +
+                        "                ><sup>4</sup></font></td>\n" +
+                        "    </tr>\n" +
+                        "    <tr >\n" +
+                        "        <td >D13\n" +
+                        "        </td>\n" +
+                        "        <td >D</td>\n" +
+                        "        <td >3</td>\n" +
+                        "        <td >130</td>\n" +
+                        "        <td ><font >5.5×10</font><font\n" +
+                        "                ><sup>4</sup></font></td>\n" +
+                        "    </tr>\n" +
+                        "    <tr>\n" +
+                        "        <td rowspan=\"3\" >挤奶栏\n" +
+                        "        </td>\n" +
+                        "        <td >D21</td>\n" +
+                        "        <td >D</td>\n" +
+                        "        <td >1</td>\n" +
+                        "        <td >未检出</td>\n" +
+                        "        <td >未检出</td>\n" +
+                        "    </tr>\n" +
+                        "    <tr>\n" +
+                        "        <td >D22\n" +
+                        "        </td>\n" +
+                        "        <td >D</td>\n" +
+                        "        <td >2</td>\n" +
+                        "        <td >未检出</td>\n" +
+                        "        <td >未检出</td>\n" +
+                        "    </tr>\n" +
+                        "    <tr>\n" +
+                        "        <td >D23\n" +
+                        "        </td>\n" +
+                        "        <td >D</td>\n" +
+                        "        <td >3</td>\n" +
+                        "        <td >未检出</td>\n" +
+                        "        <td >未检出</td>\n" +
+                        "    </tr>\n" +
+                        "    <tr>\n" +
+                        "        <td >样品名称</td>\n" +
+                        "        <td >采样点</td>\n" +
+                        "        <td >编号</td>\n" +
+                        "        <td >送检批次</td>\n" +
+                        "        <td >取样编号</td>\n" +
+                        "        <td >采样时间</td>\n" +
+                        "        <td colspan=\"2\">沉降菌（CFU/皿）\n" +
+                        "        </td>\n" +
+                        "    </tr>\n" +
+                        "    <tr>\n" +
+                        "        <td rowspan=\"5\" >空气<br>\n" +
+                        "            （样品数量1个）\n" +
+                        "        </td>\n" +
+                        "        <td rowspan=\"5\" >泌乳牛栏</td>\n" +
+                        "        <td >E11</td>\n" +
+                        "        <td >E</td>\n" +
+                        "        <td >1</td>\n" +
+                        "        <td rowspan=\"5\" >2022/8/2</td>\n" +
+                        "        <td colspan=\"2\">75</td>\n" +
+                        "    </tr>\n" +
+                        "    <tr>\n" +
+                        "        <td >E12\n" +
+                        "        </td>\n" +
+                        "        <td >E</td>\n" +
+                        "        <td >2</td>\n" +
+                        "        <td colspan=\"2\">81</td>\n" +
+                        "    </tr>\n" +
+                        "    <tr>\n" +
+                        "        <td >E13\n" +
+                        "        </td>\n" +
+                        "        <td >E</td>\n" +
+                        "        <td >3</td>\n" +
+                        "        <td colspan=\"2\">51</td>\n" +
+                        "    </tr>\n" +
+                        "    <tr>\n" +
+                        "        <td >E14\n" +
+                        "        </td>\n" +
+                        "        <td >E</td>\n" +
+                        "        <td >4</td>\n" +
+                        "        <td colspan=\"2\">47</td>\n" +
+                        "    </tr>\n" +
+                        "    <tr>\n" +
+                        "        <td >E15\n" +
+                        "        </td>\n" +
+                        "        <td >E</td>\n" +
+                        "        <td >5</td>\n" +
+                        "        <td colspan=\"2\">63</td>\n" +
+                        "    </tr>\n" +
+                        "\n" +
+                        "    </tbody>\n" +
+                        "</table>"
+                    var table23 = "<table class=\"table table-bordered table-striped\">\n" +
+                        "    <tbody>\n" +
+                        "    <tr >\n" +
+                        "        <td >样品名称</td>\n" +
+                        "        <td >采样点</td>\n" +
+                        "        <td >编号</td>\n" +
+                        "        <td >送检批次</td>\n" +
+                        "        <td >取样编号</td>\n" +
+                        "        <td >采样时间</td>\n" +
+                        "        <td colspan=\"2\" >沉降菌（CFU/皿）\n" +
+                        "        </td>\n" +
+                        "    </tr>\n" +
+                        "    <tr >\n" +
+                        "        <td rowspan=\"5\" >空气<br>\n" +
+                        "            （样品数量1个）\n" +
+                        "        </td>\n" +
+                        "        <td rowspan=\"5\" >泌乳牛栏</td>\n" +
+                        "        <td >E11</td>\n" +
+                        "        <td >E</td>\n" +
+                        "        <td >1</td>\n" +
+                        "        <td rowspan=\"5\" >2022/8/2</td>\n" +
+                        "        <td colspan=\"2\" >75</td>\n" +
+                        "    </tr>\n" +
+                        "    <tr >\n" +
+                        "        <td >E12\n" +
+                        "        </td>\n" +
+                        "        <td >E</td>\n" +
+                        "        <td >2</td>\n" +
+                        "        <td colspan=\"2\" >81</td>\n" +
+                        "    </tr>\n" +
+                        "    <tr >\n" +
+                        "        <td >E13\n" +
+                        "        </td>\n" +
+                        "        <td >E</td>\n" +
+                        "        <td >3</td>\n" +
+                        "        <td colspan=\"2\" >51</td>\n" +
+                        "    </tr>\n" +
+                        "    <tr >\n" +
+                        "        <td >E14\n" +
+                        "        </td>\n" +
+                        "        <td >E</td>\n" +
+                        "        <td >4</td>\n" +
+                        "        <td colspan=\"2\" >47</td>\n" +
+                        "    </tr>\n" +
+                        "    <tr >\n" +
+                        "        <td >E15\n" +
+                        "        </td>\n" +
+                        "        <td >E</td>\n" +
+                        "        <td >5</td>\n" +
+                        "        <td colspan=\"2\" >63</td>\n" +
+                        "    </tr>\n" +
+                        "\n" +
+                        "    </tbody>\n" +
+                        "</table>"
+                    innierdiv1.append(table11)
+                    innierdiv1.append(table12)
+
+                    innierdiv2.append(table21)
+                    innierdiv2.append(table22)
+                    innierdiv2.append(table23)
+                    div.append(innierdiv1)
+                    div.append(innierdiv2)
                     $("#mapmodel").append(div);
                 }
                 $(".modal-title").text(params.name);
@@ -260,6 +779,16 @@ $(function () {
                     // alert("我这就关")
                     div.remove()
                 });
+                $("#but1").click(function () {
+                    innerdiv1.style.display = 'block';
+                    innerdiv2.style.display = 'none';
+                });
+
+                $("#but2").click(function () {
+                    innerdiv2.style.display = 'block';
+                    innerdiv1.style.display = 'none';
+                });
+
             } else {
                 // alert("不要点我！")
             }
@@ -292,7 +821,7 @@ $(function () {
             {name: '南海诸岛', value: 0},
         ];
 
-        option = {
+        optionmap = {
             tooltip: {
                 trigger: 'item',
                 formatter: function (params) {
@@ -343,7 +872,7 @@ $(function () {
             }]
         };
 
-        myChart.setOption(option);
+        myChart.setOption(optionmap);
         window.addEventListener("resize", function () {
             myChart.resize();
         });
