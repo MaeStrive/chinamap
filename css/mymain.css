@@ -19,9 +19,22 @@
 }
 
 .gogobu{
-    margin-top: 10px;
+    height: 24%;
+    font-size: 16px;
+    line-height: 24%;
+    padding: 30px;
+}
+.hhh{
+    width:25%;
+    font-size: 16px;
+    /*line-height: 5%;*/
+    height: 60px;
+    padding: 0;
 }
 
+.hhh1{
+    margin-top: -15%;
+}
 .dialog {
     display: none;
     position: fixed;
