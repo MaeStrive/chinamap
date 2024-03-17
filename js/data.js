@@ -2457,7 +2457,7 @@ var muchangdata = {
                                             children: [
                                                 {
                                                     name: "≤0.3mg/kg",
-                                                    value: "1"
+                                                    value: 1
                                                 }
                                             ]
                                         },
@@ -2466,7 +2466,7 @@ var muchangdata = {
                                             children: [
                                                 {
                                                     name: "≤0.3mg/kg",
-                                                    value: "1"
+                                                    value: 1
                                                 }
                                             ]
                                         },
@@ -2475,7 +2475,7 @@ var muchangdata = {
                                             children: [
                                                 {
                                                     name: "≤0.6mg/kg",
-                                                    value: "1"
+                                                    value: 1
                                                 }
                                             ]
                                         }
@@ -2489,7 +2489,7 @@ var muchangdata = {
                                             children: [
                                                 {
                                                     name: "≤30mg/kg",
-                                                    value: "1"
+                                                    value: 1
                                                 }
                                             ]
                                         },
@@ -2498,7 +2498,7 @@ var muchangdata = {
                                             children: [
                                                 {
                                                     name: "≤25mg/kg",
-                                                    value: "1"
+                                                    value: 1
                                                 }
                                             ]
                                         },
@@ -2507,7 +2507,7 @@ var muchangdata = {
                                             children: [
                                                 {
                                                     name: "≤20mg/kg",
-                                                    value: "1"
+                                                    value: 1
                                                 }
                                             ]
                                         }
@@ -2521,7 +2521,7 @@ var muchangdata = {
                                             children: [
                                                 {
                                                     name: "≤50mg/kg",
-                                                    value: "1"
+                                                    value: 1
                                                 }
                                             ]
                                         },
@@ -2530,7 +2530,7 @@ var muchangdata = {
                                             children: [
                                                 {
                                                     name: "≤100mg/kg",
-                                                    value: "1"
+                                                    value: 1
                                                 }
                                             ]
                                         },
@@ -2539,7 +2539,7 @@ var muchangdata = {
                                             children: [
                                                 {
                                                     name: "≤100mg/kg",
-                                                    value: "1"
+                                                    value: 1
                                                 }
                                             ]
                                         }
@@ -2553,7 +2553,7 @@ var muchangdata = {
                                             children: [
                                                 {
                                                     name: "≤250mg/kg",
-                                                    value: "1"
+                                                    value: 1
                                                 }
                                             ]
                                         },
@@ -2562,7 +2562,7 @@ var muchangdata = {
                                             children: [
                                                 {
                                                     name: "≤300mg/kg",
-                                                    value: "1"
+                                                    value: 1
                                                 }
                                             ]
                                         },
@@ -2571,7 +2571,7 @@ var muchangdata = {
                                             children: [
                                                 {
                                                     name: "≤350mg/kg",
-                                                    value: "1"
+                                                    value: 1
                                                 }
                                             ]
                                         }
@@ -2585,7 +2585,7 @@ var muchangdata = {
                                             children: [
                                                 {
                                                     name: "≤250mg/kg",
-                                                    value: "1"
+                                                    value: 1
                                                 }
                                             ]
                                         },
@@ -2594,7 +2594,7 @@ var muchangdata = {
                                             children: [
                                                 {
                                                     name: "≤300mg/kg",
-                                                    value: "1"
+                                                    value: 1
                                                 }
                                             ]
                                         },
@@ -2603,7 +2603,7 @@ var muchangdata = {
                                             children: [
                                                 {
                                                     name: "≤350mg/kg",
-                                                    value: "1"
+                                                    value: 1
                                                 }
                                             ]
                                         }
@@ -2617,7 +2617,7 @@ var muchangdata = {
                                             children: [
                                                 {
                                                     name: "≤200mg/kg",
-                                                    value: "1"
+                                                    value: 1
                                                 }
                                             ]
                                         },
@@ -2626,7 +2626,7 @@ var muchangdata = {
                                             children: [
                                                 {
                                                     name: "≤250mg/kg",
-                                                    value: "1"
+                                                    value: 1
                                                 }
                                             ]
                                         },
@@ -2635,7 +2635,7 @@ var muchangdata = {
                                             children: [
                                                 {
                                                     name: "≤300mg/kg",
-                                                    value: "1"
+                                                    value: 1
                                                 }
                                             ]
                                         }
@@ -2657,7 +2657,7 @@ var muchangdata = {
                                     children: [
                                         {
                                             name: "≤2g/L",
-                                            value: "1"
+                                            value: 1
                                         }
                                     ]
                                 },
@@ -2666,7 +2666,7 @@ var muchangdata = {
                                     children: [
                                         {
                                             name: "≤50g/L",
-                                            value: "1"
+                                            value: 1
                                         }
                                     ]
                                 }
@@ -2680,7 +2680,7 @@ var muchangdata = {
                                     children: [
                                         {
                                             name: "≤1万个/g",
-                                            value: "1"
+                                            value: 1
                                         }
                                     ]
                                 },
@@ -2689,7 +2689,7 @@ var muchangdata = {
                                     children: [
                                         {
                                             name: "≤5万个/g",
-                                            value: "1"
+                                            value: 1
                                         }
                                     ]
                                 }
@@ -2714,7 +2714,7 @@ var muchangdata = {
                                     children: [
                                         {
                                             name: "≤2g/L",
-                                            value: "1"
+                                            value: 1
                                         }
                                     ]
                                 },
@@ -2723,7 +2723,7 @@ var muchangdata = {
                                     children: [
                                         {
                                             name: "≤50g/L",
-                                            value: "1"
+                                            value: 1
                                         }
                                     ]
                                 }
@@ -2737,7 +2737,7 @@ var muchangdata = {
                                     children: [
                                         {
                                             name: "≤1万个/g",
-                                            value: "1"
+                                            value: 1
                                         }
                                     ]
                                 },
@@ -2746,7 +2746,7 @@ var muchangdata = {
                                     children: [
                                         {
                                             name: "≤5万个/g",
-                                            value: "1"
+                                            value: 1
                                         }
                                     ]
                                 }
@@ -2760,7 +2760,7 @@ var muchangdata = {
                                     children: [
                                         {
                                             name: "≤1万个/g",
-                                            value: "1"
+                                            value: 1
                                         }
                                     ]
                                 },
@@ -2769,7 +2769,7 @@ var muchangdata = {
                                     children: [
                                         {
                                             name: "≤5万个/g",
-                                            value: "1"
+                                            value: 1
                                         }
                                     ]
                                 }
@@ -2788,7 +2788,7 @@ var muchangdata = {
                                     children: [
                                         {
                                             name: "≤10^5",
-                                            value: "1"
+                                            value: 1
                                         }
                                     ]
                                 },
@@ -2797,7 +2797,7 @@ var muchangdata = {
                                     children: [
                                         {
                                             name: "≥95%",
-                                            value: "1"
+                                            value: 1
                                         }
                                     ]
                                 }
@@ -2816,7 +2816,7 @@ var muchangdata = {
                                     children: [
                                         {
                                             name: "70",
-                                            value: "1"
+                                            value: 1
                                         }
                                     ]
                                 }
@@ -2834,7 +2834,7 @@ var muchangdata = {
                     children: [
                         {
                             name: "≥45d",
-                            value: "1"
+                            value: 1
                         }
                     ]
                 },
@@ -2843,7 +2843,7 @@ var muchangdata = {
                     children: [
                         {
                             name: "≥30d",
-                            value: "1"
+                            value: 1
                         }
                     ]
                 }
@@ -2863,15 +2863,15 @@ var muchangdata = {
                                     children: [
                                         {
                                             name: "猪舍≤17000个/m³",
-                                            value: "1"
+                                            value: 1
                                         },
                                         {
                                             name: "禽舍≤25000个/m³",
-                                            value: "1"
+                                            value: 1
                                         },
                                         {
                                             name: "牛舍≤20000个/m³",
-                                            value: "1"
+                                            value: 1
                                         }
                                     ]
                                 }
@@ -2891,7 +2891,7 @@ var muchangdata = {
                                                     children: [
                                                         {
                                                             name: "2mg/m³",
-                                                            value: "1"
+                                                            value: 1
                                                         }
                                                     ]
                                                 },
@@ -2900,7 +2900,7 @@ var muchangdata = {
                                                     children: [
                                                         {
                                                             name: "5mg/m³",
-                                                            value: "1"
+                                                            value: 1
                                                         }
                                                     ]
                                                 },
@@ -2909,15 +2909,15 @@ var muchangdata = {
                                                     children: [
                                                         {
                                                             name: "禽舍 雏10mg/m³ 成15mg/m³",
-                                                            value: "1"
+                                                            value: 1
                                                         },
                                                         {
                                                             name: "猪舍 25mg/m³",
-                                                            value: "1"
+                                                            value: 1
                                                         },
                                                         {
                                                             name: "牛舍 20mg/m³",
-                                                            value: "1"
+                                                            value: 1
                                                         }
                                                     ]
                                                 }
@@ -2931,7 +2931,7 @@ var muchangdata = {
                                                     children: [
                                                         {
                                                             name: "1mg/m³",
-                                                            value: "1"
+                                                            value: 1
                                                         }
                                                     ]
                                                 },
@@ -2940,7 +2940,7 @@ var muchangdata = {
                                                     children: [
                                                         {
                                                             name: "2mg/m³",
-                                                            value: "1"
+                                                            value: 1
                                                         }
                                                     ]
                                                 },
@@ -2949,15 +2949,15 @@ var muchangdata = {
                                                     children: [
                                                         {
                                                             name: "禽舍 雏2mg/m³ 成10mg/m³",
-                                                            value: "1"
+                                                            value: 1
                                                         },
                                                         {
                                                             name: "猪舍 10mg/m³",
-                                                            value: "1"
+                                                            value: 1
                                                         },
                                                         {
                                                             name: "牛舍 8mg/m³",
-                                                            value: "1"
+                                                            value: 1
                                                         }
                                                     ]
                                                 }
@@ -2971,7 +2971,7 @@ var muchangdata = {
                                                     children: [
                                                         {
                                                             name: "380mg/m³",
-                                                            value: "1"
+                                                            value: 1
                                                         }
                                                     ]
                                                 },
@@ -2980,7 +2980,7 @@ var muchangdata = {
                                                     children: [
                                                         {
                                                             name: "750mg/m³",
-                                                            value: "1"
+                                                            value: 1
                                                         }
                                                     ]
                                                 },
@@ -2989,15 +2989,15 @@ var muchangdata = {
                                                     children: [
                                                         {
                                                             name: "禽舍 1500mg/m³",
-                                                            value: "1"
+                                                            value: 1
                                                         },
                                                         {
                                                             name: "猪舍 1500mg/m³",
-                                                            value: "1"
+                                                            value: 1
                                                         },
                                                         {
                                                             name: "牛舍 1500mg/m³",
-                                                            value: "1"
+                                                            value: 1
                                                         }
                                                     ]
                                                 }
@@ -3016,7 +3016,7 @@ var muchangdata = {
                                                     children: [
                                                         {
                                                             name: "0.5mg/m³",
-                                                            value: "1"
+                                                            value: 1
                                                         }
                                                     ]
                                                 },
@@ -3025,7 +3025,7 @@ var muchangdata = {
                                                     children: [
                                                         {
                                                             name: "1mg/m³",
-                                                            value: "1"
+                                                            value: 1
                                                         }
                                                     ]
                                                 },
@@ -3034,15 +3034,15 @@ var muchangdata = {
                                                     children: [
                                                         {
                                                             name: "禽舍 4mg/m³",
-                                                            value: "1"
+                                                            value: 1
                                                         },
                                                         {
                                                             name: "猪舍 1mg/m³",
-                                                            value: "1"
+                                                            value: 1
                                                         },
                                                         {
                                                             name: "牛舍 2mg/m³",
-                                                            value: "1"
+                                                            value: 1
                                                         }
                                                     ]
                                                 }
@@ -3056,7 +3056,7 @@ var muchangdata = {
                                                     children: [
                                                         {
                                                             name: "1mg/m³",
-                                                            value: "1"
+                                                            value: 1
                                                         }
                                                     ]
                                                 },
@@ -3065,7 +3065,7 @@ var muchangdata = {
                                                     children: [
                                                         {
                                                             name: "2mg/m³",
-                                                            value: "1"
+                                                            value: 1
                                                         }
                                                     ]
                                                 },
@@ -3074,15 +3074,15 @@ var muchangdata = {
                                                     children: [
                                                         {
                                                             name: "禽舍 8mg/m³",
-                                                            value: "1"
+                                                            value: 1
                                                         },
                                                         {
                                                             name: "猪舍 3mg/m³",
-                                                            value: "1"
+                                                            value: 1
                                                         },
                                                         {
                                                             name: "牛舍 4mg/m³",
-                                                            value: "1"
+                                                            value: 1
                                                         }
                                                     ]
                                                 }
@@ -3101,7 +3101,7 @@ var muchangdata = {
                                                     children: [
                                                         {
                                                             name: "1mg/m³",
-                                                            value: "1"
+                                                            value: 1
                                                         }
                                                     ]
                                                 },
@@ -3110,7 +3110,7 @@ var muchangdata = {
                                                     children: [
                                                         {
                                                             name: "2mg/m³",
-                                                            value: "1"
+                                                            value: 1
                                                         }
                                                     ]
                                                 },
@@ -3119,15 +3119,15 @@ var muchangdata = {
                                                     children: [
                                                         {
                                                             name: "禽舍 70稀释倍数",
-                                                            value: "1"
+                                                            value: 1
                                                         },
                                                         {
                                                             name: "猪舍 70稀释倍数",
-                                                            value: "1"
+                                                            value: 1
                                                         },
                                                         {
                                                             name: "牛舍 70稀释倍数",
-                                                            value: "1"
+                                                            value: 1
                                                         }
                                                     ]
                                                 }
@@ -3150,11 +3150,11 @@ var muchangdata = {
                                     children: [
                                         {
                                             name: "自备井≤100个/L",
-                                            value: "1"
+                                            value: 1
                                         },
                                         {
                                             name: "地面水≤200个/L",
-                                            value: "1"
+                                            value: 1
                                         }
                                     ]
                                 },
@@ -3163,11 +3163,11 @@ var muchangdata = {
                                     children: [
                                         {
                                             name: "自备井≤3个/L",
-                                            value: "1"
+                                            value: 1
                                         },
                                         {
                                             name: "地面水≤3个/L",
-                                            value: "1"
+                                            value: 1
                                         }
                                     ]
                                 }
@@ -3181,7 +3181,7 @@ var muchangdata = {
                                     children: [
                                         {
                                             name: "自备井5.5~8.5",
-                                            value: "1"
+                                            value: 1
                                         }
                                     ]
                                 },
@@ -3190,7 +3190,7 @@ var muchangdata = {
                                     children: [
                                         {
                                             name: "自备井600mg/L",
-                                            value: "1"
+                                            value: 1
                                         }
                                     ]
                                 },
@@ -3199,7 +3199,7 @@ var muchangdata = {
                                     children: [
                                         {
                                             name: "自备井2000mg/L",
-                                            value: "1"
+                                            value: 1
                                         }
                                     ]
                                 }
@@ -3213,15 +3213,15 @@ var muchangdata = {
                                     children: [
                                         {
                                             name: "自备井 N类地下水标准",
-                                            value: "1"
+                                            value: 1
                                         },
                                         {
                                             name: "地面水 N类地面水标准",
-                                            value: "1"
+                                            value: 1
                                         },
                                         {
                                             name: "自来水 饮用水标准",
-                                            value: "1"
+                                            value: 1
                                         }
                                     ]
                                 },
@@ -3230,15 +3230,15 @@ var muchangdata = {
                                     children: [
                                         {
                                             name: "自备井 N类地下水标准",
-                                            value: "1"
+                                            value: 1
                                         },
                                         {
                                             name: "地面水 N类地面水标准",
-                                            value: "1"
+                                            value: 1
                                         },
                                         {
                                             name: "自来水 饮用水标准",
-                                            value: "1"
+                                            value: 1
                                         }
                                     ]
                                 }
@@ -3257,7 +3257,7 @@ var muchangdata = {
                                     children: [
                                         {
                                             name: "70",
-                                            value: "1"
+                                            value: 1
                                         }
                                     ]
                                 }
@@ -3276,7 +3276,7 @@ var muchangdata = {
                                     children: [
                                         {
                                             name: "70",
-                                            value: "1"
+                                            value: 1
                                         }
                                     ]
                                 }
@@ -3295,7 +3295,7 @@ var muchangdata = {
                                     children: [
                                         {
                                             name: "70",
-                                            value: "1"
+                                            value: 1
                                         }
                                     ]
                                 }
@@ -3314,7 +3314,7 @@ var muchangdata = {
                                     children: [
                                         {
                                             name: "70",
-                                            value: "1"
+                                            value: 1
                                         }
                                     ]
                                 }
@@ -3333,7 +3333,7 @@ var muchangdata = {
                                     children: [
                                         {
                                             name: "70",
-                                            value: "1"
+                                            value: 1
                                         }
                                     ]
                                 }
@@ -3352,7 +3352,7 @@ var muchangdata = {
                                     children: [
                                         {
                                             name: "70",
-                                            value: "1"
+                                            value: 1
                                         }
                                     ]
                                 }
@@ -3371,7 +3371,7 @@ var muchangdata = {
                                     children: [
                                         {
                                             name: "60dB",
-                                            value: "1"
+                                            value: 1
                                         }
                                     ]
                                 },
@@ -3380,7 +3380,7 @@ var muchangdata = {
                                     children: [
                                         {
                                             name: "80dB",
-                                            value: "1"
+                                            value: 1
                                         }
                                     ]
                                 }
@@ -3391,7 +3391,7 @@ var muchangdata = {
                             children: [
                                 {
                                     name: "80dB",
-                                    value: "1"
+                                    value: 1
                                 }
                             ]
                         },
@@ -3400,7 +3400,7 @@ var muchangdata = {
                             children: [
                                 {
                                     name: "75dB",
-                                    value: "1"
+                                    value: 1
                                 }
                             ]
                         }
@@ -3418,7 +3418,7 @@ var muchangdata = {
                     children: [
                         {
                             name: "2年",
-                            value: "1"
+                            value: 1
                         }
                     ]
                 },
@@ -3427,7 +3427,7 @@ var muchangdata = {
                     children: [
                         {
                             name: "20年",
-                            value: "1"
+                            value: 1
                         }
                     ]
                 }
