@@ -1,9 +1,9 @@
 $(function () {
     var myChart1 = echarts.init(document.getElementById('contextmenu'));
     //默认展示牛肉
-    var info2 = niuroudata
+    var info2 = muchangdata
     // var info2 = []
-    var dataname = "牛肉"
+    var dataname = "牧场"
     // var dataname = ""
     $(".niurou").click(function () {
         dataname = "牛肉"
@@ -210,7 +210,6 @@ $(function () {
             })
         );
     })
-
 
     RICH = {
         name: {
