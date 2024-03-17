@@ -166,6 +166,20 @@ $(function () {
     })
 
 
+    $(".shui").click(function () {
+        //弹窗
+        $('#customModal').modal('show');
+        var div = $("<div  style=\"width:1500px; height: 600px;\"></div>")
+        $("#mapmodel").append(div);
+        $(".modal-title").text("水产");
+        // 基于准备好的dom，初始化echarts实例
+        $('#customModal').on('hide.bs.modal', function (e) {
+            // alert("我这就关")
+            div.remove()
+        });
+    })
+
+
     function clearData() {
         for (var i = 0; i < optionmap.series[0].data.length; i++) {
             optionmap.series[0].data[i].itemStyle = {
