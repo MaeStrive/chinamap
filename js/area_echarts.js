@@ -28,6 +28,36 @@ $(function () {
         myChart.setOption(optionmap);
     })
 
+
+    $(".jiji").click(function () {
+        //弹窗
+        $('#customModal').modal('show');
+        var div = $("<div id='xjj'  style=\"width: 800px; height: 600px;\"></div>")
+        $("#mapmodel").append(div);
+        $(".modal-title").text("冷鲜鸡肉加工贮藏中微生物污染及荧光-高光谱");
+        // 基于准备好的dom，初始化echarts实例
+        var jiChart = echarts.init(document.getElementById('xjj'));
+        option = {
+            tooltip: {
+                formatter: function (params) {
+                    var data = params.data;
+                    return '<div style="text-align:center"><img src="' + data.imageBase64 + '"/></div>';
+                }
+            },
+            series: [{
+                type: 'treemap',
+                data: jijidata,
+                roam: false,
+
+            }]
+        };
+        jiChart.setOption(option);
+        $('#customModal').on('hide.bs.modal', function (e) {
+            // alert("我这就关")
+            div.remove()
+        });
+    })
+
     $(".niuniu").click(function () {
         datainfo = "niuniu"
         clearData()
