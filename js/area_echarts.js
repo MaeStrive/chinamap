@@ -32,26 +32,110 @@ $(function () {
     $(".jiji").click(function () {
         //弹窗
         $('#customModal').modal('show');
-        var div = $("<div id='xjj'  style=\"width: 800px; height: 600px;\"></div>")
+        var div = $("<div id='xjj'  style=\"width:1500px; height: 600px;\"></div>")
         $("#mapmodel").append(div);
         $(".modal-title").text("冷鲜鸡肉加工贮藏中微生物污染及荧光-高光谱");
         // 基于准备好的dom，初始化echarts实例
         var jiChart = echarts.init(document.getElementById('xjj'));
-        option = {
-            tooltip: {
-                formatter: function (params) {
-                    var data = params.data;
-                    return '<div style="text-align:center"><img src="' + data.imageBase64 + '"/></div>';
-                }
-            },
-            series: [{
-                type: 'treemap',
-                data: jijidata,
-                roam: false,
+        structs_datas = []
+        format_struct_data_image(jijidata.children, structs_datas);
+        jiChart.setOption(
+            (option = {
+                tooltip: {
+                    formatter: function (info) {
+                        console.log("tool------", info);
+                        var val = info.data.value;
+                        var name = info.name;
+                        return ["<h4 style='color: #f30619;font-weight: 700'>" + name + "</>"].join("");
+                    },
+                    // rich: RICH, tooltip不支持富文本
+                },
 
-            }]
-        };
-        jiChart.setOption(option);
+                series: [
+                    {
+                        name: "冷鲜鸡加工贮藏微生物污染及荧光-高光谱",
+                        type: "treemap",
+                        visibleMin: 1,
+                        // data: format_struct_data(info2.children, structs_datas),
+                        data: structs_datas,
+                        leafDepth: 1,
+                        // roam: false,
+                        label: {
+                            normal: {
+                                show: true,
+                                position: "insideTopLeft",
+                                formatter: function (a) {
+                                    console.log("formatter==label=======", a);
+                                    return (
+                                        "{Name|" +
+                                        a.name +
+                                        "}"
+                                    );
+                                },
+                                textStyle: {
+                                    // color: '',  label的字体颜色
+                                    fontSize: "14",
+                                    fontWeight: "bold",
+                                },
+                                rich: RICH,
+                            },
+                        },
+                        levels: [
+                            {
+                                itemStyle: {
+                                    normal: {
+                                        borderWidth: 0,
+                                        gapWidth: 2,
+                                    },
+                                },
+                            },
+                            {
+                                itemStyle: {
+                                    normal: {
+                                        gapWidth: 2,
+                                    },
+                                },
+                            },
+                            {
+                                // colorSaturation: [0.35, 0.5],
+                                itemStyle: {
+                                    normal: {
+                                        gapWidth: 2,
+                                        // borderColorSaturation: 0.6
+                                    },
+                                },
+                            },
+                        ],
+                        breadcrumb: {
+                            show: true,
+                            // "height": 22,
+                            left: "10%",
+                            top: "93%",
+                            emptyItemWidth: 25,
+                            itemStyle: {
+                                normal: {
+                                    color: "#fff",
+                                    borderColor: "rgba(255,255,255,0.7)",
+                                    borderWidth: 1,
+                                    shadowColor: "rgba(150,150,150,1)",
+                                    shadowBlur: 3,
+                                    shadowOffsetX: 0,
+                                    shadowOffsetY: 0,
+                                    textStyle: {
+                                        color: "#000",
+                                        fontWeight: "bold",
+                                    },
+                                },
+                                emphasis: {
+                                    textStyle: {},
+                                },
+                            },
+                        },
+                    },
+                ],
+            })
+        );
+        jiChart.setOption(option)
         $('#customModal').on('hide.bs.modal', function (e) {
             // alert("我这就关")
             div.remove()
