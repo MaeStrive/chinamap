@@ -3859,9 +3859,9 @@ function format_struct_data_image(children, structs_datas) {
             name: children[prop].name,
             children: [],
             value: children[prop].value,
-            img: children[prop.imageBase64]
+            img: children[prop].imageBase64
         };
-        format_struct_data(children[prop].children, tmp.children);
+        format_struct_data_image(children[prop].children, tmp.children);
         if (tmp.children.length === 0) {
             delete tmp.children;
         }

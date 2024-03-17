@@ -45,8 +45,10 @@ $(function () {
                     formatter: function (info) {
                         console.log("tool------", info);
                         var val = info.data.value;
+                        var img = info.data.img;
                         var name = info.name;
-                        return ["<h4 style='color: #f30619;font-weight: 700'>" + name + "</>"].join("");
+                        return ["<img src='" + img + "'/>"].join("");
+                        // return ["<h4 style='color: #f30619;font-weight: 700'>" + name + "</>"].join("");
                     },
                     // rich: RICH, tooltip不支持富文本
                 },
@@ -56,7 +58,6 @@ $(function () {
                         name: "冷鲜鸡加工贮藏微生物污染及荧光-高光谱",
                         type: "treemap",
                         visibleMin: 1,
-                        // data: format_struct_data(info2.children, structs_datas),
                         data: structs_datas,
                         leafDepth: 1,
                         // roam: false,
