@@ -165,6 +165,7 @@ $(function () {
         myChart.setOption(optionmap);
     })
 
+    var divtable1
 
     $(".shui").click(function () {
         //弹窗
@@ -184,42 +185,83 @@ $(function () {
             // alert("我这就关")
             div.remove()
         });
-    })
+        $(".ypxz").click(function () {
+            alert("ooo")
+            console.log(divtable1)
+            divtable1.style.display = "block";
+            divtable1.style.display = "none";
+            divtable1.style.display = "none";
+            divtable1.style.display = "none";
+            divtable1.style.display = "none";
+            divtable1.style.display = "none";
+        })
+        $(".dhft").click(function () {
+            $("#divypxz").style.display = "none";
+            $("#divdhft").style.display = "block";
+            $("#divdltb").style.display = "none";
+            $("#divmbxds").style.display = "none";
+            $("#divzrxds").style.display = "none";
+            $("#divwsw").style.display = "none";
+        })
+        $(".dltb").click(function () {
+            $("#divypxz").style.display = "none";
+            $("#divdhft").style.display = "none";
+            $("#divdltb").style.display = "block";
+            $("#divmbxds").style.display = "none";
+            $("#divzrxds").style.display = "none";
+            $("#divwsw").style.display = "none";
+        })
+        $(".mbxds").click(function () {
+            $("#divypxz").style.display = "none";
+            $("#divdhft").style.display = "none";
+            $("#divdltb").style.display = "none";
+            $("#divmbxds").style.display = "block";
+            $("#divzrxds").style.display = "none";
+            $("#divwsw").style.display = "none";
+        })
+        $(".zrxds").click(function () {
+            $("#divypxz").style.display = "none";
+            $("#divdhft").style.display = "none";
+            $("#divdltb").style.display = "none";
+            $("#divmbxds").style.display = "none";
+            $("#divzrxds").style.display = "block";
+            $("#divwsw").style.display = "none";
+        })
+        $(".wsw").click(function () {
+            $("#divypxz").style.display = "none";
+            $("#divdhft").style.display = "none";
+            $("#divdltb").style.display = "none";
+            $("#divmbxds").style.display = "none";
+            $("#divzrxds").style.display = "none";
+            $("#divwsw").style.display = "block";
+        })
 
 
-    var shuichantable1btn = ypxz()
-    $(".ypxz").click(function () {
-        shuichantable1btn=dhft
-    })
-    $(".dhft").click(function () {
-        shuichantable1btn=dhft
-    })
-    $(".dltb").click(function () {
-        shuichantable1btn=dltb()
-    })
-    $(".mbxds").click(function () {
-        shuichantable1btn=mbxds()
-    })
-    $(".zrxds").click(function () {
-        shuichantable1btn=zrxds()
-    })
-    $(".wsw").click(function () {
-        shuichantable1btn=wsw()
     })
 
 
     function shuichantable1() {
         var innerdiv = $("<div></div>")
-        innerdiv.append("<div style='margin-top: 15px;margin-bottom:15px;text-align: center'><button class=\"btn btn-info btn66 ypxz\">样品性状</button>&emsp;&emsp;&emsp;" +
+        innerdiv.append("<div style='margin-top: 15px;margin-bottom:15px;text-align: center'>" +
+            "<button class=\"btn btn-info btn66 ypxz\">样品性状</button>&emsp;&emsp;&emsp;" +
             "<button class=\"btn btn-info btn66 dhft\">多环芳烃</button>&emsp;&emsp;&emsp;" +
             "<button class=\"btn btn-info btn66 dltb\">多氯联苯</button>&emsp;&emsp;&emsp;" +
             "<button class=\"btn btn-info btn66 mbxds\">麻痹性毒素</button>&emsp;&emsp;&emsp;" +
             "<button class=\"btn btn-info btn66 zrxds\">脂溶性毒素</button>&emsp;&emsp;&emsp;" +
             "<button class=\"btn btn-info btn66 wsw\">微生物</button></div>"
         )
-        innerdiv.append(shuichantable1btn)
+
+        innerdiv.append(ypxz())
+        innerdiv.append(dhft())
+        innerdiv.append(dltb())
+        innerdiv.append(mbxds())
+        innerdiv.append(zrxds())
+        innerdiv.append(wsw())
+
+
         return innerdiv
     }
+
 
     function wsw() {
         var data1 =
@@ -274,7 +316,7 @@ $(function () {
                 ["2022/05", 141, 1.87, 1.08],
                 ["2022/05", 144, 2.10, 0.98]
             ];
-        var div = $("<div style='margin-bottom:10px;'></div>")
+        divtable1 = $("<div style='margin-bottom:10px;display: none' id='divwsw'></div>")
         var table = $("<table class=\"table table-bordered table-striped\" style='font-size: 16px;margin-top: 10px'></table>");
         // 添加表头和表格内容
         for (var i = 0; i < data1.length; i++) {
@@ -287,8 +329,8 @@ $(function () {
             }
             table.append(row);
         }
-        div.append(table)
-        return div
+        divtable1.append(table)
+        return divtable1
     }
 
 
@@ -345,7 +387,7 @@ $(function () {
             ["2022/05", 144, "ND", "ND", "ND", "ND"],
         ]
 
-        var div = $("<div style='margin-bottom:10px;'></div>")
+        divtable1 = $("<div style='margin-bottom:10px;display: none' id='divzrxds'></div>")
         var table = $("<table class=\"table table-bordered table-striped\" style='font-size: 16px;margin-top: 10px'></table>");
         // 添加表头和表格内容
         for (var i = 0; i < data1.length; i++) {
@@ -358,8 +400,8 @@ $(function () {
             }
             table.append(row);
         }
-        div.append(table)
-        return div
+        divtable1.append(table)
+        return divtable1
     }
 
 
@@ -415,7 +457,7 @@ $(function () {
             ["2022/05", 144, "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND"],
         ]
 
-        var div = $("<div style='margin-bottom:10px;'></div>")
+        divtable1 = $("<div style='margin-bottom:10px;display: none'  id='divmbxds'></div>")
         var table = $("<table class=\"table table-bordered table-striped\" style='font-size: 16px;margin-top: 10px'></table>");
         // 添加表头和表格内容
         for (var i = 0; i < data1.length; i++) {
@@ -428,8 +470,8 @@ $(function () {
             }
             table.append(row);
         }
-        div.append(table)
-        return div
+        divtable1.append(table)
+        return divtable1
     }
 
 
@@ -502,7 +544,7 @@ $(function () {
             ["2022/5/11", "144", "ND", "ND", "4.73", "1.31", "0.76", "ND", "ND", "6.80"],
         ]
 
-        var div = $("<div style='margin-bottom:10px;'></div>")
+        divtable1 = $("<div style='margin-bottom:10px;display: none'  id='divdltb'></div>")
         var table = $("<table class=\"table table-bordered table-striped\" style='font-size: 16px;margin-top: 10px'></table>");
         // 添加表头和表格内容
         for (var i = 0; i < data1.length; i++) {
@@ -515,8 +557,8 @@ $(function () {
             }
             table.append(row);
         }
-        div.append(table)
-        return div
+        divtable1.append(table)
+        return divtable1
     }
 
 
@@ -603,7 +645,7 @@ $(function () {
             ['2022/5/1', 144, 'ND', 2.80, 9.49, 12.99, 7.30, 7.90, 5.57, 2.65, 2.18, 'ND', 'ND', 'ND', 4.67, 'ND', 'ND']
         ]
 
-        var div = $("<div style='margin-bottom:10px;'></div>")
+        divtable1 = $("<div style='margin-bottom:10px;display: none' id='divdltb'></div>")
         var table = $("<table class=\"table table-bordered table-striped\" style='font-size: 16px;margin-top: 10px'></table>");
         // 添加表头和表格内容
         for (var i = 0; i < data1.length; i++) {
@@ -616,8 +658,8 @@ $(function () {
             }
             table.append(row);
         }
-        div.append(table)
-        return div
+        divtable1.append(table)
+        return divtable1
     }
 
     function ypxz() {
@@ -640,7 +682,7 @@ $(function () {
             ["2022/3/4", 38.77, 19.30, 0.50, "", 74.89, 69.11, 23.22],
             ["2022/5/11", 47.88, 24.64, 0.51, "", 74.67, 69.00, 20.00]
         ];
-        var div = $("<div></div>")
+        divtable1 = $("<div id='divypxz' style='display: block'></div>")
         var table = $("<table class=\"table table-bordered table-striped\" style='font-size: 16px;margin-top: 10px'></table>");
         // 添加表头和表格内容
         for (var i = 0; i < data1.length; i++) {
@@ -653,9 +695,9 @@ $(function () {
             }
             table.append(row);
         }
-        div.append($("<div style=\"text-align=left;font-size: 18px;font-weight: 700;margin-top: 10px\">均值：</div>"))
-        div.append(table)
-        div.append($("<div style=\"text-align=left;font-size: 18px;font-weight: 700;margin-top: 10px\">标准差：</div>"))
+        divtable1.append($("<div style=\"text-align=left;font-size: 18px;font-weight: 700;margin-top: 10px\">均值：</div>"))
+        divtable1.append(table)
+        divtable1.append($("<div style=\"text-align=left;font-size: 18px;font-weight: 700;margin-top: 10px\">标准差：</div>"))
         var table2 = $("<table class=\"table table-bordered table-striped\" style='font-size: 16px;margin-top: 10px'></table>");
 
         var data2 = [
@@ -687,8 +729,8 @@ $(function () {
             }
             table2.append(row);
         }
-        div.append(table2)
-        return div
+        divtable1.append(table2)
+        return divtable1
     }
 
     function clearData() {
