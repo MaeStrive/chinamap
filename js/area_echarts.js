@@ -186,54 +186,92 @@ $(function () {
             div.remove()
         });
         $(".ypxz").click(function () {
-            alert("ooo")
+            // alert("ooo")
             console.log( $("#divypxz"))
-            $("#divypxz").style.display = "block";
-            $("#divdhft").style.display = "none";
-            $("#divdltb").style.display = "none";
-            $("#divmbxds").style.display = "none";
-            $("#divzrxds").style.display = "none";
-            $("#divwsw").style.display = "none";
+            // $("#divypxz").style.display = "block";
+            // $("#divdhft").style.display = "none";
+            // $("#divdltb").style.display = "none";
+            // $("#divmbxds").style.display = "none";
+            // $("#divzrxds").style.display = "none";
+            // $("#divwsw").style.display = "none";
+            $("#divypxz").css({display:"block"}) 
+            $("#divdhft").css({display:"none"}) 
+            $("#divdltb").css({display:"none"}) 
+            $("#divmbxds").css({display:"none"}) 
+            $("#divzrxds").css({display:"none"}) 
+            $("#divwsw").css({display:"none"}) 
         })
         $(".dhft").click(function () {
-            $("#divypxz").style.display = "none";
-            $("#divdhft").style.display = "block";
-            $("#divdltb").style.display = "none";
-            $("#divmbxds").style.display = "none";
-            $("#divzrxds").style.display = "none";
-            $("#divwsw").style.display = "none";
+            // $("#divypxz").style.display = "none";
+            // $("#divdhft").style.display = "block";
+
+            $("#divypxz").css({display:"none"}) 
+            $("#divdhft").css({display:"block"}) 
+            $("#divdltb").css({display:"none"}) 
+            $("#divmbxds").css({display:"none"}) 
+            $("#divzrxds").css({display:"none"}) 
+            $("#divwsw").css({display:"none"}) 
+            // $("#divdltb").style.display = "none";
+            // $("#divmbxds").style.display = "none";
+            // $("#divzrxds").style.display = "none";
+            // $("#divwsw").style.display = "none";
         })
         $(".dltb").click(function () {
-            $("#divypxz").style.display = "none";
-            $("#divdhft").style.display = "none";
-            $("#divdltb").style.display = "block";
-            $("#divmbxds").style.display = "none";
-            $("#divzrxds").style.display = "none";
-            $("#divwsw").style.display = "none";
+            // $("#divypxz").style.display = "none";
+            // $("#divdhft").style.display = "none";
+            // $("#divdltb").style.display = "block";
+            // $("#divmbxds").style.display = "none";
+            // $("#divzrxds").style.display = "none";
+            // $("#divwsw").style.display = "none";
+
+            $("#divypxz").css({display:"none"}) 
+            $("#divdhft").css({display:"none"}) 
+            $("#divdltb").css({display:"block"}) 
+            $("#divmbxds").css({display:"none"}) 
+            $("#divzrxds").css({display:"none"}) 
+            $("#divwsw").css({display:"none"}) 
         })
         $(".mbxds").click(function () {
-            $("#divypxz").style.display = "none";
-            $("#divdhft").style.display = "none";
-            $("#divdltb").style.display = "none";
-            $("#divmbxds").style.display = "block";
-            $("#divzrxds").style.display = "none";
-            $("#divwsw").style.display = "none";
+            // $("#divypxz").style.display = "none";
+            // $("#divdhft").style.display = "none";
+            // $("#divdltb").style.display = "none";
+            // $("#divmbxds").style.display = "block";
+            // $("#divzrxds").style.display = "none";
+            // $("#divwsw").style.display = "none";
+            $("#divypxz").css({display:"none"}) 
+            $("#divdhft").css({display:"none"}) 
+            $("#divdltb").css({display:"none"}) 
+            $("#divmbxds").css({display:"block"}) 
+            $("#divzrxds").css({display:"none"}) 
+            $("#divwsw").css({display:"none"}) 
         })
         $(".zrxds").click(function () {
-            $("#divypxz").style.display = "none";
-            $("#divdhft").style.display = "none";
-            $("#divdltb").style.display = "none";
-            $("#divmbxds").style.display = "none";
-            $("#divzrxds").style.display = "block";
-            $("#divwsw").style.display = "none";
+            // $("#divypxz").style.display = "none";
+            // $("#divdhft").style.display = "none";
+            // $("#divdltb").style.display = "none";
+            // $("#divmbxds").style.display = "none";
+            // $("#divzrxds").style.display = "block";
+            // $("#divwsw").style.display = "none";
+            $("#divypxz").css({display:"none"}) 
+            $("#divdhft").css({display:"none"}) 
+            $("#divdltb").css({display:"none"}) 
+            $("#divmbxds").css({display:"none"}) 
+            $("#divzrxds").css({display:"block"}) 
+            $("#divwsw").css({display:"none"}) 
         })
         $(".wsw").click(function () {
-            $("#divypxz").style.display = "none";
-            $("#divdhft").style.display = "none";
-            $("#divdltb").style.display = "none";
-            $("#divmbxds").style.display = "none";
-            $("#divzrxds").style.display = "none";
-            $("#divwsw").style.display = "block";
+            // $("#divypxz").style.display = "none";
+            // $("#divdhft").style.display = "none";
+            // $("#divdltb").style.display = "none";
+            // $("#divmbxds").style.display = "none";
+            // $("#divzrxds").style.display = "none";
+            // $("#divwsw").style.display = "block";
+            $("#divypxz").css({display:"none"}) 
+            $("#divdhft").css({display:"none"}) 
+            $("#divdltb").css({display:"none"}) 
+            $("#divmbxds").css({display:"none"}) 
+            $("#divzrxds").css({display:"none"}) 
+            $("#divwsw").css({display:"block"}) 
         })
 
 
