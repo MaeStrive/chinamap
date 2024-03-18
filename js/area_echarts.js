@@ -165,7 +165,7 @@ $(function () {
         myChart.setOption(optionmap);
     })
 
-    var divtable1
+    var div
 
     $(".shui").click(function () {
         //弹窗
@@ -187,13 +187,13 @@ $(function () {
         });
         $(".ypxz").click(function () {
             alert("ooo")
-            console.log(divtable1)
-            divtable1.style.display = "block";
-            divtable1.style.display = "none";
-            divtable1.style.display = "none";
-            divtable1.style.display = "none";
-            divtable1.style.display = "none";
-            divtable1.style.display = "none";
+            console.log( $("#divypxz"))
+            $("#divypxz").style.display = "block";
+            $("#divdhft").style.display = "none";
+            $("#divdltb").style.display = "none";
+            $("#divmbxds").style.display = "none";
+            $("#divzrxds").style.display = "none";
+            $("#divwsw").style.display = "none";
         })
         $(".dhft").click(function () {
             $("#divypxz").style.display = "none";
@@ -316,7 +316,7 @@ $(function () {
                 ["2022/05", 141, 1.87, 1.08],
                 ["2022/05", 144, 2.10, 0.98]
             ];
-        divtable1 = $("<div style='margin-bottom:10px;display: none' id='divwsw'></div>")
+        var div = $("<div style='margin-bottom:10px;display: none' id='divwsw'></div>")
         var table = $("<table class=\"table table-bordered table-striped\" style='font-size: 16px;margin-top: 10px'></table>");
         // 添加表头和表格内容
         for (var i = 0; i < data1.length; i++) {
@@ -329,8 +329,8 @@ $(function () {
             }
             table.append(row);
         }
-        divtable1.append(table)
-        return divtable1
+        div.append(table)
+        return div
     }
 
 
@@ -387,7 +387,7 @@ $(function () {
             ["2022/05", 144, "ND", "ND", "ND", "ND"],
         ]
 
-        divtable1 = $("<div style='margin-bottom:10px;display: none' id='divzrxds'></div>")
+        var div = $("<div style='margin-bottom:10px;display: none' id='divzrxds'></div>")
         var table = $("<table class=\"table table-bordered table-striped\" style='font-size: 16px;margin-top: 10px'></table>");
         // 添加表头和表格内容
         for (var i = 0; i < data1.length; i++) {
@@ -400,8 +400,8 @@ $(function () {
             }
             table.append(row);
         }
-        divtable1.append(table)
-        return divtable1
+        div.append(table)
+        return div
     }
 
 
@@ -457,7 +457,7 @@ $(function () {
             ["2022/05", 144, "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND"],
         ]
 
-        divtable1 = $("<div style='margin-bottom:10px;display: none'  id='divmbxds'></div>")
+        var div = $("<div style='margin-bottom:10px;display: none'  id='divmbxds'></div>")
         var table = $("<table class=\"table table-bordered table-striped\" style='font-size: 16px;margin-top: 10px'></table>");
         // 添加表头和表格内容
         for (var i = 0; i < data1.length; i++) {
@@ -470,8 +470,8 @@ $(function () {
             }
             table.append(row);
         }
-        divtable1.append(table)
-        return divtable1
+        div.append(table)
+        return div
     }
 
 
@@ -544,7 +544,7 @@ $(function () {
             ["2022/5/11", "144", "ND", "ND", "4.73", "1.31", "0.76", "ND", "ND", "6.80"],
         ]
 
-        divtable1 = $("<div style='margin-bottom:10px;display: none'  id='divdltb'></div>")
+        var div = $("<div style='margin-bottom:10px;display: none'  id='divdltb'></div>")
         var table = $("<table class=\"table table-bordered table-striped\" style='font-size: 16px;margin-top: 10px'></table>");
         // 添加表头和表格内容
         for (var i = 0; i < data1.length; i++) {
@@ -557,8 +557,8 @@ $(function () {
             }
             table.append(row);
         }
-        divtable1.append(table)
-        return divtable1
+        div.append(table)
+        return div
     }
 
 
@@ -645,7 +645,7 @@ $(function () {
             ['2022/5/1', 144, 'ND', 2.80, 9.49, 12.99, 7.30, 7.90, 5.57, 2.65, 2.18, 'ND', 'ND', 'ND', 4.67, 'ND', 'ND']
         ]
 
-        divtable1 = $("<div style='margin-bottom:10px;display: none' id='divdltb'></div>")
+        var div = $("<div style='margin-bottom:10px;display: none' id='divdltb'></div>")
         var table = $("<table class=\"table table-bordered table-striped\" style='font-size: 16px;margin-top: 10px'></table>");
         // 添加表头和表格内容
         for (var i = 0; i < data1.length; i++) {
@@ -658,8 +658,8 @@ $(function () {
             }
             table.append(row);
         }
-        divtable1.append(table)
-        return divtable1
+        div.append(table)
+        return div
     }
 
     function ypxz() {
@@ -682,7 +682,8 @@ $(function () {
             ["2022/3/4", 38.77, 19.30, 0.50, "", 74.89, 69.11, 23.22],
             ["2022/5/11", 47.88, 24.64, 0.51, "", 74.67, 69.00, 20.00]
         ];
-        divtable1 = $("<div id='divypxz' style='display: block'></div>")
+       var div = $("<div id='divypxz' style='display: block'></div>")
+        console.log(div)
         var table = $("<table class=\"table table-bordered table-striped\" style='font-size: 16px;margin-top: 10px'></table>");
         // 添加表头和表格内容
         for (var i = 0; i < data1.length; i++) {
@@ -695,9 +696,9 @@ $(function () {
             }
             table.append(row);
         }
-        divtable1.append($("<div style=\"text-align=left;font-size: 18px;font-weight: 700;margin-top: 10px\">均值：</div>"))
-        divtable1.append(table)
-        divtable1.append($("<div style=\"text-align=left;font-size: 18px;font-weight: 700;margin-top: 10px\">标准差：</div>"))
+        div.append($("<div style=\"text-align=left;font-size: 18px;font-weight: 700;margin-top: 10px\">均值：</div>"))
+        div.append(table)
+        div.append($("<div style=\"text-align=left;font-size: 18px;font-weight: 700;margin-top: 10px\">标准差：</div>"))
         var table2 = $("<table class=\"table table-bordered table-striped\" style='font-size: 16px;margin-top: 10px'></table>");
 
         var data2 = [
@@ -729,8 +730,8 @@ $(function () {
             }
             table2.append(row);
         }
-        divtable1.append(table2)
-        return divtable1
+        div.append(table2)
+        return div
     }
 
     function clearData() {
