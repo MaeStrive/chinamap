@@ -225,32 +225,6 @@ $(function () {
     var structs_datas = [];
     var formatUtil = echarts.format;
 
-    function format_struct_data(children, structs_datas) {
-        // 添加每个单位的颜色
-        for (var prop in children) {
-            var index = Math.floor(Math.random() * 20);
-            var value = 1;
-            if (children[prop].value !== 0) {
-                value = children[prop].value;
-            }
-            var tmp = {
-                itemStyle: {
-                    normal: {
-                        color: struct_colors[index],
-                    },
-                },
-                name: children[prop].name,
-                children: [],
-                value: children[prop].value,
-            };
-            format_struct_data(children[prop].children, tmp.children);
-            if (tmp.children.length === 0) {
-                delete tmp.children;
-            }
-            structs_datas.push(tmp);
-            // return structs_datas;
-        }
-    }
 
     function showMenu(param) {
         // 可在此处添加右击操作内容
@@ -379,5 +353,7 @@ $(function () {
         return false;
     };
     myChart1.on("contextmenu", showMenu);
+
+
 
 })
