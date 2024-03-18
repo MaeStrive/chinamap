@@ -60,7 +60,7 @@ $(function () {
                         visibleMin: 1,
                         data: structs_datas,
                         leafDepth: 1,
-                        // roam: false,
+                        roam: false,
                         label: {
                             normal: {
                                 show: true,
@@ -165,7 +165,6 @@ $(function () {
         myChart.setOption(optionmap);
     })
 
-    var div
 
     $(".shui").click(function () {
         //弹窗
@@ -179,6 +178,8 @@ $(function () {
             "  </select>")
         div.append(selectdiv)
         div.append(shuichantable1())
+        div.append(shuichantable2())
+        div.append(shuichantable3())
         $("#mapmodel").append(div);
         // 基于准备好的dom，初始化echarts实例
         $('#customModal').on('hide.bs.modal', function (e) {
@@ -187,30 +188,30 @@ $(function () {
         });
         $(".ypxz").click(function () {
             // alert("ooo")
-            console.log( $("#divypxz"))
+            console.log($("#divypxz"))
             // $("#divypxz").style.display = "block";
             // $("#divdhft").style.display = "none";
             // $("#divdltb").style.display = "none";
             // $("#divmbxds").style.display = "none";
             // $("#divzrxds").style.display = "none";
             // $("#divwsw").style.display = "none";
-            $("#divypxz").css({display:"block"}) 
-            $("#divdhft").css({display:"none"}) 
-            $("#divdltb").css({display:"none"}) 
-            $("#divmbxds").css({display:"none"}) 
-            $("#divzrxds").css({display:"none"}) 
-            $("#divwsw").css({display:"none"}) 
+            $("#divypxz").css({display: "block"})
+            $("#divhtft").css({display: "none"})
+            $("#divdltb").css({display: "none"})
+            $("#divmbxds").css({display: "none"})
+            $("#divzrxds").css({display: "none"})
+            $("#divwsw").css({display: "none"})
         })
         $(".dhft").click(function () {
             // $("#divypxz").style.display = "none";
             // $("#divdhft").style.display = "block";
 
-            $("#divypxz").css({display:"none"}) 
-            $("#divdhft").css({display:"block"}) 
-            $("#divdltb").css({display:"none"}) 
-            $("#divmbxds").css({display:"none"}) 
-            $("#divzrxds").css({display:"none"}) 
-            $("#divwsw").css({display:"none"}) 
+            $("#divypxz").css({display: "none"})
+            $("#divhtft").css({display: "block"})
+            $("#divdltb").css({display: "none"})
+            $("#divmbxds").css({display: "none"})
+            $("#divzrxds").css({display: "none"})
+            $("#divwsw").css({display: "none"})
             // $("#divdltb").style.display = "none";
             // $("#divmbxds").style.display = "none";
             // $("#divzrxds").style.display = "none";
@@ -224,12 +225,12 @@ $(function () {
             // $("#divzrxds").style.display = "none";
             // $("#divwsw").style.display = "none";
 
-            $("#divypxz").css({display:"none"}) 
-            $("#divdhft").css({display:"none"}) 
-            $("#divdltb").css({display:"block"}) 
-            $("#divmbxds").css({display:"none"}) 
-            $("#divzrxds").css({display:"none"}) 
-            $("#divwsw").css({display:"none"}) 
+            $("#divypxz").css({display: "none"})
+            $("#divhtft").css({display: "none"})
+            $("#divdltb").css({display: "block"})
+            $("#divmbxds").css({display: "none"})
+            $("#divzrxds").css({display: "none"})
+            $("#divwsw").css({display: "none"})
         })
         $(".mbxds").click(function () {
             // $("#divypxz").style.display = "none";
@@ -238,12 +239,12 @@ $(function () {
             // $("#divmbxds").style.display = "block";
             // $("#divzrxds").style.display = "none";
             // $("#divwsw").style.display = "none";
-            $("#divypxz").css({display:"none"}) 
-            $("#divdhft").css({display:"none"}) 
-            $("#divdltb").css({display:"none"}) 
-            $("#divmbxds").css({display:"block"}) 
-            $("#divzrxds").css({display:"none"}) 
-            $("#divwsw").css({display:"none"}) 
+            $("#divypxz").css({display: "none"})
+            $("#divhtft").css({display: "none"})
+            $("#divdltb").css({display: "none"})
+            $("#divmbxds").css({display: "block"})
+            $("#divzrxds").css({display: "none"})
+            $("#divwsw").css({display: "none"})
         })
         $(".zrxds").click(function () {
             // $("#divypxz").style.display = "none";
@@ -252,34 +253,128 @@ $(function () {
             // $("#divmbxds").style.display = "none";
             // $("#divzrxds").style.display = "block";
             // $("#divwsw").style.display = "none";
-            $("#divypxz").css({display:"none"}) 
-            $("#divdhft").css({display:"none"}) 
-            $("#divdltb").css({display:"none"}) 
-            $("#divmbxds").css({display:"none"}) 
-            $("#divzrxds").css({display:"block"}) 
-            $("#divwsw").css({display:"none"}) 
+            $("#divypxz").css({display: "none"})
+            $("#divhtft").css({display: "none"})
+            $("#divdltb").css({display: "none"})
+            $("#divmbxds").css({display: "none"})
+            $("#divzrxds").css({display: "block"})
+            $("#divwsw").css({display: "none"})
         })
         $(".wsw").click(function () {
-            // $("#divypxz").style.display = "none";
-            // $("#divdhft").style.display = "none";
-            // $("#divdltb").style.display = "none";
-            // $("#divmbxds").style.display = "none";
-            // $("#divzrxds").style.display = "none";
-            // $("#divwsw").style.display = "block";
-            $("#divypxz").css({display:"none"}) 
-            $("#divdhft").css({display:"none"}) 
-            $("#divdltb").css({display:"none"}) 
-            $("#divmbxds").css({display:"none"}) 
-            $("#divzrxds").css({display:"none"}) 
-            $("#divwsw").css({display:"block"}) 
+            $("#divypxz").css({display: "none"})
+            $("#divhtft").css({display: "none"})
+            $("#divdltb").css({display: "none"})
+            $("#divmbxds").css({display: "none"})
+            $("#divzrxds").css({display: "none"})
+            $("#divwsw").css({display: "block"})
         })
 
+        //第二个
+        $(".paba").click(function () {
+            $("#divsmif").css({display: "none"})
+            $("#divpaba").css({display: "block"})
+            $("#divogpt").css({display: "none"})
+            $("#divant").css({display: "none"})
+            $("#divheam").css({display: "none"})
+            $("#divshto").css({display: "none"})
+        })
+        $(".heam").click(function () {
+            $("#divsmif").css({display: "none"})
+            $("#divpaba").css({display: "none"})
+            $("#divogpt").css({display: "none"})
+            $("#divant").css({display: "none"})
+            $("#divheam").css({display: "block"})
+            $("#divshto").css({display: "none"})
+        })
+        $(".ant").click(function () {
+            $("#divsmif").css({display: "none"})
+            $("#divpaba").css({display: "none"})
+            $("#divogpt").css({display: "none"})
+            $("#divant").css({display: "block"})
+            $("#divheam").css({display: "none"})
+            $("#divshto").css({display: "none"})
+        })
+        $(".shto").click(function () {
+            $("#divsmif").css({display: "none"})
+            $("#divpaba").css({display: "none"})
+            $("#divogpt").css({display: "none"})
+            $("#divant").css({display: "none"})
+            $("#divheam").css({display: "none"})
+            $("#divshto").css({display: "block"})
+        })
+        $(".ogpt").click(function () {
+            $("#divsmif").css({display: "none"})
+            $("#divpaba").css({display: "none"})
+            $("#divogpt").css({display: "block"})
+            $("#divant").css({display: "none"})
+            $("#divheam").css({display: "none"})
+            $("#divshto").css({display: "none"})
+        })
+        $(".smif").click(function () {
+            $("#divsmif").css({display: "block"})
+            $("#divpaba").css({display: "none"})
+            $("#divogpt").css({display: "none"})
+            $("#divant").css({display: "none"})
+            $("#divheam").css({display: "none"})
+            $("#divshto").css({display: "none"})
+        })
+
+        $(".ant1").click(function () {
+            $("#divsmif1").css({display: "none"})
+            $("#divogpt1").css({display: "none"})
+            $("#divant1").css({display: "block"})
+            $("#divshto1").css({display: "none"})
+        })
+        $(".shto1").click(function () {
+            $("#divsmif1").css({display: "none"})
+            $("#divogpt1").css({display: "none"})
+            $("#divant1").css({display: "none"})
+            $("#divshto1").css({display: "block"})
+        })
+        $(".ogpt1").click(function () {
+            $("#divsmif1").css({display: "none"})
+            $("#divogpt1").css({display: "block"})
+            $("#divant1").css({display: "none"})
+            $("#divshto1").css({display: "none"})
+        })
+        $(".smif1").click(function () {
+            $("#divsmif1").css({display: "block"})
+            $("#divogpt1").css({display: "none"})
+            $("#divant1").css({display: "none"})
+            $("#divshto1").css({display: "none"})
+        })
+
+
+        // 获取下拉框元素
+        var selectElement = document.getElementById("inputGroupSelect04");
+
+        // 添加事件监听器
+        selectElement.addEventListener("change", function () {
+            // 获取当前选定的值
+            var selectedValue = selectElement.value;
+            if (selectedValue == 1) {
+                $("#sc1div").css({display: "block"})
+                $("#sc2div").css({display: "none"})
+                $("#sc3div").css({display: "none"})
+            }
+            if (selectedValue == 2) {
+                $("#sc1div").css({display: "none"})
+                $("#sc2div").css({display: "block"})
+                $("#sc3div").css({display: "none"})
+            }
+            if (selectedValue == 3) {
+                $("#sc1div").css({display: "none"})
+                $("#sc2div").css({display: "none"})
+                $("#sc3div").css({display: "block"})
+
+            }
+        });
 
     })
 
 
     function shuichantable1() {
-        var innerdiv = $("<div></div>")
+        var innerdiv = $("<div id='sc1div' style='display: block'></div>")
         innerdiv.append("<div style='margin-top: 15px;margin-bottom:15px;text-align: center'>" +
             "<button class=\"btn btn-info btn66 ypxz\">样品性状</button>&emsp;&emsp;&emsp;" +
             "<button class=\"btn btn-info btn66 dhft\">多环芳烃</button>&emsp;&emsp;&emsp;" +
@@ -296,8 +391,402 @@ $(function () {
         innerdiv.append(zrxds())
         innerdiv.append(wsw())
 
-
         return innerdiv
+    }
+
+    function shuichantable2() {
+        var innerdiv = $("<div id='sc2div' style='display:none;'></div>")
+        innerdiv.append("<div style='margin-top: 15px;margin-bottom:15px;text-align: center'>" +
+            "<button class=\"btn btn-info btn66 smif\">sample information</button>&emsp;&emsp;&emsp;" +
+            "<button class=\"btn btn-info btn66 ogpt\">organic pollutants</button>&emsp;&emsp;&emsp;" +
+            "<button class=\"btn btn-info btn66 shto\">shellfish toxins</button>&emsp;&emsp;&emsp;" +
+            "<button class=\"btn btn-info btn66 ant\"> antibiotics</button>&emsp;&emsp;&emsp;"
+        )
+
+        innerdiv.append(smif())
+        innerdiv.append(ogpt())
+        innerdiv.append(shto())
+        innerdiv.append(ant())
+        // innerdiv.append(heam())
+        // innerdiv.append(paba())
+        return innerdiv
+    }
+
+    function shuichantable3() {
+        var innerdiv = $("<div id='sc3div' style='display:none;'></div>")
+        innerdiv.append("<div style='margin-top: 15px;margin-bottom:15px;text-align: center'>" +
+            "<button class=\"btn btn-info btn66 smif1\">sample information</button>&emsp;&emsp;&emsp;" +
+            "<button class=\"btn btn-info btn66 ogpt1\">organic pollutants</button>&emsp;&emsp;&emsp;" +
+            "<button class=\"btn btn-info btn66 shto1\">pathogenic bacteria</button>&emsp;&emsp;&emsp;" +
+            "<button class=\"btn btn-info btn66 ant1\"> heavy metal</button>&emsp;&emsp;&emsp;"
+        )
+
+        console.log(smif1())
+        innerdiv.append(ogpt1())
+        innerdiv.append(shto1())
+        innerdiv.append(ant1())
+        innerdiv.append(smif1())
+
+        // innerdiv.append(heam())
+        // innerdiv.append(paba())
+        return innerdiv
+    }
+    function smif1() {
+        var data1 =
+            [
+                ["","海湾扇贝", "月份"],
+                ["61-1", "金黄品种", "8月"],
+                ["61-2", "", "8月"],
+                ["61-3", "", "8月"],
+                ["70-1", "金黄品种", "9月"],
+                ["70-2", "", "9月"],
+                ["70-3", "", "9月"],
+                ["75-1", "金黄品种", "10月"],
+                ["75-2", "", "10月"],
+                ["75-3", "", "10月"],
+                ["63-1", "紫色普通", "8月"],
+                ["63-2", "", "8月"],
+                ["63-3", "", "8月"],
+                ["69-1", "紫色普通", "9月"],
+                ["69-2", "", "9月"],
+                ["69-3", "", "9月"],
+                ["76-1", "紫色普通", "10月"],
+                ["76-2", "", "10月"],
+                ["76-3", "", "10月"]
+            ]
+
+        var div = $("<div style='margin-bottom:10px;display: block' id='divsmif1'></div>")
+        var table = $("<table class=\"table table-bordered table-striped\" style='font-size: 16px;margin-top: 10px'></table>");
+        // 添加表头和表格内容
+        for (var i = 0; i < data1.length; i++) {
+            var row = $("<tr></tr>");
+            for (var j = 0; j < data1[i].length; j++) {
+                var cell = i === 0 ? "<th>" : "<td>";
+                cell += data1[i][j];
+                cell += i === 0 ? "</th>" : "</td>";
+                row.append(cell);
+            }
+            table.append(row);
+        }
+        div.append(table)
+        return div
+    }
+
+    function ogpt1() {
+        var data1 =
+            [["ug/kg", "STX", "dcSTX", "neoSTX", "GTX2", "GTX1", "GTX5", "dcGTX2", "GTX3", "GTX4", "dcGTX3", "ugSTX/kg", "OA", "DTX-1", "DTX-2"],
+                [2.42, 5.63, 23.30, 13.00, 18.44, 12.16, 8.45, 5.41, 4.28, 2.44, "", "", 5.32, "", "", "", 0.91, "", "", "", "", "", 0.91],
+                [2.46, 5.73, 23.45, 13.10, 18.34, 12.20, 8.48, 5.44, 4.30, 2.45, "", "", 5.68, "", "", "", 0.91, "", "", "", "", "", 0.91],
+                [2.44, 5.68, 23.15, 12.90, 18.54, 12.12, 8.42, 5.38, 4.26, 2.43, "", "", 4.97, "", "", "", 0.91, "", "", "", "", "", 0.91],
+                ["", 12.28, 4.17, 48.16, 24.10, 31.25, 7.10, 16.73, 21.98, 35.82, 0.76, 0.36, 1.61, 1.78, "", "", 1.00, 4.27, 2.35, 1.48, "", "", 8.81],
+                ["", 12.28, 4.20, 48.01, 24.22, 31.41, 7.12, 16.77, 21.86, 35.70, 0.76, 0.36, 1.61, 1.78, "", "", 0.83, 3.97, 2.35, 1.38, "", "", 8.88],
+                ["", 12.22, 4.14, 48.31, 23.98, 31.09, 7.08, 16.69, 22.10, 35.94, 0.76, 0.36, 1.61, 1.78, "", "", 0.92, 4.12, 2.35, 1.43, "", "", 8.74],
+                ["", 5.69, 2.19, 20.23, 13.02, "", "", 13.33, 3.36, 2.12, "", "", "", "", "", "", 2.82, 15.26, 9.43, 1.47, "", "", 29.22],
+                ["", 5.66, 2.20, 20.10, 13.08, "", "", 13.38, 3.35, 2.13, "", "", "", "", "", "", 3.12, 15.11, 9.70, 1.53, "", "", 29.13],
+                ["", 5.72, 2.18, 20.36, 12.96, "", "", 13.28, 3.37, 2.11, "", "", "", "", "", "", 2.97, 15.18, 9.57, 1.50, "", "", 29.31],
+                ["", 13.53, 5.49, 23.16, 13.10, 17.40, 11.69, 7.45, 5.59, 5.39, "", "", 0.46, 0.94, "", "", 1.03, 0.83, "", "", "", "", 1.84],
+                ["", 13.61, 5.47, 23.28, 13.17, 17.52, 11.67, 7.42, 5.57, 5.41, "", "", 0.46, 0.94, "", "", 1.04, 0.78, "", "", "", "", 1.73],
+                ["", 13.45, 5.51, 23.04, 13.03, 17.28, 11.71, 7.48, 5.61, 5.37, "", "", 0.46, 0.94, "", "", 1.03, 0.81, "", "", "", "", 1.95],
+                ["", 17.06, 4.87, 32.33, 18.29, 37.64, 7.05, 18.12, 18.93, 36.29, 0.77, 0.52, 1.56, 1.45, "", "", 1.02, 3.37, 2.73, "", "", "", 8.60],
+                ["", 17.16, 4.90, 32.12, 18.21, 37.86, 7.07, 18.20, 18.83, 36.08, 0.77, 0.52, 1.56, 1.45, "", "", 1.20, 3.93, 2.58, "", "", "", 8.64],
+                ["", 16.96, 4.84, 32.54, 18.37, 37.42, 7.03, 18.04, 19.03, 36.50, 0.77, 0.52, 1.56, 1.45, "", "", 1.11, 3.65, 2.66, "", "", "", 8.56],
+                ["", 11.31, 6.06, 25.25, 22.34, 29.73, "", 12.96, 3.70, 0.63, "", "", 11.31, "", "", "", 2.90, 11.65, 1.54, 1.25, "", "", 17.08],
+                ["", 11.38, 6.09, 25.13, 22.22, 29.95, "", 13.05, 3.71, 0.63, "", "", 11.31, "", "", "", 2.65, 11.59, 1.45, 1.14, "", "", 17.22],
+                ["", 11.32, 6.03, 25.37, 22.46, 29.51, "", 12.87, 3.69, 0.63, "", "", 11.31, "", "", "", 2.77, 11.62, 1.50, 1.19, "", "", 16.94]
+            ]
+
+
+        var div = $("<div style='margin-bottom:10px;display: none' id='divogpt1'></div>")
+        var table = $("<table class=\"table table-bordered table-striped\" style='font-size: 16px;margin-top: 10px'></table>");
+        // 添加表头和表格内容
+        for (var i = 0; i < data1.length; i++) {
+            var row = $("<tr></tr>");
+            for (var j = 0; j < data1[i].length; j++) {
+                var cell = i === 0 ? "<th>" : "<td>";
+                cell += data1[i][j];
+                cell += i === 0 ? "</th>" : "</td>";
+                row.append(cell);
+            }
+            table.append(row);
+        }
+        div.append(table)
+        return div
+    }
+
+    function shto1() {
+        var data1 =
+            [
+                ["Pb（mg/kg）", "Cd（mg/kg", "Hg(ug/kg)", "As（mg/kg）"],
+                [0.12, 0.39, 10.26581118, 1.38],
+                [0.12, 0.36, 10.362, 1.44],
+                [0.12, 0.38, 10.31, 1.41],
+                [0.27, 0.54, 14.38547486, 1.37],
+                [0.27, 0.53, 14.325, 1.31],
+                [0.27, 0.54, 14.36, 1.34],
+                [0.18, 0.48, 16.08767577, 1.55],
+                [0.19, 0.49, 16.032, 1.52],
+                [0.19, 0.49, 16.06, 1.53],
+                [0.10, 0.36, 13.40206186, 1.26],
+                [0.10, 0.34, 14.236, 1.23],
+                [0.10, 0.35, 13.82, 1.24],
+                [0.27, 0.64, 10.41529334, 1.31],
+                [0.28, 0.61, 10.326, 1.30],
+                [0.28, 0.63, 10.37, 1.31],
+                [0.23, 0.66, 14.06360424, 1.56],
+                [0.24, 0.66, 15.003, 1.51],
+                [0.23, 0.66, 14.53, 1.53]
+            ]
+
+        var div = $("<div style='margin-bottom:10px;display: none' id='divshto1'></div>")
+        var table = $("<table class=\"table table-bordered table-striped\" style='font-size: 16px;margin-top: 10px'></table>");
+        // 添加表头和表格内容
+        for (var i = 0; i < data1.length; i++) {
+            var row = $("<tr></tr>");
+            for (var j = 0; j < data1[i].length; j++) {
+                var cell = i === 0 ? "<th>" : "<td>";
+                cell += data1[i][j];
+                cell += i === 0 ? "</th>" : "</td>";
+                row.append(cell);
+            }
+            table.append(row);
+        }
+        div.append(table)
+        return div
+    }
+
+    function ant1() {
+        var data1 =[
+            [	"Escherichia coli"	,"Vibrio parahaemolyticus"],
+                [0.62, 7.20],
+            [0.50, 6.00],
+            [0.74, 8.40],
+            [21.00, 11.00],
+            [21.10, 11.10],
+            [20.90, 10.90],
+            [2.10, 23.00],
+            [2.18, 23.80],
+            [2.02, 22.20],
+            [9.30, 11.00],
+            [9.34, 11.06],
+            [9.36, 10.94],
+            [26.00, 12.08],
+            [26.10, 12.00],
+            [26.90, 11.92],
+            [1.50, 11.00],
+            [1.55, 11.05],
+            [1.45, 10.95]]
+
+        var div = $("<div style='margin-bottom:10px;display: none' id='divant1'></div>")
+        var table = $("<table class=\"table table-bordered table-striped\" style='font-size: 16px;margin-top: 10px'></table>");
+        // 添加表头和表格内容
+        for (var i = 0; i < data1.length; i++) {
+            var row = $("<tr></tr>");
+            for (var j = 0; j < data1[i].length; j++) {
+                var cell = i === 0 ? "<th>" : "<td>";
+                cell += data1[i][j];
+                cell += i === 0 ? "</th>" : "</td>";
+                row.append(cell);
+            }
+            table.append(row);
+        }
+        div.append(table)
+        return div
+    }
+
+//---
+    function ant() {
+        var data1 =
+            [["ug/kg", "Chloramphenicol", "Thiamphenicol", "Florfenicol", "Malachite green", "Leucomalachite green", "3-Armino-2-oxazolidinone", "5-Morpholino-methyl-3-armino-2-oxazolidinone", "Semicarbazid", "1-Aminohydantoin", "Sulfadiazine", "Sulfathiazole", "Sulfamerazine", "Sulfamethazine", "Sulfamonomethoxine", "Sulfamethizole", "Sulfachloropyridazine", "Sulfadoxine", "Sulfadimethoxine", "Sulfamethoxazole", "Sulfisoxazole", "Sulfaquinoxaline", "Enrofloxacin", "Norfloxacin", "Ciprofloxacin", "Ofloxacin", "Pefloxacin", "Lomefloxacin"],
+                ["YY-1", "ND", "ND", "ND", "ND", "ND", "", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND"],
+                ["YY-2", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND"],
+                ["YY-3", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND"],
+                ["SHD-1", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND"],
+                ["SHD-2", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND"],
+                ["SHD-3", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND"],
+                ["YMD-1", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND"],
+                ["YMD-2", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND"],
+                ["YMD-3", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND"],
+                ["KTD-1", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND"],
+                ["KTD-2", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND"],
+                ["KTD-3", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND"],
+                ["CD-1", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND"],
+                ["CD-2", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND"],
+                ["CD-3", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND"],
+                ["SD-1", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND"],
+                ['SD-2', 'ND', 'ND', 'ND', 'ND', 'ND', 'ND', 'ND', 'ND', 'ND', 'ND', 'ND', 'ND', 'ND', 'ND', 'ND', 'ND', 'ND', 'ND', 'ND', 'ND', 'ND', 'ND', 'ND', 'ND', 'ND', 'ND', 'ND'],
+                ['SD-3', 'ND', 'ND', 'ND', 'ND', 'ND', 'ND', 'ND', 'ND', 'ND', 'ND', 'ND', 'ND', 'ND', 'ND', 'ND', 'ND', 'ND', 'ND', 'ND', 'ND', 'ND', 'ND', 'ND', 'ND', 'ND', 'ND', 'ND'],
+                ['XS-1', 'ND', 'ND', 'ND', 'ND', 'ND', 'ND', 'ND', 'ND', 'ND', 'ND', 'ND', 'ND', 'ND', 'ND', 'ND', 'ND', 'ND', 'ND', 'ND', 'ND', 'ND', 'ND', 'ND', 'ND', 'ND', 'ND', 'ND'],
+                ["XS-2", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND"],
+                ["XS-3", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND"],
+                ["RS-1", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND"],
+            ]
+
+        var div = $("<div style='margin-bottom:10px;display: none' id='divant'></div>")
+        var table = $("<table class=\"table table-bordered table-striped\" style='font-size: 16px;margin-top: 10px'></table>");
+        // 添加表头和表格内容
+        for (var i = 0; i < data1.length; i++) {
+            var row = $("<tr></tr>");
+            for (var j = 0; j < data1[i].length; j++) {
+                var cell = i === 0 ? "<th>" : "<td>";
+                cell += data1[i][j];
+                cell += i === 0 ? "</th>" : "</td>";
+                row.append(cell);
+            }
+            table.append(row);
+        }
+        div.append(table)
+        return div
+    }
+
+//------------------------
+    function ogpt() {
+        var data1 =
+            [['ug/kg', 'Naphthalene', 'Acenaphthene', 'Fluornene', 'Phenanthrene', 'Anthracene', 'Fluoranthene', 'Pyrene', 'Benz[a]anthracene BaA', 'Chrysene CHR', 'Benzo[b]fluoranthene BbFA', 'Benzo[k]fluoranthene BkFA', 'Benzo[a]pyrene BaP', 'Dibenz[a,h]anthracene DBahA', 'Benzo[g,h,i]perylene BghiP', 'Indeno[1,2,3-c,d]pyrene I', 'PCB28', 'PCB52', 'PCB101', 'PCB118', 'PCB180', 'PCB138', 'PCB153'],
+                ['YY-1', 'ND', 'ND', 'ND', 7.06, 'ND', 4.57, 'ND', 'ND', 5.79, 'ND', 'ND', 'ND', 'ND', 'ND', 'ND', 1.74, 'ND', 'ND', 'ND', 'ND', 'ND'],
+                ['YY-2', 'ND', 'ND', 'ND', 6.78, 'ND', 4.30, 'ND', 'ND', 5.40, 'ND', 'ND', 'ND', 'ND', 'ND', 'ND', 1.96, 'ND', 'ND', 'ND', 'ND', 'ND'],
+                ['YY-3', 'ND', 'ND', 'ND', 7.00, 'ND', 4.02, 'ND', 'ND', 5.59, 'ND', 'ND', 'ND', 'ND', 'ND', 'ND', 1.80, 'ND', 'ND', 'ND', 'ND', 'ND'],
+                ['SHD-1', 'ND', 'ND', 'ND', 7.75, 'ND', 'ND', 'ND', 'ND', 'ND', 'ND', 'ND', 'ND', 'ND', 'ND', 'ND', 1.18, 'ND', 'ND', 'ND', 'ND', 'ND'],
+                ['SHD-2', 'ND', 'ND', 'ND', 7.79, 'ND', 'ND', 'ND', 'ND', 'ND', 'ND', 'ND', 'ND', 'ND', 'ND', 'ND', 1.29, 'ND', 'ND', 'ND', 'ND', 'ND'],
+                ['SHD-3', 'ND', 'ND', 'ND', 7.65, 'ND', 'ND', 'ND', 'ND', 'ND', 'ND', 'ND', 'ND', 'ND', 'ND', 'ND', 1.15, 'ND', 'ND', 'ND', 'ND', 'ND'],
+                ['YMD-1', 'ND', 3.98, 'ND', 5.27, 2.97, 'ND', 'ND', 'ND', 'ND', 'ND', 'ND', 'ND', 'ND', 'ND', 'ND', 0.98, 0.54, 'ND', 'ND', 'ND', 'ND'],
+                ['YMD-2', 'ND', 4.06, 'ND', 5.23, 2.77, 'ND', 'ND', 'ND', 'ND', 'ND', 'ND', 'ND', 'ND', 'ND', 'ND', 1.01, 0.68, 'ND', 'ND', 'ND', 'ND'],
+                ["YMD-3", "ND", 4.05, "ND", 5.14, 2.87, "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", 1.02, 0.55, "ND", "ND", "ND", "ND"],
+                ["KTD-1", "ND", "ND", "ND", 6.15, "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", 2.54, "ND", "ND", "ND", "ND", "ND"],
+                ["KTD-2", "ND", "ND", "ND", 6.11, "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", 2.32, "ND", "ND", "ND", "ND", "ND"],
+                ["KTD-3", "ND", "ND", "ND", 6.07, "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", 2.42, "ND", "ND", "ND", "ND", "ND"],
+                ["CD-1", "ND", "ND", "ND", 6.91, "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", 2.07, "ND", "ND", "ND", "ND", "ND"],
+                ["CD-2", "ND", "ND", "ND", 6.68, "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", 2.08, "ND", "ND", "ND", "ND", "ND"],
+                ["SD-3", "ND", "ND", "ND", 6.45, "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", 1.85, 0.75, "ND", 0.76, "ND", "ND"],
+                ["XS-1", "ND", "ND", "ND", 5.58, "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", 2.20, 0.85, "ND", 0.63, "ND", "ND"],
+                ["XS-2", "ND", "ND", "ND", 5.70, "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", 2.23, 0.99, "ND", 0.56, "ND", "ND"],
+                ["XS-3", "ND", "ND", "ND", 5.84, "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", 2.21, 0.92, "ND", 0.65, "ND", "ND"],
+                ["RS-1", "ND", "ND", "ND", 5.83, "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", 3.87, 0.98, "ND", 0.74, "ND", "ND"],
+                ["RS-2", "ND", "ND", "ND", 5.74, "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", 4.09, 0.88, "ND", 0.73, "ND", "ND"],
+                ["RS-3", "ND", "ND", "ND", 5.51, "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", 3.92, 0.78, "ND", 0.69, "ND", "ND"],
+                ["LS-1", "ND", "ND", "ND", 7.69, "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", 3.68, 0.51, "ND", 0.97, "ND", "ND"],
+                ["LS-2", "ND", "ND", "ND", 7.54, "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", 3.74, 0.50, "ND", 0.87, "ND", "ND"],
+                ["LS-3", "ND", "ND", "ND", 7.38, "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", 3.53, 0.52, "ND", 0.90, "ND", "ND"],
+                ["RJT-1", "ND", "ND", "ND", 7.80, "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", 2.86, 0.66, "ND", "ND", "ND", "ND"],
+                ["RJT-2", "ND", "ND", "ND", 7.86, "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", 2.67, 0.64, "ND", "ND", "ND", "ND"],
+                ["RJT-3", "ND", "ND", "ND", 7.86, "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", 2.69, 0.63, "ND", "ND", "ND", "ND"]
+            ]
+
+        var div = $("<div style='margin-bottom:10px;display: none' id='divogpt'></div>")
+        var table = $("<table class=\"table table-bordered table-striped\" style='font-size: 16px;margin-top: 10px'></table>");
+        // 添加表头和表格内容
+        for (var i = 0; i < data1.length; i++) {
+            var row = $("<tr></tr>");
+            for (var j = 0; j < data1[i].length; j++) {
+                var cell = i === 0 ? "<th>" : "<td>";
+                cell += data1[i][j];
+                cell += i === 0 ? "</th>" : "</td>";
+                row.append(cell);
+            }
+            table.append(row);
+        }
+        div.append(table)
+        return div
+    }
+
+    function shto() {
+        var data1 =
+            [["YY-1", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND"],
+                ["YY-2", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND"],
+                ["YY-3", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND"],
+                ["SHD-1", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND"],
+                ["SHD-2", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND"],
+                ["SHD-3", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND"],
+                ["YMD-1", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND"],
+                ["YMD-2", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND"],
+                ["YMD-3", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND"],
+                ["KTD-1", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", 10.39, "ND", "ND"],
+                ["KTD-2", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", 11.20, "ND", "ND"],
+                ["KTD-3", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", 12.56, "ND", "ND"],
+                ["CD-1", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", 12.85, "ND", "ND"],
+                ["CD-2", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", 12.53, "ND", "ND"],
+                ["CD-3", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", 13.15, "ND", "ND"],
+                ["SD-1", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND"],
+                ["SD-2", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND"],
+                ["SD-3", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND"],
+                ["XS-1", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND"],
+                ["XS-2", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND"],
+                ["XS-3", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND"],
+                ["RS-1", "ND", "ND", "ND", 58.79, 53.78, "ND", "ND", "ND", "ND", "ND", 77.30, 18.89, "ND", "ND"],
+                ["RS-2", "ND", "ND", "ND", 60.65, 51.90, "ND", "ND", "ND", "ND", "ND", 76.16, 18.24, "ND", "ND"],
+                ["RS-3", "ND", "ND", "ND", 56.98, 55.78, "ND", "ND", "ND", "ND", "ND", 78.57, 19.45, "ND", "ND"],
+                ["LS-1", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", 20.44, "ND", "ND"],
+                ["LS-2", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", 22.13, "ND", "ND"],
+                ["LS-3", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", 20.30, "ND", "ND"],
+                ["RJT-1", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND"],
+                ["RJT-2", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND"],
+                ["RJT-3", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND", "ND"]]
+        var div = $("<div style='margin-bottom:10px;display: none' id='divshto'></div>")
+        var table = $("<table class=\"table table-bordered table-striped\" style='font-size: 16px;margin-top: 10px'></table>");
+        // 添加表头和表格内容
+        for (var i = 0; i < data1.length; i++) {
+            var row = $("<tr></tr>");
+            for (var j = 0; j < data1[i].length; j++) {
+                var cell = i === 0 ? "<th>" : "<td>";
+                cell += data1[i][j];
+                cell += i === 0 ? "</th>" : "</td>";
+                row.append(cell);
+            }
+            table.append(row);
+        }
+        div.append(table)
+        return div
+    }
+
+
+    function smif() {
+        var data1 =
+            [['', "种类", ''],
+                ['YY-1', 1, '远遥'],
+                ['YY-2', "", '远遥'],
+                ['YY-3', "", '远遥'],
+                ['SHD-1', 2, '双岛'],
+                ['SHD-2', "", '双岛'],
+                ['SHD-3', "", '双岛'],
+                ['YMD-1', 3, '养马岛'],
+                ['YMD-2', "", '养马岛'],
+                ['YMD-3', "", '养马岛'],
+                ['KTD-1', 4, '崆峒岛'],
+                ['KTD-2', "", '崆峒岛'],
+                ['KTD-3', "", '崆峒岛'],
+                ['CD-1', 5, '长岛'],
+                ['CD-2', "", '长岛'],
+                ['CD-3', "", '长岛'],
+                ['SD-1', 6, '石岛'],
+                ['SD-2', "", '石岛'],
+                ['SD-3', "", '石岛'],
+                ['XS-1', 7, '寻山'],
+                ['XS-2', "", '寻山'],
+                ['XS-3', "", '寻山'],
+                ['RS-1', 8, '乳山'],
+                ['RS-2', "", '乳山'],
+                ['RS-3', "", '乳山'],
+                ['LS-1', 9, '崂山'],
+                ['LS-2', "", '崂山'],
+                ['LS-3', "", '崂山'],
+                ['RJT-1', 10, '日照任家台'],
+                ['RJT-2', "", '日照任家台'],
+                ['RJT-3', "", '日照任家台']
+            ];
+        var div = $("<div style='margin-bottom:10px;display: block' id='divsmif'></div>")
+        var table = $("<table class=\"table table-bordered table-striped\" style='font-size: 16px;margin-top: 10px'></table>");
+        // 添加表头和表格内容
+        for (var i = 0; i < data1.length; i++) {
+            var row = $("<tr></tr>");
+            for (var j = 0; j < data1[i].length; j++) {
+                var cell = i === 0 ? "<th>" : "<td>";
+                cell += data1[i][j];
+                cell += i === 0 ? "</th>" : "</td>";
+                row.append(cell);
+            }
+            table.append(row);
+        }
+        div.append(table)
+        return div
     }
 
 
@@ -683,7 +1172,7 @@ $(function () {
             ['2022/5/1', 144, 'ND', 2.80, 9.49, 12.99, 7.30, 7.90, 5.57, 2.65, 2.18, 'ND', 'ND', 'ND', 4.67, 'ND', 'ND']
         ]
 
-        var div = $("<div style='margin-bottom:10px;display: none' id='divdltb'></div>")
+        var div = $("<div style='margin-bottom:10px;display: none' id='divhtft'></div>")
         var table = $("<table class=\"table table-bordered table-striped\" style='font-size: 16px;margin-top: 10px'></table>");
         // 添加表头和表格内容
         for (var i = 0; i < data1.length; i++) {
@@ -720,7 +1209,7 @@ $(function () {
             ["2022/3/4", 38.77, 19.30, 0.50, "", 74.89, 69.11, 23.22],
             ["2022/5/11", 47.88, 24.64, 0.51, "", 74.67, 69.00, 20.00]
         ];
-       var div = $("<div id='divypxz' style='display: block'></div>")
+        var div = $("<div id='divypxz' style='display: block'></div>")
         console.log(div)
         var table = $("<table class=\"table table-bordered table-striped\" style='font-size: 16px;margin-top: 10px'></table>");
         // 添加表头和表格内容
