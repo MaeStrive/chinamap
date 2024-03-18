@@ -211,6 +211,418 @@ $(function () {
         );
     })
 
+    $(".yufei").click(function () {
+        dataname = "育肥场"
+        info2 = yufeichangdata
+        structs_datas = []
+        format_struct_data(info2.children, structs_datas);
+        myChart1.setOption(
+            (option = {
+                tooltip: {
+                    formatter: function (info) {
+                        console.log("tool------", info);
+                        var val = info.data.value;
+                        var name = info.name;
+                        return ["<h4 style='color: #f30619;font-weight: 700'>" + name + "</>"].join("");
+                    },
+                    // rich: RICH, tooltip不支持富文本
+                },
+
+                series: [
+                    {
+                        name: dataname,
+                        type: "treemap",
+                        visibleMin: 1,
+                        // data: format_struct_data(info2.children, structs_datas),
+                        data: structs_datas,
+                        leafDepth: 1,
+                        // roam: false,
+                        label: {
+                            normal: {
+                                show: true,
+                                position: "insideTopLeft",
+                                formatter: function (a) {
+                                    console.log("formatter==label=======", a);
+                                    return (
+                                        "{Name|" +
+                                        a.name +
+                                        "}"
+                                    );
+                                },
+                                textStyle: {
+                                    // color: '',  label的字体颜色
+                                    fontSize: "14",
+                                    fontWeight: "bold",
+                                },
+                                rich: RICH,
+                            },
+                        },
+                        levels: [
+                            {
+                                itemStyle: {
+                                    normal: {
+                                        borderWidth: 0,
+                                        gapWidth: 2,
+                                    },
+                                },
+                            },
+                            {
+                                itemStyle: {
+                                    normal: {
+                                        gapWidth: 2,
+                                    },
+                                },
+                            },
+                            {
+                                // colorSaturation: [0.35, 0.5],
+                                itemStyle: {
+                                    normal: {
+                                        gapWidth: 2,
+                                        // borderColorSaturation: 0.6
+                                    },
+                                },
+                            },
+                        ],
+                        breadcrumb: {
+                            show: true,
+                            // "height": 22,
+                            left: "10%",
+                            top: "93%",
+                            emptyItemWidth: 25,
+                            itemStyle: {
+                                normal: {
+                                    color: "#fff",
+                                    borderColor: "rgba(255,255,255,0.7)",
+                                    borderWidth: 1,
+                                    shadowColor: "rgba(150,150,150,1)",
+                                    shadowBlur: 3,
+                                    shadowOffsetX: 0,
+                                    shadowOffsetY: 0,
+                                    textStyle: {
+                                        color: "#000",
+                                        fontWeight: "bold",
+                                    },
+                                },
+                                emphasis: {
+                                    textStyle: {},
+                                },
+                            },
+                        },
+                    },
+                ],
+            })
+        );
+    })
+
+    $(".zaiqian").click(function () {
+        dataname = "宰前管理"
+        info2 = zaiqiandata
+        structs_datas = []
+        format_struct_data(info2.children, structs_datas);
+        myChart1.setOption(
+            (option = {
+                tooltip: {
+                    formatter: function (info) {
+                        console.log("tool------", info);
+                        var val = info.data.value;
+                        var name = info.name;
+                        return ["<h4 style='color: #f30619;font-weight: 700'>" + name + "</>"].join("");
+                    },
+                    // rich: RICH, tooltip不支持富文本
+                },
+
+                series: [
+                    {
+                        name: dataname,
+                        type: "treemap",
+                        visibleMin: 1,
+                        // data: format_struct_data(info2.children, structs_datas),
+                        data: structs_datas,
+                        leafDepth: 1,
+                        // roam: false,
+                        label: {
+                            normal: {
+                                show: true,
+                                position: "insideTopLeft",
+                                formatter: function (a) {
+                                    console.log("formatter==label=======", a);
+                                    return (
+                                        "{Name|" +
+                                        a.name +
+                                        "}"
+                                    );
+                                },
+                                textStyle: {
+                                    // color: '',  label的字体颜色
+                                    fontSize: "14",
+                                    fontWeight: "bold",
+                                },
+                                rich: RICH,
+                            },
+                        },
+                        levels: [
+                            {
+                                itemStyle: {
+                                    normal: {
+                                        borderWidth: 0,
+                                        gapWidth: 2,
+                                    },
+                                },
+                            },
+                            {
+                                itemStyle: {
+                                    normal: {
+                                        gapWidth: 2,
+                                    },
+                                },
+                            },
+                            {
+                                // colorSaturation: [0.35, 0.5],
+                                itemStyle: {
+                                    normal: {
+                                        gapWidth: 2,
+                                        // borderColorSaturation: 0.6
+                                    },
+                                },
+                            },
+                        ],
+                        breadcrumb: {
+                            show: true,
+                            // "height": 22,
+                            left: "10%",
+                            top: "93%",
+                            emptyItemWidth: 25,
+                            itemStyle: {
+                                normal: {
+                                    color: "#fff",
+                                    borderColor: "rgba(255,255,255,0.7)",
+                                    borderWidth: 1,
+                                    shadowColor: "rgba(150,150,150,1)",
+                                    shadowBlur: 3,
+                                    shadowOffsetX: 0,
+                                    shadowOffsetY: 0,
+                                    textStyle: {
+                                        color: "#000",
+                                        fontWeight: "bold",
+                                    },
+                                },
+                                emphasis: {
+                                    textStyle: {},
+                                },
+                            },
+                        },
+                    },
+                ],
+            })
+        );
+    })
+
+    $(".tuzai").click(function () {
+        dataname = "屠宰"
+        info2 = tuzaidata
+        structs_datas = []
+        format_struct_data(info2.children, structs_datas);
+        myChart1.setOption(
+            (option = {
+                tooltip: {
+                    formatter: function (info) {
+                        console.log("tool------", info);
+                        var val = info.data.value;
+                        var name = info.name;
+                        return ["<h4 style='color: #f30619;font-weight: 700'>" + name + "</>"].join("");
+                    },
+                    // rich: RICH, tooltip不支持富文本
+                },
+
+                series: [
+                    {
+                        name: dataname,
+                        type: "treemap",
+                        visibleMin: 1,
+                        // data: format_struct_data(info2.children, structs_datas),
+                        data: structs_datas,
+                        leafDepth: 1,
+                        // roam: false,
+                        label: {
+                            normal: {
+                                show: true,
+                                position: "insideTopLeft",
+                                formatter: function (a) {
+                                    console.log("formatter==label=======", a);
+                                    return (
+                                        "{Name|" +
+                                        a.name +
+                                        "}"
+                                    );
+                                },
+                                textStyle: {
+                                    // color: '',  label的字体颜色
+                                    fontSize: "14",
+                                    fontWeight: "bold",
+                                },
+                                rich: RICH,
+                            },
+                        },
+                        levels: [
+                            {
+                                itemStyle: {
+                                    normal: {
+                                        borderWidth: 0,
+                                        gapWidth: 2,
+                                    },
+                                },
+                            },
+                            {
+                                itemStyle: {
+                                    normal: {
+                                        gapWidth: 2,
+                                    },
+                                },
+                            },
+                            {
+                                // colorSaturation: [0.35, 0.5],
+                                itemStyle: {
+                                    normal: {
+                                        gapWidth: 2,
+                                        // borderColorSaturation: 0.6
+                                    },
+                                },
+                            },
+                        ],
+                        breadcrumb: {
+                            show: true,
+                            // "height": 22,
+                            left: "10%",
+                            top: "93%",
+                            emptyItemWidth: 25,
+                            itemStyle: {
+                                normal: {
+                                    color: "#fff",
+                                    borderColor: "rgba(255,255,255,0.7)",
+                                    borderWidth: 1,
+                                    shadowColor: "rgba(150,150,150,1)",
+                                    shadowBlur: 3,
+                                    shadowOffsetX: 0,
+                                    shadowOffsetY: 0,
+                                    textStyle: {
+                                        color: "#000",
+                                        fontWeight: "bold",
+                                    },
+                                },
+                                emphasis: {
+                                    textStyle: {},
+                                },
+                            },
+                        },
+                    },
+                ],
+            })
+        );
+    })
+
+    $(".lenglian").click(function () {
+        dataname = "冷链运输"
+        info2 = lengliandata
+        structs_datas = []
+        format_struct_data(info2.children, structs_datas);
+        myChart1.setOption(
+            (option = {
+                tooltip: {
+                    formatter: function (info) {
+                        console.log("tool------", info);
+                        var val = info.data.value;
+                        var name = info.name;
+                        return ["<h4 style='color: #f30619;font-weight: 700'>" + name + "</>"].join("");
+                    },
+                    // rich: RICH, tooltip不支持富文本
+                },
+
+                series: [
+                    {
+                        name: dataname,
+                        type: "treemap",
+                        visibleMin: 1,
+                        // data: format_struct_data(info2.children, structs_datas),
+                        data: structs_datas,
+                        leafDepth: 1,
+                        // roam: false,
+                        label: {
+                            normal: {
+                                show: true,
+                                position: "insideTopLeft",
+                                formatter: function (a) {
+                                    console.log("formatter==label=======", a);
+                                    return (
+                                        "{Name|" +
+                                        a.name +
+                                        "}"
+                                    );
+                                },
+                                textStyle: {
+                                    // color: '',  label的字体颜色
+                                    fontSize: "14",
+                                    fontWeight: "bold",
+                                },
+                                rich: RICH,
+                            },
+                        },
+                        levels: [
+                            {
+                                itemStyle: {
+                                    normal: {
+                                        borderWidth: 0,
+                                        gapWidth: 2,
+                                    },
+                                },
+                            },
+                            {
+                                itemStyle: {
+                                    normal: {
+                                        gapWidth: 2,
+                                    },
+                                },
+                            },
+                            {
+                                // colorSaturation: [0.35, 0.5],
+                                itemStyle: {
+                                    normal: {
+                                        gapWidth: 2,
+                                        // borderColorSaturation: 0.6
+                                    },
+                                },
+                            },
+                        ],
+                        breadcrumb: {
+                            show: true,
+                            // "height": 22,
+                            left: "10%",
+                            top: "93%",
+                            emptyItemWidth: 25,
+                            itemStyle: {
+                                normal: {
+                                    color: "#fff",
+                                    borderColor: "rgba(255,255,255,0.7)",
+                                    borderWidth: 1,
+                                    shadowColor: "rgba(150,150,150,1)",
+                                    shadowBlur: 3,
+                                    shadowOffsetX: 0,
+                                    shadowOffsetY: 0,
+                                    textStyle: {
+                                        color: "#000",
+                                        fontWeight: "bold",
+                                    },
+                                },
+                                emphasis: {
+                                    textStyle: {},
+                                },
+                            },
+                        },
+                    },
+                ],
+            })
+        );
+    })
+
     RICH = {
         name: {
             color: "#fff",
