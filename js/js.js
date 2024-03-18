@@ -49,7 +49,8 @@ function echarts_996() {
               trigger: 'axis'
             },
             legend: {
-              data: ['Naphthalene', 'Acenaphthene', 'PCB52', 'PCB101', 'OA','Escherichia coli','Vibrio parahaemolyticus'],
+              data: ['Naphthalene', 'Acenaphthene', 'PCB52', 'PCB101', 'OA','Escherichia coli',
+              ,'Indoor TSP','Indoor PM2.5','Outdoor TSP'],
               textStyle:{
                 color:'white'
             },
@@ -143,11 +144,24 @@ function echarts_996() {
                 // stack: 'Total',
                 data: [1.41, 0.977, 2.06, 1.867, 5.62, 5.535, 2.85]
               },
+              
               {
-                name: 'Vibrio parahaemolyticus',
+                name: 'Indoor TSP',
                 type: 'line',
                 // stack: 'Total',
-                data: [4.67, 0, 0, 1.067, 15.757, 5.85, 0.71]
+                data: ['','',99.02, 119.57, 80.41, 94.11,'']
+              },
+              {
+                name: 'Indoor PM2.5',
+                type: 'line',
+                // stack: 'Total',
+                data: ['','',58.92, 49.93, 43.69, 47.23,'']
+              },
+              {
+                name: 'Outdoor TSP',
+                type: 'line',
+                // stack: 'Total',
+                data: ['','',97.77, 102.48, 138.73, 100.93,'']
               }
             ]
           };
