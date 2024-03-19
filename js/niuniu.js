@@ -68,19 +68,21 @@ $(function () {
 
         var tabledata = []
         niudata2.forEach(function (value, index, array) {
-            if (index == 0) tabledata.push(value)
-            else {
-                let len = 0;
-                for (let i = 0; i < value.length; i++) {
-                    if (value[i] == selectitem[i].val()) {
-                        len++
-                        if (len == 15) {
-                            tabledata.push(value)
-                        }
-                    }
-                }
-            }
+            tabledata.push(value)
+            // if (index == 0) tabledata.push(value)
+            // else {
+            //     let len = 0;
+            //     for (let i = 0; i < value.length; i++) {
+            //         if (value[i] == selectitem[i].val()) {
+            //             len++
+            //             if (len == 15) {
+            //                 tabledata.push(value)
+            //             }
+            //         }
+            //     }
+            // }
         })
+        var tableBoder = $("<div style='height: 500px;overflow: auto'></<div>>");
         var tableddd = $("<table class=\"table table-bordered table-striped\" style='font-size: 16px;margin-top: 10px'></table>");
         // 添加表头和表格内容
         for (var i = 0; i < tabledata.length; i++) {
@@ -93,14 +95,16 @@ $(function () {
             }
             tableddd.append(row);
         }
+        tableBoder.append(tableddd)
 
 
         outerdiv.append(innerdiv1)
         outerdiv.append(innerdiv2)
         outerdiv.append(innerdiv3)
-        outerdiv.append($("<div style='margin-top: 15px;text-align: center'><button class=\"btn btn-success query niubutton\" style='width: 10%'>查询</button></div>"))
+        outerdiv.append($("<div style='margin-top: 15px;text-align: center'><button class=\"btn btn-success query niubutton\" style='width: 10%'>查询</button>" +
+            "&emsp;&emsp;<button class=\"btn btn-warning queryAll niubutton\" style='width: 10%'>显示全部</button></div>"))
         innerdiv2New.append(outerdiv)
-        innerdiv2New.append(tableddd)
+        innerdiv2New.append(tableBoder)
         div.append(innerdiv1New)
         div.append(innerdiv2New)
 
@@ -128,6 +132,26 @@ $(function () {
                         }
                     }
                 }
+            })
+            console.log(tabledata)
+            for (var i = 0; i < tabledata.length; i++) {
+                var row = $("<tr></tr>");
+                for (var j = 0; j < tabledata[i].length; j++) {
+                    var cell = i === 0 ? "<th>" : "<td>";
+                    cell += tabledata[i][j];
+                    cell += i === 0 ? "</th>" : "</td>";
+                    row.append(cell);
+                }
+                tableddd.append(row);
+            }
+        })
+
+
+        $(".queryAll").click(function () {
+            tableddd.empty()
+            tabledata = []
+            niudata2.forEach(function (value, index, array) {
+                tabledata.push(value)
             })
             console.log(tabledata)
             for (var i = 0; i < tabledata.length; i++) {
