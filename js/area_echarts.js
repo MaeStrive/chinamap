@@ -19,6 +19,20 @@ $(function () {
                         color: struct_colors[Math.floor(Math.random() * 20)]
                     }
                 };
+                if(data.name==="黑龙江"||data.name==="吉林"||data.name==="辽宁"){
+                    optionmap.series[0].data[i].itemStyle = {
+                        normal: {
+                            color: struct_colors[0]
+                        }
+                    }
+                }
+                if(data.name==="新疆"||data.name==="甘肃"){
+                    optionmap.series[0].data[i].itemStyle = {
+                        normal: {
+                            color: struct_colors[1]
+                        }
+                    }
+                }
                 optionmap.series[0].data[i].value = data.value
             } else {
                 // console.log

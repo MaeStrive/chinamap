@@ -10681,6 +10681,11 @@ var baomi = [
     {name: '安徽', value: 10},
     {name: '山西', value: 60},
     {name: '山东', value: 60},
+    {name: '黑龙江', value: 60},
+    {name: '吉林', value: 60},
+    {name: '辽宁', value: 60},
+    {name: '新疆', value: 60},
+    {name: '甘肃', value: 60},
 ]
 
 var baomititle = ["#", "DON", "AFB1", "AFB2", "AFG1", "AFG2", "FB1"]
@@ -10761,6 +10766,19 @@ var anhuidata = [
     ["利辛市", 17.02, 1.41, 2.50, 0.34, 0.82, 827.32],
     ["店集市", 7.86, 7.25, 0.98, 0.17, 0.35, 892.08],
 ]
+var dongbeidata = [
+    baomititle,
+    ["阜阳市", 64.40, 4.11, 3.09, 0.21, 0.31, 2615.55],
+    ["利辛市", 17.02, 1.41, 2.50, 0.34, 0.82, 827.32],
+    ["店集市", 7.86, 7.25, 0.98, 0.17, 0.35, 892.08],
+]
+
+var xibeidata = [
+    baomititle,
+    ["阜阳市", 64.40, 4.11, 3.09, 0.21, 0.31, 2615.55],
+    ["利辛市", 17.02, 1.41, 2.50, 0.34, 0.82, 827.32],
+    ["店集市", 7.86, 7.25, 0.98, 0.17, 0.35, 892.08],
+]
 
 var shuju = [
     {value: yunnandata, name: "云南"},
@@ -10771,6 +10789,11 @@ var shuju = [
     {value: shaanxidata, name: "陕西"},
     {value: henandata, name: "河南"},
     {value: anhuidata, name: "安徽"},
+    {value: dongbeidata, name: "黑龙江"},
+    {value: dongbeidata, name: "吉林"},
+    {value: dongbeidata, name: "辽宁"},
+    {value: xibeidata, name: "新疆"},
+    {value: xibeidata, name: "甘肃"},
 ]
 var niuniu = [
     {name: '广西', value: 100},
@@ -10778,6 +10801,8 @@ var niuniu = [
 ]
 
 var struct_colors = [
+    "#ad2ac4",
+    "#b21509",
     "#ed6f6d",
     "#f3765d",
     "#f77a57",
