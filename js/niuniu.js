@@ -2,7 +2,7 @@ $(function () {
     var innerdiv1New = $("<div id='innerdiv1New' style='display: block;overflow: auto;height: 500px;'></div>")
     var innerdiv2New = $("<div id='innerdiv2New' style='display: none'></div>")
     var divbutton = $("<div style='text-align: center'><button class=\"btn btn-primary niubutton\" id='but1New'>奶牛养殖现场环境参数</button>&emsp;&emsp;&emsp;" +
-        "<button class=\"btn btn-info niubutton\" id='but2New'>山农菌株数据库</button></div>")
+        "<button class=\"btn btn-info niubutton\" id='but2New'>生物危害数据库</button></div>")
     var titleArr = niudata2[0]
     console.log(titleArr)
     // 获取每一列并去重打印
