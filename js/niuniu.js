@@ -175,7 +175,10 @@ $(function () {
             // alert("我这就关")
             div.remove()
             outerdiv.remove()
+            innerdiv1New.remove()
+            innerdiv2New.remove()
             tableddd.remove()
+            tableBoder.remove()
         });
     })
 
