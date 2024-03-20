@@ -19,14 +19,14 @@ $(function () {
                         color: struct_colors[Math.floor(Math.random() * 20)]
                     }
                 };
-                if(data.name==="黑龙江"||data.name==="吉林"||data.name==="辽宁"){
+                if (data.name === "黑龙江" || data.name === "吉林" || data.name === "辽宁") {
                     optionmap.series[0].data[i].itemStyle = {
                         normal: {
                             color: struct_colors[0]
                         }
                     }
                 }
-                if(data.name==="新疆"||data.name==="甘肃"){
+                if (data.name === "新疆" || data.name === "甘肃") {
                     optionmap.series[0].data[i].itemStyle = {
                         normal: {
                             color: struct_colors[1]
@@ -445,10 +445,11 @@ $(function () {
         // innerdiv.append(paba())
         return innerdiv
     }
+
     function smif1() {
         var data1 =
             [
-                ["","海湾扇贝", "月份"],
+                ["", "海湾扇贝", "月份"],
                 ["61-1", "金黄品种", "8月"],
                 ["61-2", "", "8月"],
                 ["61-3", "", "8月"],
@@ -569,9 +570,9 @@ $(function () {
     }
 
     function ant1() {
-        var data1 =[
-            [	"Escherichia coli"	,"Vibrio parahaemolyticus"],
-                [0.62, 7.20],
+        var data1 = [
+            ["Escherichia coli", "Vibrio parahaemolyticus"],
+            [0.62, 7.20],
             [0.50, 6.00],
             [0.74, 8.40],
             [21.00, 11.00],
@@ -1293,7 +1294,7 @@ $(function () {
             if (params.value !== 0) {
                 console.log('您点击了' + params.name);
                 $('#customModal').modal('show');
-                var div = $("<div></div>")
+                var div = $("<div style='overflow: auto;height: 600px'></div>")
                 if (datainfo == "niuniu") {
 
                     // 定义表格数据
@@ -2031,7 +2032,7 @@ $(function () {
                     $("#mapmodel").append(div);
                 }
                 //放外面
-                $(".modal-title").text(params.name);
+                $(".modal-title").text((params.name == "新疆" || params.name == "甘肃") ? "西北地区" : (params.name == "黑龙江" || params.name == "吉林" || params.name == "辽宁") ? "东北地区" : params.name);
                 $('#customModal').on('hide.bs.modal', function (e) {
                     // alert("我这就关")
                     div.remove()
