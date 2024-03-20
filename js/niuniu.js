@@ -82,7 +82,7 @@ $(function () {
             //     }
             // }
         })
-        var tableBoder = $("<div style='height: 500px;overflow: auto'></<div>>");
+        var tableBoder = $("<div style='height: 500px;overflow: auto'></<div>");
         var tableddd = $("<table class=\"table table-bordered table-striped\" style='font-size: 16px;margin-top: 10px'></table>");
         // 添加表头和表格内容
         for (var i = 0; i < tabledata.length; i++) {
