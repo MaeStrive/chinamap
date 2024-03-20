@@ -41,7 +41,8 @@ $(function () {
         var innerdiv1 = $("<div style='text-align: center;margin-top: 15px'></div>")
         var innerdiv2 = $("<div style='text-align: center;margin-top: 10px'></div>")
         var innerdiv3 = $("<div style='text-align: center;margin-top: 10px'></div>")
-        var selectitem = new Array(15).fill(0);
+        var innerdiv4 = $("<div style='text-align: center;margin-top: 10px'></div>")
+        var selectitem = new Array(20).fill(0);
         selectitem.forEach(function (value, index, array) {
             selectitem[index] = $("<select class=\"custom-select\" id='select" + index + "' aria-label=\"\" style='width: 10%;margin-right: 10px'></select>")
         })
@@ -63,6 +64,10 @@ $(function () {
             } else if (index < 15) {
                 innerdiv3.append($("<span>" + uniqueColumns[index][0] + "：</span>"))
                 innerdiv3.append(selectitem[index])
+            }
+            else if (index < 20) {
+                innerdiv4.append($("<span>" + uniqueColumns[index][0] + "：</span>"))
+                innerdiv4.append(selectitem[index])
             }
         })
 
@@ -101,6 +106,7 @@ $(function () {
         outerdiv.append(innerdiv1)
         outerdiv.append(innerdiv2)
         outerdiv.append(innerdiv3)
+        outerdiv.append(innerdiv4)
         outerdiv.append($("<div style='margin-top: 15px;text-align: center'><button class=\"btn btn-success query niubutton\" style='width: 10%'>查询</button>" +
             "&emsp;&emsp;<button class=\"btn btn-warning queryAll niubutton\" style='width: 10%'>显示全部</button></div>"))
         innerdiv2New.append(outerdiv)
