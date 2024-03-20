@@ -49,8 +49,8 @@ function echarts_996() {
               trigger: 'axis'
             },
             legend: {
-              data: ['Naphthalene', 'Acenaphthene', 'PCB52', 'PCB101', 'OA','Escherichia coli',
-              ,'Indoor TSP','Indoor PM2.5','Outdoor TSP'],
+              data: ['萘', '苊', 'PCB52', 'PCB101', 'OA','大肠埃希氏菌',
+              ,'室内 TSP','室内 PM2.5','户外 TSP'],
               textStyle:{
                 color:'white'
             },
@@ -100,7 +100,7 @@ function echarts_996() {
             },
             series: [
               {
-                name: 'Naphthalene',
+                name: '萘',
                 type: 'line',
                 // stack: 'Total',
                 data: [0, 9.86, 0, 0, 4.81, 0, 0],
@@ -115,7 +115,7 @@ function echarts_996() {
                 
               },
               {
-                name: 'Acenaphthene',
+                name: '苊',
                 type: 'line',
                 // stack: 'Total',
                 data: [4.12, 5.18, 8.63, 14.9, 7.38, 4.055, 4.49]
@@ -139,26 +139,26 @@ function echarts_996() {
                 data: [87.05, 8.91, 0, 0, 68.117, 26.3, 0]
               },
               {
-                name: 'Escherichia coli',
+                name: '大肠埃希氏菌',
                 type: 'line',
                 // stack: 'Total',
                 data: [1.41, 0.977, 2.06, 1.867, 5.62, 5.535, 2.85]
               },
               
               {
-                name: 'Indoor TSP',
+                name: '室内 TSP',
                 type: 'line',
                 // stack: 'Total',
                 data: ['','',99.02, 119.57, 80.41, 94.11,'']
               },
               {
-                name: 'Indoor PM2.5',
+                name: '室内 PM2.5',
                 type: 'line',
                 // stack: 'Total',
                 data: ['','',58.92, 49.93, 43.69, 47.23,'']
               },
               {
-                name: 'Outdoor TSP',
+                name: '户外 TSP',
                 type: 'line',
                 // stack: 'Total',
                 data: ['','',97.77, 102.48, 138.73, 100.93,'']

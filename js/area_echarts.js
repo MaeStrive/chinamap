@@ -571,7 +571,7 @@ $(function () {
 
     function ant1() {
         var data1 = [
-            ["Escherichia coli", "Vibrio parahaemolyticus"],
+            ["大肠埃希氏菌", "Vibrio parahaemolyticus"],
             [0.62, 7.20],
             [0.50, 6.00],
             [0.74, 8.40],
@@ -656,7 +656,7 @@ $(function () {
 //------------------------
     function ogpt() {
         var data1 =
-            [['ug/kg', 'Naphthalene', 'Acenaphthene', 'Fluornene', 'Phenanthrene', 'Anthracene', 'Fluoranthene', 'Pyrene', 'Benz[a]anthracene BaA', 'Chrysene CHR', 'Benzo[b]fluoranthene BbFA', 'Benzo[k]fluoranthene BkFA', 'Benzo[a]pyrene BaP', 'Dibenz[a,h]anthracene DBahA', 'Benzo[g,h,i]perylene BghiP', 'Indeno[1,2,3-c,d]pyrene I', 'PCB28', 'PCB52', 'PCB101', 'PCB118', 'PCB180', 'PCB138', 'PCB153'],
+            [['ug/kg', '萘', '苊', 'Fluornene', 'Phenanthrene', 'Anthracene', 'Fluoranthene', 'Pyrene', 'Benz[a]anthracene BaA', 'Chrysene CHR', 'Benzo[b]fluoranthene BbFA', 'Benzo[k]fluoranthene BkFA', 'Benzo[a]pyrene BaP', 'Dibenz[a,h]anthracene DBahA', 'Benzo[g,h,i]perylene BghiP', 'Indeno[1,2,3-c,d]pyrene I', 'PCB28', 'PCB52', 'PCB101', 'PCB118', 'PCB180', 'PCB138', 'PCB153'],
                 ['YY-1', 'ND', 'ND', 'ND', 7.06, 'ND', 4.57, 'ND', 'ND', 5.79, 'ND', 'ND', 'ND', 'ND', 'ND', 'ND', 1.74, 'ND', 'ND', 'ND', 'ND', 'ND'],
                 ['YY-2', 'ND', 'ND', 'ND', 6.78, 'ND', 4.30, 'ND', 'ND', 5.40, 'ND', 'ND', 'ND', 'ND', 'ND', 'ND', 1.96, 'ND', 'ND', 'ND', 'ND', 'ND'],
                 ['YY-3', 'ND', 'ND', 'ND', 7.00, 'ND', 4.02, 'ND', 'ND', 5.59, 'ND', 'ND', 'ND', 'ND', 'ND', 'ND', 1.80, 'ND', 'ND', 'ND', 'ND', 'ND'],
@@ -1300,8 +1300,8 @@ $(function () {
                     // 定义表格数据
                     if (params.name == '天津') {
                         var tableData = [
-                            ["#", "Indoor TSP", "Indoor PM2.5", "Outdoor TSP", "Outdoor PM2.5",
-                                "Ambient PM2.5", "Indoor CO2", "Indoor NH3", "Indoor RH", "Indoor T"],
+                            ["#", "室内 TSP", "室内 PM2.5", "户外 TSP", "户外 PM2.5",
+                                "Ambient PM2.5", "室内 CO2", "室内 NH3", "室内 RH", "室内 T"],
                             ["2021年第一季度", 99.0, 58.9, 97.8, 54.4, 31.2, 595.9, 0.4, 45.6, 2.5],
                             ["2021年第二季度", 119.6, 49.9, 102.5, 43.0, 28.1, 506.2, 0.8, 54.5, 20.9],
                             ["2021年第三季度", 80.4, 43.7, 138.7, 53.6, 24.7, 553.5, 0.7, 93.3, 26.5],
