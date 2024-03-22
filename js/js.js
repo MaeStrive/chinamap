@@ -10,9 +10,13 @@
         var selectedValue = selectElement.value;
         console.log("Selected value: " + selectedValue);
         if (selectedValue == 1) {
+            $("#echart4").css({display: "block"})
+            $("#echart5").css({display: "none"})
             echarts_996();
         }
         if (selectedValue == 2) {
+            $("#echart4").css({display: "none"})
+            $("#echart5").css({display: "block"})
             echarts_997();
         }
     });
@@ -22,28 +26,6 @@
         // 初始化 ECharts 实例
         var myChart = echarts.init(document.getElementById('echart4'));
 
-        var data = {
-            physics: [
-                [1, 220],
-                [2, 250],
-                [3, 200],
-                [4, 180]
-            ],
-            chemistry: [
-                [1, 180],
-                [2, 160],
-                [3, 190],
-                [4, 210]
-            ],
-            physicsDisplay: true,
-            chemistryDisplay: true
-        };
-
-        function toggleLines() {
-            data.physicsDisplay = !data.physicsDisplay;
-            data.chemistryDisplay = !data.chemistryDisplay;
-            renderChart();
-        }
 
         function renderChart() {
             var option;
@@ -161,40 +143,17 @@
 
     function echarts_997() {
         // 初始化 ECharts 实例
-        var myChart = echarts.init(document.getElementById('echart4'));
-
-        var data = {
-            physics: [
-                [1, 220],
-                [2, 250],
-                [3, 200],
-                [4, 180]
-            ],
-            chemistry: [
-                [1, 180],
-                [2, 160],
-                [3, 190],
-                [4, 210]
-            ],
-            physicsDisplay: true,
-            chemistryDisplay: true
-        };
-
-        function toggleLines() {
-            data.physicsDisplay = !data.physicsDisplay;
-            data.chemistryDisplay = !data.chemistryDisplay;
-            renderChart();
-        }
+        var myChart = echarts.init(document.getElementById('echart5'));
 
         function renderChart() {
-            var option;
-            option = {
+            var option1;
+            option1 = {
                 title: {},
                 tooltip: {
                     trigger: 'axis'
                 },
                 legend: {
-                    data: ['室内TSP(μg/m3)'],
+                    data: ['菌落总数','大肠菌群数','嗜冷菌'],
                     textStyle: {
                         color: 'white'
                     },
@@ -202,7 +161,7 @@
                 grid: {
                     left: '3%',
                     right: '4%',
-                    top: '25%',
+                    top: '10%',
                     bottom: '3%',
                     containLabel: true
                 },
@@ -214,7 +173,9 @@
                 xAxis: {
                     type: 'category',
                     boundaryGap: true,
-                    data: ['2021一季度', '2021二季度', '2021三季度', '2021四季度'],
+                    data: ['剔骨工人手套','分割间案板','分割间传送带','车间原水管道末端',
+                    '预冷水前段','预冷水中段','预冷水后段','净膛后鸡胴体','预冷后鸡胴体',
+                    '分割后鸡腿肉','分割后鸡胸肉'],
                     axisLine: {
                         lineStyle: {
                             color: 'white' // 这里设置横坐标轴线的颜色为红色
@@ -232,15 +193,27 @@
                 series: [
 
                     {
-                        name: '室内TSP(μg/m3)',
+                        name: '菌落总数',
                         type: 'line',
                         // stack: 'Total',
-                        data: [99.02, 119.57, 80.41, 94.11]
+                        data: [4.46, 3.44, 3.11, 3.78,3.48,2.15,2.79,5.60,6.67,3.58,3.78]
+                    },
+                    {
+                        name: '大肠菌群数',
+                        type: 'line',
+                        // stack: 'Total',
+                        data: [2.41, 1.7, 1.77, 0.67,1.25,1.06,1.38,2.08,3.12,1.79,0.93]
+                    },
+                    {
+                        name: '嗜冷菌',
+                        type: 'line',
+                        // stack: 'Total',
+                        data: [0, 0, 0, 1.97,1.48,1.39,3.61,4.60,6.23,3.34,2.82]
                     }
                 ]
             };
 
-            myChart.setOption(option);
+            myChart.setOption(option1);
         }
 
         renderChart();
