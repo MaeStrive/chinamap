@@ -1,22 +1,46 @@
 $(function () {
     var innerdiv1New = $("<div id='innerdiv1New' style='display: block;overflow: auto;height: 500px;'></div>")
     var innerdiv2New = $("<div id='innerdiv2New' style='display: none'></div>")
-    var divbutton = $("<div style='text-align: center'><button class=\"btn btn-primary niubutton\" id='but1New'>奶牛养殖现场环境参数</button>&emsp;&emsp;&emsp;" +
+    var divbutton = $("<div style='text-align: center'><button class=\"btn btn-primary niubutton\" id='but1New'>奶牛养殖场环境参数</button>&emsp;&emsp;&emsp;" +
         "<button class=\"btn btn-info niubutton\" id='but2New'>生物危害数据库</button></div>")
-    var titleArr = niudata2[0]
+    // var titleArr = niudata2[0]
+    // console.log(titleArr)
+
+    //第一行去重当搜索框
+    var titleArr = niudata2[0].filter((item, index) => niudata2[0].indexOf(item) === index);
     console.log(titleArr)
+
+    //取每列的选项
     // 获取每一列并去重打印
     var uniqueColumns = [];
+    var titlesPushed = [];
 
     for (var i = 0; i < niudata2[0].length; i++) {
-        var column = niudata2.map(function (value) {
-            return value[i];
-        });
+        if (niudata2[1][i] === niudata2[0][i]) {
+            //取这列去重
+            var column = niudata2.map(function (value) {
+                return value[i];
+            });
 
-        var uniqueColumn = column.filter(function (item, index, self) {
-            return self.indexOf(item) === index;
-        });
-        uniqueColumns.push(uniqueColumn);
+            var uniqueColumn = column.filter(function (item, index, self) {
+                return self.indexOf(item) === index;
+            });
+            uniqueColumns.push(uniqueColumn.slice(2));
+            // console.log(uniqueColumn.slice(2))
+        } else {
+            //取第二行的值
+            var teColumn = []
+            var selectTitle = niudata2[0][i];
+            if (!titlesPushed.includes(selectTitle)) {
+                titlesPushed.push(selectTitle)
+                for (let k = i; k < niudata2[0].length; k++) {
+                    if (niudata2[0][k] === selectTitle) {
+                        teColumn.push(niudata2[1][k])
+                    }
+                }
+                uniqueColumns.push(teColumn);
+            }
+        }
     }
     console.log(uniqueColumns);
 
@@ -42,7 +66,7 @@ $(function () {
         var innerdiv2 = $("<div style='text-align: center;margin-top: 10px'></div>")
         var innerdiv3 = $("<div style='text-align: center;margin-top: 10px'></div>")
         var innerdiv4 = $("<div style='text-align: center;margin-top: 10px'></div>")
-        var selectitem = new Array(20).fill(0);
+        var selectitem = new Array(15).fill(0);
         selectitem.forEach(function (value, index, array) {
             selectitem[index] = $("<select class=\"custom-select\" id='select" + index + "' aria-label=\"\" style='width: 10%;margin-right: 10px'></select>")
         })
@@ -51,29 +75,28 @@ $(function () {
         //     selectdiv1.append($('<option value=' + option + '">' + option + '</option>'));
         // })
         uniqueColumns.forEach(function (value, index, array) {
-            uniqueColumns[index].forEach(function (option, indexinner) {
-                if (indexinner != 0)
-                    selectitem[index].append($('<option value=' + option + '>' + option + '</option>'));
+            uniqueColumns[index].forEach(function (option) {
+                selectitem[index].append($('<option value=' + option + '>' + option + '</option>'));
             })
             if (index < 5) {
-                innerdiv1.append($("<span>" + uniqueColumns[index][0] + "：</span>"))
+                innerdiv1.append($("<span>" + titleArr[index] + "：</span>"))
                 innerdiv1.append(selectitem[index])
             } else if (index < 10) {
-                innerdiv2.append($("<span>" + uniqueColumns[index][0] + "：</span>"))
+                innerdiv2.append($("<span>" + titleArr[index] + "：</span>"))
                 innerdiv2.append(selectitem[index])
             } else if (index < 15) {
-                innerdiv3.append($("<span>" + uniqueColumns[index][0] + "：</span>"))
+                innerdiv3.append($("<span>" + titleArr[index] + "：</span>"))
                 innerdiv3.append(selectitem[index])
-            }
-            else if (index < 20) {
-                innerdiv4.append($("<span>" + uniqueColumns[index][0] + "：</span>"))
+            } else if (index < 20) {
+                innerdiv4.append($("<span>" + titleArr[index] + "：</span>"))
                 innerdiv4.append(selectitem[index])
             }
         })
 
         var tabledata = []
         niudata2.forEach(function (value, index, array) {
-            tabledata.push(value)
+            if (index !== 0)
+                tabledata.push(value)
             // if (index == 0) tabledata.push(value)
             // else {
             //     let len = 0;
@@ -126,7 +149,8 @@ $(function () {
             tableddd.empty()
             tabledata = []
             niudata2.forEach(function (value, index, array) {
-                if (index == 0) tabledata.push(value)
+                if (index == 0) {}
+                else  if (index == 1) tabledata.push(value)
                 else {
                     let len = 0;
                     for (let i = 0; i < value.length; i++) {
