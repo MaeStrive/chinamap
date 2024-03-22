@@ -23,9 +23,10 @@ $(function () {
             });
 
             var uniqueColumn = column.filter(function (item, index, self) {
+                if (index == 0 || index == 1) return false
                 return self.indexOf(item) === index;
             });
-            uniqueColumns.push(uniqueColumn.slice(2));
+            uniqueColumns.push(uniqueColumn);
             // console.log(uniqueColumn.slice(2))
         } else {
             //取第二行的值
@@ -145,19 +146,35 @@ $(function () {
         });
         $(".query").click(function () {
             console.log("query")
-            console.log(selectitem[0].val())
+            // console.log(selectitem[0].val())
             tableddd.empty()
             tabledata = []
+            var titlePush = []
             niudata2.forEach(function (value, index, array) {
-                if (index == 0) {}
-                else  if (index == 1) tabledata.push(value)
+                var j = 0;//标题的下标
+                if (index == 0) {
+                } else if (index == 1) tabledata.push(value)
                 else {
                     let len = 0;
                     for (let i = 0; i < value.length; i++) {
-                        if (value[i] == selectitem[i].val()) {
-                            len++
-                            if (len == 15) {
+                        console.log(selectitem[j].val())
+                        console.log(j)
+                        if (niudata2[0][i] === niudata2[1][i]) {
+                            if (value[i] == selectitem[j].val()) {
+                                len++
+                            }
+                            j++;
+                            if (len == titleArr.length) {
                                 tabledata.push(value)
+                            }
+                        } else {
+                            if (selectitem[j].val() === niudata2[1][i]) {
+                                if (niudata2[index][i] !== '/')
+                                    len++;
+                            }
+                            if (!titlePush.includes(niudata2[0][i])) {
+                                titlePush.push(niudata2[0][i]);
+                                j++;
                             }
                         }
                     }
@@ -181,7 +198,8 @@ $(function () {
             tableddd.empty()
             tabledata = []
             niudata2.forEach(function (value, index, array) {
-                tabledata.push(value)
+                if (index !== 0)
+                    tabledata.push(value)
             })
             console.log(tabledata)
             for (var i = 0; i < tabledata.length; i++) {

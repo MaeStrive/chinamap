@@ -4,6 +4,8 @@ $(function () {
     var innierdiv2 = $("<div id='innerdiv2' style='display: none'></div>")
     var divbutton = $("<div style='text-align: center'><button class=\"btn btn-primary niubutton\" id='but1'>奶样检测结果</button>&emsp;&emsp;&emsp;" +
         "<button class=\"btn btn-info niubutton\" id='but2'>夏季试验微生物检测结果</button></div>")
+
+
     map();
     var datainfo = ""
     $(".baomi").click(function () {
@@ -43,13 +45,83 @@ $(function () {
     })
 
 
+    var innerdiv1Ji = $("<div id='innerdiv1Ji' style='display: block;overflow: auto;height: 600px;'></div>")
+    var innerdiv2Ji = $("<div id='innerdiv2Ji' style='display: none;overflow: auto;height: 600px;text-align: center;margin-top: 10px'></div>")
+    var divbuttonJi = $("<div style='text-align: center'><button class=\"btn btn-primary niubutton\" id='but1Ji'>肉鸡加工贮藏中生物危害的分布</button>&emsp;&emsp;&emsp;" +
+        "<button class=\"btn btn-info niubutton\" id='but2Ji'>肉鸡加工贮藏中生物危害的溯源</button></div>")
+
+    var uniqueColumnsJi = [];
+    for (var i = 0; i < jidata2[0].length; i++) {
+        var column = jidata2.map(function (value) {
+            return value[i];
+        });
+
+        var uniqueColumn = column.filter(function (item, index, self) {
+            if (index === 0) return false
+            return self.indexOf(item) === index;
+        });
+        uniqueColumnsJi.push(uniqueColumn);
+    }
+    console.log(uniqueColumnsJi)
     $(".jiji").click(function () {
         //弹窗
+        var divOuter = $("<div></div>")
+        divOuter.append(divbuttonJi)
         $('#customModal').modal('show');
         var div = $("<div id='xjj'  style=\"width:1500px; height: 600px;\"></div>")
-        $("#mapmodel").append(div);
-        $(".modal-title").text("冷鲜鸡肉加工贮藏中微生物污染及荧光-高光谱");
+        $(".modal-title").text("鸡");
         // 基于准备好的dom，初始化echarts实例
+        innerdiv1Ji.append(div)
+        var selectitemJi = new Array(4).fill(0);
+        jidata2[0].forEach(function (value, index, array) {
+            if (index < 4)
+                selectitemJi[index] = $("<select class=\"custom-select\" id='select" + index + "' aria-label=\"\" style='width: 10%;margin-right: 10px'></select>")
+        })
+        uniqueColumnsJi.forEach(function (value, index, array) {
+            if (index < 4)
+                uniqueColumnsJi[index].forEach(function (option) {
+                    selectitemJi[index].append($('<option value=' + option + '>' + option + '</option>'));
+                    innerdiv2Ji.append(selectitemJi[index])
+                })
+        })
+        var jibuttonquery = $("<button class=\"btn btn-success queryji niubutton\" style='width: 10%'>查询</button>" +
+            "<button class=\"btn btn-warning queryallji niubutton\" style='width: 10%'>查询全部</button>")
+        innerdiv2Ji.append(jibuttonquery)
+
+        var tabledata = []
+        jidata2.forEach(function (value, index, array) {
+            tabledata.push(value)
+            // if (index == 0) tabledata.push(value)
+            // else {
+            //     let len = 0;
+            //     for (let i = 0; i < value.length; i++) {
+            //         if (value[i] == selectitem[i].val()) {
+            //             len++
+            //             if (len == 15) {
+            //                 tabledata.push(value)
+            //             }
+            //         }
+            //     }
+            // }
+        })
+        var tableBoder = $("<div style='height: 500px;overflow: auto'></<div>");
+        var tableddd = $("<table class=\"table table-bordered table-striped\" style='font-size: 16px;margin-top: 10px'></table>");
+        // 添加表头和表格内容
+        for (var i = 0; i < tabledata.length; i++) {
+            var row = $("<tr></tr>");
+            for (var j = 4; j < tabledata[i].length; j++) {
+                var cell = i === 0 ? "<th>" : "<td>";
+                cell += tabledata[i][j];
+                cell += i === 0 ? "</th>" : "</td>";
+                row.append(cell);
+            }
+            tableddd.append(row);
+        }
+        tableBoder.append(tableddd)
+        innerdiv2Ji.append(tableBoder)
+        divOuter.append(innerdiv1Ji)
+        divOuter.append(innerdiv2Ji)
+        $("#mapmodel").append(divOuter);
         var jiChart = echarts.init(document.getElementById('xjj'));
         structs_datas = []
         format_struct_data_image(jijidata.children, structs_datas);
@@ -151,10 +223,76 @@ $(function () {
             })
         );
         jiChart.setOption(option)
+
         $('#customModal').on('hide.bs.modal', function (e) {
             // alert("我这就关")
+            divOuter.remove()
+            innerdiv1Ji.remove()
+            tableddd.remove()
+            selectitemJi[0].remove()
+            selectitemJi[1].remove()
+            selectitemJi[2].remove()
+            selectitemJi[3].remove()
+            innerdiv2Ji.remove()
+            tableBoder.remove()
+            jibuttonquery.remove()
             div.remove()
         });
+        $("#but1Ji").click(function () {
+            innerdiv1Ji.css({display: "block"})
+            innerdiv2Ji.css({display: "none"})
+        })
+        $("#but2Ji").click(function () {
+            innerdiv1Ji.css({display: "none"})
+            innerdiv2Ji.css({display: "block"})
+        })
+        $(".queryji").click(function () {
+            console.log("query")
+            // console.log(selectitem[0].val())
+            tableddd.empty()
+            tabledata = []
+            jidata2.forEach(function (value, index, array) {
+                if (index == 0) tabledata.push(value)
+                else {
+                    var len = 0
+                    for (let i = 0; i < value.length; i++) {
+                        if (i < 4) {
+                            if (selectitemJi[i].val() == value[i]) len++
+                            if (len == 4) tabledata.push(value)
+                        }
+                    }
+                }
+            })
+            console.log(tabledata)
+            for (var i = 0; i < tabledata.length; i++) {
+                var row = $("<tr></tr>");
+                for (var j = 4; j < tabledata[i].length; j++) {
+                    var cell = i === 0 ? "<th>" : "<td>";
+                    cell += tabledata[i][j];
+                    cell += i === 0 ? "</th>" : "</td>";
+                    row.append(cell);
+                }
+                tableddd.append(row);
+            }
+        })
+        $(".queryallji").click(function () {
+            tableddd.empty()
+            tabledata = []
+            jidata2.forEach(function (value, index, array) {
+                tabledata.push(value)
+            })
+            console.log(tabledata)
+            for (var i = 0; i < tabledata.length; i++) {
+                var row = $("<tr></tr>");
+                for (var j = 4; j < tabledata[i].length; j++) {
+                    var cell = i === 0 ? "<th>" : "<td>";
+                    cell += tabledata[i][j];
+                    cell += i === 0 ? "</th>" : "</td>";
+                    row.append(cell);
+                }
+                tableddd.append(row);
+            }
+        })
     })
 
     $(".niuniu").click(function () {
