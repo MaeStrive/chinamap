@@ -150,7 +150,33 @@
             option1 = {
                 title: {},
                 tooltip: {
-                    trigger: 'axis'
+                    trigger: 'axis',
+                    formatter: function (params) {
+                        for (let i = 0; i < params.length; i++) {
+                          var relVal = params[i].name;
+                        }
+                        for (let i = 0; i < params.length; i++) {
+                            let unit = "";
+                            console.log(params[i].seriesName)
+                            console.log(params[i].name)
+                               
+                            if (params[i].name == "剔骨工人手套"||params[i].name == "分割间案板"||params[i].name == "分割间传送带") {
+                                unit = "(1gCFU/cm^2)";
+                            }else if(params[i].name == "车间原水管道末端"||params[i].name == "预冷水前段"||params[i].name == "预冷水中段"||params[i].name == "预冷水后段"){
+                                unit = "(1gCFU/mL)";
+                            }else{
+                                unit = "(1gCFU/g)"; 
+                            }
+                            relVal +=
+                            "<br/>" +
+                            params[i].marker +
+                            params[i].seriesName +
+                            ":" +
+                            params[i].data +
+                            unit;
+                        }
+                        return relVal;
+                      }
                 },
                 legend: {
                     data: ['菌落总数','大肠菌群数','嗜冷菌'],
@@ -184,9 +210,11 @@
                 },
                 yAxis: {
                     type: 'value',
+                    // axisLabel:{formatter:'{value} gCFU/g'},
                     axisLine: {
                         lineStyle: {
-                            color: 'white' // 这里设置横坐标轴线的颜色为红色
+                            color: 'white', // 这里设置横坐标轴线的颜色为红色
+                            // formatter: '{value} 1gCFU/g'
                         }
                     }
                 },
