@@ -73,11 +73,11 @@ $(function () {
         innerdiv1Ji.append(div)
         var selectitemJi = new Array(4).fill(0);
         jidata22[0].forEach(function (value, index, array) {
-            if (index < 4)
+            if (index < 4 && index !== 0 && index !== 2)
                 selectitemJi[index] = $("<select class=\"custom-select\" id='select" + index + "' aria-label=\"\" style='width: 10%;margin-right: 10px'></select>")
         })
         uniqueColumnsJi.forEach(function (value, index, array) {
-            if (index < 4)
+            if (index < 4 && index !== 0 && index !== 2)
                 uniqueColumnsJi[index].forEach(function (option) {
                     selectitemJi[index].append($('<option value=' + option + '>' + option + '</option>'));
                     innerdiv2Ji.append(selectitemJi[index])
@@ -255,9 +255,9 @@ $(function () {
                 else {
                     var len = 0
                     for (let i = 0; i < value.length; i++) {
-                        if (i < 4) {
+                        if (i < 4 && i != 0 && i != 2) {
                             if (selectitemJi[i].val() == value[i]) len++
-                            if (len == 4) tabledata.push(value)
+                            if (len == 2) tabledata.push(value)
                         }
                     }
                 }
