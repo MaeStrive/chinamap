@@ -114,6 +114,13 @@
     padding: 0;
 }
 
+.pagebtn{
+    width: 5%;
+    font-size: 16px;
+    /*line-height: 5%;*/
+    height: 30px;
+    padding: 0;
+}
 .btn66 {
     font-size: 16px;
     padding: 5px 10px;
