@@ -90,18 +90,41 @@ $(function () {
             tabledata.push(value)
         })
         var tableBoder = $("<div style='height: 500px;overflow: auto'></<div>");
-        var tableddd = $("<table class=\"table table-bordered table-striped\" style='font-size: 16px;margin-top: 10px'></table>");
-        // 添加表头和表格内容
-        for (var i = 0; i < tabledata.length; i++) {
+        // var tableddd = $("<table class=\"table table-bordered table-striped\" style='font-size: 16px;margin-top: 10px;table-layout: fixed;'></table>");
+        // // 添加表头和表格内容
+        // for (var i = 0; i < tabledata.length; i++) {
+        //     var row = $("<tr></tr>");
+        //     for (var j = 0; j < tabledata[i].length; j++) {
+        //         var cell = i === 0 ? "<th style='width: 220px'>" : "<td style='width: 220px'>";
+        //         cell += tabledata[i][j];
+        //         cell += i === 0 ? "</th>" : "</td>";
+        //         row.append(cell);
+        //     }
+        //     tableddd.append(row);
+        // }
+        // tableBoder.append(tableddd)
+        var tableddd = $("<table class=\"table table-bordered table-striped table-fixed-header\" style='font-size: 16px;margin-top: 10px; table-layout: fixed;'></table>");
+        var headerRow = $("<tr></tr>");
+
+    // 添加表头
+        for (var j = 0; j < niudata1[0].length; j++) {
+            var headerCell = $("<th>" + niudata1[0][j] + "</th>");
+            headerRow.append(headerCell);
+        }
+        tableddd.append($("<thead style='position: sticky;top:0;z-index:1;background-color: #fff3cd'></thead>").append(headerRow)); // 将表头包在 thead 标签内
+        // 添加表格内容
+        var tbody = $("<tbody></tbody>");
+        for (var i = 1; i < niudata1.length; i++) {
             var row = $("<tr></tr>");
-            for (var j = 0; j < tabledata[i].length; j++) {
-                var cell = i === 0 ? "<th>" : "<td>";
-                cell += tabledata[i][j];
-                cell += i === 0 ? "</th>" : "</td>";
+            for (var j = 0; j < niudata1[i].length; j++) {
+                var cell = "<td>" + niudata1[i][j] + "</td>";
                 row.append(cell);
             }
-            tableddd.append(row);
+            tbody.append(row);
         }
+
+        tableddd.append(tbody);
+
         tableBoder.append(tableddd)
 
 
