@@ -1,23 +1,23 @@
-import pandas as pd
+import csv
+import json
 
 # 读取CSV文件
-data = pd.read_csv('data.csv',encoding='gbk')
+with open("data.csv", newline='') as csvfile:
+    csvreader = csv.reader(csvfile)
+    data = [row for row in csvreader]
 
-# 获取标题行
-header = data[:2]
-
-# 获取数据行
+# 除去两行表头
 data = data[2:]
 
-# 将数据拆分成多个数组
-split_data = [data[i:i+61] for i in range(0, len(data), 61)]
+# 将数据分成十份
+data_chunks = [data[i:i + len(data) // 10] for i in range(0, len(data), len(data) // 10)]
 
-# 将数据写入多个JavaScript文件
-num_files = 10
-for i in range(num_files):
-    with open(f'junzhudata{i+1}.js', 'w',encoding='gbk') as file:
-        file.write('const data = [\n')
-        for _, row in split_data[i].iterrows():
-            row_values = [f'"{val}"' if isinstance(val, str) else str(val) for val in row]
-            file.write(f'[{", ".join(row_values)}],\n')
-        file.write('];')
+# 将数据转换为二维数组并写入十个不同的 JavaScript 文件
+for i, chunk in enumerate(data_chunks):
+    data_array = []
+    for row in chunk:
+        data_array.append(row)
+
+    with open(f"output_{i + 1}.js", "w", encoding='utf-8') as js_file:
+        js_file.write("const data = ")
+        json.dump(data_array, js_file, ensure_ascii=False)
