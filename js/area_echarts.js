@@ -45,10 +45,10 @@ $(function () {
     })
 
 
-    var innerdiv1Ji = $("<div id='innerdiv1Ji' style='display: block;overflow: auto;height: 600px;'></div>")
-    var innerdiv2Ji = $("<div id='innerdiv2Ji' style='display: none;overflow: auto;height: 600px;text-align: center;margin-top: 10px'></div>")
-    var divbuttonJi = $("<div style='text-align: center'><button class=\"btn btn-primary niubutton\" id='but1Ji'>肉鸡加工贮藏中生物危害的分布</button>&emsp;&emsp;&emsp;" +
-        "<button class=\"btn btn-info niubutton\" id='but2Ji'>肉鸡加工贮藏中生物危害的溯源</button></div>")
+    var innerdiv1Ji = $("<div id='innerdiv1Ji' style='display: none;overflow: auto;height: 600px;'></div>")
+    var innerdiv2Ji = $("<div id='innerdiv2Ji' style='display: block;overflow: auto;height: 600px;text-align: center;margin-top: 10px'></div>")
+    var divbuttonJi = $("<div style='text-align: center'><button class=\"btn btn-primary niubutton\" id='but2Ji'>肉鸡加工贮藏中生物危害的溯源</button>&emsp;&emsp;&emsp;" +
+        "<button class=\"btn btn-info niubutton\" id='but1Ji'>肉鸡加工贮藏中生物危害的分布</button></div>")
     var uniqueColumnsJi = [];
     for (var i = 0; i < jidata22[0].length; i++) {
         var column = jidata22.map(function (value) {
@@ -68,7 +68,7 @@ $(function () {
         divOuter.append(divbuttonJi)
         $('#customModal').modal('show');
         var div = $("<div id='xjj'  style=\"width:1500px; height: 600px;\"></div>")
-        $(".modal-title").text("鸡");
+        $(".modal-title").text(" ");
         // 基于准备好的dom，初始化echarts实例
         innerdiv1Ji.append(div)
         var selectitemJi = new Array(4).fill(0);
@@ -320,7 +320,7 @@ $(function () {
     $(".shui").click(function () {
         //弹窗
         $('#customModal').modal('show');
-        $(".modal-title").text("水产");
+        $(".modal-title").text("贝类");
         var div = $("<div></div>")
         var selectdiv = $("<span>扇贝危害数据：</span><select class=\"custom-select\" id=\"inputGroupSelect04\" aria-label=\"\">\n" +
             "    <option value=\"1\" selected=selected>1.栉孔扇贝全生长周期-不同月龄危害物数据</option>\n" +

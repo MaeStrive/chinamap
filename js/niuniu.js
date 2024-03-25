@@ -1,7 +1,7 @@
 $(function () {
     var innerdiv1New = $("<div id='innerdiv1New' style='display: block;overflow: auto;height: 500px;'></div>")
     var innerdiv2New = $("<div id='innerdiv2New' style='display: none'></div>")
-    var divbutton = $("<div style='text-align: center'><button class=\"btn btn-primary niubutton\" id='but1New'>奶牛养殖场环境参数</button>&emsp;&emsp;&emsp;" +
+    var divbutton = $("<div style='text-align: center'><button class=\"btn btn-primary niubutton\" id='but1New'>养殖场环境参数</button>&emsp;&emsp;&emsp;" +
         "<button class=\"btn btn-info niubutton\" id='but2New'>生物危害数据库</button></div>")
     // var titleArr = junzhudata1[0]
     // console.log(titleArr)
@@ -237,7 +237,7 @@ $(function () {
             innerdiv2New.css({display: "block"})
             innerdiv1New.css({display: "none"})
         });
-        $(".modal-title").text("牛");
+        $(".modal-title").text("");
         $('#customModal').on('hide.bs.modal', function (e) {
             // alert("我这就关")
             div.remove()
