@@ -192,14 +192,14 @@ $(function () {
                         let len = 0;
                         for (let i = 0; i < value.length; i++) {
                             if (niudata2[0][i] === niudata2[1][i]) {
+                                console.log(66)
                                 if (value[i] === selectitem[j].val() && checkboxArroo[j]) {
                                     len++;
                                 }
                                 j++;
-
                             } else {
                                 if (selectitem[j].val() === niudata2[1][i] && checkboxArroo[j]) {
-                                    if (value[i] !== '-' || value[i] !== '')
+                                    if (value[i] !== '-' && value[i] !== '')
                                         len++;
                                 }
                                 if (!titlePush.includes(niudata2[0][i])) {
@@ -209,6 +209,7 @@ $(function () {
                             }
                             if (len === onesCount) {
                                 tabledata.push(value)
+                                break;
                             }
                         }
                     }
