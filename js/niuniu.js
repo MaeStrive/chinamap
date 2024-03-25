@@ -172,6 +172,7 @@ $(function () {
             var allZeros = checkboxArroo.every(function (element) {
                 return element === 0;
             });
+            console.log(allZeros)
             if (allZeros) {
                 alldataFunction(junzhudata1)
             } else {
@@ -260,6 +261,7 @@ $(function () {
                 if (j >= 45 && j <= 106)
                     headerCell = $("<th style='width: 220px;font-style: italic'>" + tabledata[0][j] + "</th>");
                 else
+                    headerCell = $("<th style='width: 220px;'>" + tabledata[0][j] + "</th>");
                 headerRow.append(headerCell);
             }
             tableddd.append($("<thead style='position: sticky;top:0;z-index:1;background-color: #fff3cd'></thead>").append(headerRow));
@@ -267,7 +269,7 @@ $(function () {
             // 添加表格内容
             var tbody = $("<tbody></tbody>");
             for (var i = 1; i < tabledata.length; i++) {
-                var row = $("<tr class='table-success'></tr>");
+                var row = $("<tr  class='table-success'></tr>");
                 for (var j = 0; j < tabledata[i].length; j++) {
                     var cell = "<td style='width: 220px;'>" + tabledata[i][j] + "</td>";
                     row.append(cell);
@@ -275,6 +277,7 @@ $(function () {
                 tbody.append(row);
             }
             tableddd.append(tbody);
+            tableBoder.append(tableddd)
         }
 
         $(".yi").click(function () {
