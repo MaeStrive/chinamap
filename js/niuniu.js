@@ -1,8 +1,8 @@
 $(function () {
-    var innerdiv1New = $("<div id='innerdiv1New' style='display: block;overflow: auto;height: 500px;'></div>")
-    var innerdiv2New = $("<div id='innerdiv2New' style='display: none'></div>")
-    var divbutton = $("<div style='text-align: center'><button class=\"btn btn-primary niubutton\" id='but1New'>养殖场环境参数</button>&emsp;&emsp;&emsp;" +
-        "<button class=\"btn btn-info niubutton\" id='but2New'>生物危害数据库</button></div>")
+    // var innerdiv1New = $("<div id='innerdiv1New' style='display: block;overflow: auto;height: 500px;'></div>")
+    // var innerdiv2New = $("<div id='innerdiv2New' style='display: none'></div>")
+    // var divbutton = $("<div style='text-align: center'><button class=\"btn btn-primary niubutton\" id='but1New'>养殖场环境参数</button>&emsp;&emsp;&emsp;" +
+    //     "<button class=\"btn btn-info niubutton\" id='but2New'>生物危害数据库</button></div>")
     // var titleArr = junzhudata1[0]
     // console.log(titleArr)
 
@@ -41,6 +41,11 @@ $(function () {
     }
     console.log(uniqueColumns);
     $(".niuniu").click(function () {
+        var innerdiv1New = $("<div id='innerdiv1New' style='display: block;overflow: auto;height: 500px;'></div>")
+        var innerdiv2New = $("<div id='innerdiv2New' style='display: none'></div>")
+        var divbutton = $("<div style='text-align: center'><button class=\"btn btn-primary niubutton\" id='but1New'>养殖场环境参数</button>&emsp;&emsp;&emsp;" +
+            "<button class=\"btn btn-info niubutton\" id='but2New'>生物危害数据库</button></div>")
+            
         $('#customModal').modal('show');
         var div = $("<div></div>")
         div.append(divbutton)
@@ -243,9 +248,11 @@ $(function () {
             div.remove()
             outerdiv.remove()
             innerdiv1New.remove()
+            // innerdiv2New=''
             innerdiv2New.remove()
             tableddd.remove()
             tableBoder.remove()
+            console.log(innerdiv2New)
         });
     })
 
