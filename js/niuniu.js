@@ -71,7 +71,10 @@ $(function () {
         var checkbox = new Array(15).fill(0);
 
         selectitem.forEach(function (value, index, array) {
-            checkbox[index] = $("<input type='checkbox' id='checkbox" + index + "' style='margin-right: 5px'></input>");
+            if (index == 0)
+                checkbox[index] = $("<input type='checkbox' id='checkbox" + index + "' style='margin-right: 5px' checked disabled></input>");
+            else
+                checkbox[index] = $("<input type='checkbox' id='checkbox" + index + "' style='margin-right: 5px'></input>");
             selectitem[index] = $("<select class=\"custom-select\" id='select" + index + "' aria-label=\"\" style='width: 10%;margin-right: 10px;font-size: 13px'></select>")
         })
         uniqueColumns.forEach(function (value, index, array) {
@@ -107,7 +110,7 @@ $(function () {
 
         // 添加表头
         for (var j = 0; j < tabledata[0].length; j++) {
-            var headerCell=''
+            var headerCell = ''
             if (j >= 45 && j <= 106)
                 headerCell = $("<th style='width: 220px;font-style: italic'>" + tabledata[0][j] + "</th>");
             else
@@ -217,7 +220,7 @@ $(function () {
                 console.log(tabledata)
                 // 添加表头
                 for (var j = 0; j < tabledata[0].length; j++) {
-                    var headerCell=''
+                    var headerCell = ''
                     if (j >= 45 && j <= 106)
                         headerCell = $("<th style='width: 220px;font-style: italic'>" + tabledata[0][j] + "</th>");
                     else
@@ -248,6 +251,8 @@ $(function () {
         })
 
 
+
+
         function alldataFunction(page) {
             tableddd.empty()
             headerRow.empty()
@@ -258,7 +263,7 @@ $(function () {
             })
             // 添加表头
             for (var j = 0; j < tabledata[0].length; j++) {
-                var headerCell=''
+                var headerCell = ''
                 if (j >= 45 && j <= 106)
                     headerCell = $("<th style='width: 220px;font-style: italic'>" + tabledata[0][j] + "</th>");
                 else
@@ -332,6 +337,13 @@ $(function () {
             tbody.remove()
             console.log(innerdiv2New)
         });
+        $("#checkbox0").on('change', function () {
+            console.log(66666)
+            if (selectitem[0].val()=='Salmonella') {
+                $("#checkbox1").checked=true
+                $("#checkbox1").disabled =true
+            }
+        })
     })
 
 
