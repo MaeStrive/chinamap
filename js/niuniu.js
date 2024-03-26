@@ -78,8 +78,9 @@ $(function () {
             selectitem[index] = $("<select class=\"custom-select\" id='select" + index + "' aria-label=\"\" style='width: 10%;margin-right: 10px;font-size: 13px'></select>")
         })
         uniqueColumns.forEach(function (value, index, array) {
-            uniqueColumns[index].forEach(function (option) {
-                selectitem[index].append($('<option value=' + option + '>' + option + '</option>'));
+            uniqueColumns[index].forEach(function (optiontext) {
+                // console.log(option)
+                selectitem[index].append($('<option value="' + optiontext + '">' + optiontext + '</option>'));
             })
             if (index < 5) {
                 innerdiv1.append(checkbox[index]);
@@ -141,7 +142,7 @@ $(function () {
             "<button class=\"btn btn-success yi danger niubutton\" style='width: 10%'>显示全部</button></div>"))
         innerdiv2New.append(outerdiv)
         innerdiv2New.append(tableBoder)
-        innerdiv2New.append($("<div style='margin-top: 10px;text-align: center'>" +
+        var mypagebtn=$("<div style='margin-top: 10px;text-align: center' style='display: block' class='mypagebtn'>" +
             "<button class=\"btn btn-primary pagebtn yi\">第一页</button>&emsp;&emsp;" +
             "<button class=\"btn btn-primary pagebtn er\">第二页</button>&emsp;&emsp;" +
             "<button class=\"btn btn-primary pagebtn san\">第三页</button>&emsp;&emsp;" +
@@ -152,7 +153,8 @@ $(function () {
             "<button class=\"btn btn-primary pagebtn ba\">第八页</button>&emsp;&emsp;" +
             "<button class=\"btn btn-primary pagebtn jiu\">第九页</button>&emsp;&emsp;" +
             "<button class=\"btn btn-primary pagebtn shi\">第十页</button>&emsp;&emsp;" +
-            "</div>"))
+            "</div>")
+        innerdiv2New.append(mypagebtn)
         div.append(innerdiv1New)
         div.append(innerdiv2New)
 
@@ -164,6 +166,8 @@ $(function () {
         });
         $(".query").click(function () {
             console.log("query")
+            mypagebtn.css({display: "none"})
+            console.log(selectitem[0].val())
             var checkboxArroo = new Array(14).fill(0);
 
             for (var i = 0; i < 14; i++) {
@@ -195,7 +199,6 @@ $(function () {
                         let len = 0;
                         for (let i = 0; i < value.length; i++) {
                             if (niudata2[0][i] === niudata2[1][i]) {
-                                console.log(66)
                                 if (value[i] === selectitem[j].val() && checkboxArroo[j]) {
                                     len++;
                                 }
@@ -258,10 +261,11 @@ $(function () {
 
 
         function alldataFunction(page) {
+
             tableddd.empty()
             headerRow.empty()
             tabledata = []
-
+            mypagebtn.css({display: "block"})
             page.forEach(function (value, index, array) {
                 tabledata.push(value)
             })
@@ -339,6 +343,7 @@ $(function () {
             headerRow.remove()
             headerCell.remove()
             tbody.remove()
+            mypagebtn.remove()
             console.log(innerdiv2New)
         });
         $("#checkbox0").on('change', function () {
