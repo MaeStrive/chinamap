@@ -195,7 +195,8 @@ $(function () {
                         let len = 0;
                         for (let i = 0; i < value.length; i++) {
                             if (niudata2[0][i] === niudata2[1][i]) {
-                                console.log(66)
+                                console.log(value[i])
+                                console.log(selectitem[j].val())
                                 if (value[i] === selectitem[j].val() && checkboxArroo[j]) {
                                     len++;
                                 }
