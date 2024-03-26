@@ -272,34 +272,34 @@ $(function () {
                     innerdiv2New.append(splitpagebtn)
 
                     $(".splbtn1").click(function () {
-                        splitPageFunction(tabledata,1)
+                        splitPageFunction(tabledata, 1)
                     })
                     $(".splbtn2").click(function () {
-                        splitPageFunction(tabledata,2)
+                        splitPageFunction(tabledata, 2)
                     })
                     $(".splbtn3").click(function () {
-                        splitPageFunction(tabledata,3)
+                        splitPageFunction(tabledata, 3)
                     })
                     $(".splbtn4").click(function () {
-                        splitPageFunction(tabledata,4)
+                        splitPageFunction(tabledata, 4)
                     })
                     $(".splbtn5").click(function () {
-                        splitPageFunction(tabledata,5)
+                        splitPageFunction(tabledata, 5)
                     })
                     $(".splbtn6").click(function () {
-                        splitPageFunction(tabledata,6)
+                        splitPageFunction(tabledata, 6)
                     })
                     $(".splbtn7").click(function () {
-                        splitPageFunction(tabledata,7)
+                        splitPageFunction(tabledata, 7)
                     })
                     $(".splbtn8").click(function () {
-                        splitPageFunction(tabledata,8)
+                        splitPageFunction(tabledata, 8)
                     })
                     $(".splbtn9").click(function () {
-                        splitPageFunction(tabledata,9)
+                        splitPageFunction(tabledata, 9)
                     })
                     $(".splbtn10").click(function () {
-                        splitPageFunction(tabledata,10)
+                        splitPageFunction(tabledata, 10)
                     })
                 }
             }
@@ -330,7 +330,9 @@ $(function () {
             // 将表头包在 thead 标签内
             // 添加表格内容
             var tbody = $("<tbody></tbody>");
-            for (var i = 0; i < data1.length; i++) {
+            var ii = 0
+            if(pagenum==1) ii=1
+            for (var i = ii; i < data1.length; i++) {
                 var row = $("<tr  class='table-success'></tr>");
                 for (var j = 0; j < data1[i].length; j++) {
                     var cell = "<td style='width: 220px;'>" + data1[i][j] + "</td>";
