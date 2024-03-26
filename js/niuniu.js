@@ -77,12 +77,18 @@ $(function () {
             //     checkbox[index] = $("<input type='checkbox' id='checkbox" + index + "' style='margin-right: 5px' checked disabled></input>");
             // else
             checkbox[index] = $("<input type='checkbox' id='checkbox" + index + "' style='margin-right: 5px'></input>");
-            selectitem[index] = $("<select class=\"custom-select\" id='select" + index + "' aria-label=\"\" style='width: 10%;margin-right: 10px;font-size: 13px'></select>")
+            if(index==4||index==5||index==6)
+            selectitem[index] = $("<select class=\"custom-select\" id='select" + index + "' aria-label=\"\" style='width: 10%;margin-right: 10px;font-size: 13px;font-style: italic'></select>")
+            else
+                selectitem[index] = $("<select class=\"custom-select\" id='select" + index + "' aria-label=\"\" style='width: 10%;margin-right: 10px;font-size: 13px;'></select>")
         })
         uniqueColumns.forEach(function (value, index, array) {
             uniqueColumns[index].forEach(function (optiontext) {
                 // console.log(option)
-                selectitem[index].append($('<option value="' + optiontext + '">' + optiontext + '</option>'));
+                if(index==4||index==5||index==6)
+                selectitem[index].append($('<option value="' + optiontext + '" style="font-style: italic">' + optiontext + '</option>'));
+                else
+                    selectitem[index].append($('<option value="' + optiontext + '">' + optiontext + '</option>'));
             })
             if (index < 5) {
                 innerdiv1.append(checkbox[index]);
