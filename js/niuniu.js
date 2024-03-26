@@ -71,9 +71,9 @@ $(function () {
         var checkbox = new Array(15).fill(0);
 
         selectitem.forEach(function (value, index, array) {
-            if (index == 0)
-                checkbox[index] = $("<input type='checkbox' id='checkbox" + index + "' style='margin-right: 5px' checked disabled></input>");
-            else
+            // if (index == 0)
+            //     checkbox[index] = $("<input type='checkbox' id='checkbox" + index + "' style='margin-right: 5px' checked disabled></input>");
+            // else
                 checkbox[index] = $("<input type='checkbox' id='checkbox" + index + "' style='margin-right: 5px'></input>");
             selectitem[index] = $("<select class=\"custom-select\" id='select" + index + "' aria-label=\"\" style='width: 10%;margin-right: 10px;font-size: 13px'></select>")
         })
@@ -207,7 +207,11 @@ $(function () {
                                 }
                                 if (!titlePush.includes(niudata2[0][i])) {
                                     titlePush.push(niudata2[0][i]);
-                                    j++;
+                                }else{
+                                    let nextIndex = i + 1;
+                                    if (nextIndex < niudata2[0].length && niudata2[0][i] !== niudata2[0][nextIndex]) {
+                                        j++;
+                                    }
                                 }
                             }
                             if (len === onesCount) {
