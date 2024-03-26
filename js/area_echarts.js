@@ -320,7 +320,7 @@ $(function () {
     $(".shui").click(function () {
         //弹窗
         $('#customModal').modal('show');
-        $(".modal-title").text("贝类");
+        $(".modal-title").text("");
         var div = $("<div></div>")
         var selectdiv = $("<span>扇贝危害数据：</span><select class=\"custom-select\" id=\"inputGroupSelect04\" aria-label=\"\">\n" +
             "    <option value=\"1\" selected=selected>1.栉孔扇贝全生长周期-不同月龄危害物数据</option>\n" +

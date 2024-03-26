@@ -39,6 +39,8 @@ $(function () {
             }
         }
     }
+    var pagelenlen = 150 // 0-149为一页
+
     console.log(uniqueColumns);
     $(".niuniu").click(function () {
         var innerdiv1New = $("<div id='innerdiv1New' style='display: block;overflow: auto;height: 500px;'></div>")
@@ -71,15 +73,22 @@ $(function () {
         var checkbox = new Array(15).fill(0);
 
         selectitem.forEach(function (value, index, array) {
-            if (index == 0)
-                checkbox[index] = $("<input type='checkbox' id='checkbox" + index + "' style='margin-right: 5px' checked disabled></input>");
+            // if (index == 0)
+            //     checkbox[index] = $("<input type='checkbox' id='checkbox" + index + "' style='margin-right: 5px' checked disabled></input>");
+            // else
+            checkbox[index] = $("<input type='checkbox' id='checkbox" + index + "' style='margin-right: 5px'></input>");
+            if(index==4||index==5||index==6)
+            selectitem[index] = $("<select class=\"custom-select\" id='select" + index + "' aria-label=\"\" style='width: 10%;margin-right: 10px;font-size: 13px;font-style: italic'></select>")
             else
-                checkbox[index] = $("<input type='checkbox' id='checkbox" + index + "' style='margin-right: 5px'></input>");
-            selectitem[index] = $("<select class=\"custom-select\" id='select" + index + "' aria-label=\"\" style='width: 10%;margin-right: 10px;font-size: 13px'></select>")
+                selectitem[index] = $("<select class=\"custom-select\" id='select" + index + "' aria-label=\"\" style='width: 10%;margin-right: 10px;font-size: 13px;'></select>")
         })
         uniqueColumns.forEach(function (value, index, array) {
-            uniqueColumns[index].forEach(function (option) {
-                selectitem[index].append($('<option value=' + option + '>' + option + '</option>'));
+            uniqueColumns[index].forEach(function (optiontext) {
+                // console.log(option)
+                if(index==4||index==5||index==6)
+                selectitem[index].append($('<option value="' + optiontext + '" style="font-style: italic">' + optiontext + '</option>'));
+                else
+                    selectitem[index].append($('<option value="' + optiontext + '">' + optiontext + '</option>'));
             })
             if (index < 5) {
                 innerdiv1.append(checkbox[index]);
@@ -104,6 +113,7 @@ $(function () {
             tabledata.push(value)
         })
         var tableBoder = $("<div style='height: 500px;overflow: auto'></<div>");
+        var splitpagebtn = $("<div style='margin-top: 10px;text-align: center' style='display: block' class='mypagebtn'></div>")
 
         var tableddd = $("<table class=\"table table-bordered table-striped table-fixed-header table-hover\" style='font-size: 16px;margin-top: 10px; table-layout: fixed;'></table>");
         var headerRow = $("<tr></tr>");
@@ -141,7 +151,7 @@ $(function () {
             "<button class=\"btn btn-success yi danger niubutton\" style='width: 10%'>显示全部</button></div>"))
         innerdiv2New.append(outerdiv)
         innerdiv2New.append(tableBoder)
-        innerdiv2New.append($("<div style='margin-top: 10px;text-align: center'>" +
+        var mypagebtn = $("<div style='margin-top: 10px;text-align: center' style='display: block' class='mypagebtn'>" +
             "<button class=\"btn btn-primary pagebtn yi\">第一页</button>&emsp;&emsp;" +
             "<button class=\"btn btn-primary pagebtn er\">第二页</button>&emsp;&emsp;" +
             "<button class=\"btn btn-primary pagebtn san\">第三页</button>&emsp;&emsp;" +
@@ -152,7 +162,8 @@ $(function () {
             "<button class=\"btn btn-primary pagebtn ba\">第八页</button>&emsp;&emsp;" +
             "<button class=\"btn btn-primary pagebtn jiu\">第九页</button>&emsp;&emsp;" +
             "<button class=\"btn btn-primary pagebtn shi\">第十页</button>&emsp;&emsp;" +
-            "</div>"))
+            "</div>")
+        innerdiv2New.append(mypagebtn)
         div.append(innerdiv1New)
         div.append(innerdiv2New)
 
@@ -163,7 +174,10 @@ $(function () {
             innerdiv2New.css({display: "none"})
         });
         $(".query").click(function () {
+            splitpagebtn.empty()
             console.log("query")
+            mypagebtn.css({display: "none"})
+            console.log(selectitem[0].val())
             var checkboxArroo = new Array(14).fill(0);
 
             for (var i = 0; i < 14; i++) {
@@ -195,8 +209,6 @@ $(function () {
                         let len = 0;
                         for (let i = 0; i < value.length; i++) {
                             if (niudata2[0][i] === niudata2[1][i]) {
-                                console.log(value[i])
-                                console.log(selectitem[j].val())
                                 if (value[i] === selectitem[j].val() && checkboxArroo[j]) {
                                     len++;
                                 }
@@ -208,7 +220,11 @@ $(function () {
                                 }
                                 if (!titlePush.includes(niudata2[0][i])) {
                                     titlePush.push(niudata2[0][i]);
-                                    j++;
+                                } else {
+                                    let nextIndex = i + 1;
+                                    if (nextIndex < niudata2[0].length && niudata2[0][i] !== niudata2[0][nextIndex]) {
+                                        j++;
+                                    }
                                 }
                             }
                             if (len === onesCount) {
@@ -218,29 +234,80 @@ $(function () {
                         }
                     }
                 })
-                console.log(tabledata)
-                // 添加表头
-                for (var j = 0; j < tabledata[0].length; j++) {
-                    var headerCell = ''
-                    if (j >= 45 && j <= 106)
-                        headerCell = $("<th style='width: 220px;font-style: italic'>" + tabledata[0][j] + "</th>");
-                    else
-                        headerCell = $("<th style='width: 220px;'>" + tabledata[0][j] + "</th>");
-                    headerRow.append(headerCell);
-                }
-                tableddd.append($("<thead style='position: sticky;top:0;z-index:1;background-color: #fff3cd'></thead>").append(headerRow));
-                // 将表头包在 thead 标签内
-                // 添加表格内容
-                var tbody = $("<tbody></tbody>");
-                for (var i = 1; i < tabledata.length; i++) {
-                    var row = $("<tr  class='table-success'></tr>");
-                    for (var j = 0; j < tabledata[i].length; j++) {
-                        var cell = "<td style='width: 220px;'>" + tabledata[i][j] + "</td>";
-                        row.append(cell);
+                // console.log(tabledata.length)
+                let lennum = spiltPage(tabledata)
+                if (lennum == 1) {
+                    // 添加表头
+                    for (var j = 0; j < tabledata[0].length; j++) {
+                        var headerCell = ''
+                        if (j >= 45 && j <= 106)
+                            headerCell = $("<th style='width: 220px;font-style: italic'>" + tabledata[0][j] + "</th>");
+                        else
+                            headerCell = $("<th style='width: 220px;'>" + tabledata[0][j] + "</th>");
+                        headerRow.append(headerCell);
                     }
-                    tbody.append(row);
+                    tableddd.append($("<thead style='position: sticky;top:0;z-index:1;background-color: #fff3cd'></thead>").append(headerRow));
+                    // 将表头包在 thead 标签内
+                    // 添加表格内容
+                    var tbody = $("<tbody></tbody>");
+                    for (var i = 1; i < tabledata.length; i++) {
+                        var row = $("<tr  class='table-success'></tr>");
+                        for (var j = 0; j < tabledata[i].length; j++) {
+                            var cell = "<td style='width: 220px;'>" + tabledata[i][j] + "</td>";
+                            row.append(cell);
+                        }
+                        tbody.append(row);
+                    }
+                    tableddd.append(tbody);
+                } else {
+                    //分个小页
+                    splitPageFunction(tabledata, 1)
+                    // "<button class=\"btn btn-primary pagebtn yi\">第一页</button>&emsp;&emsp;" +
+                    // "<button class=\"btn btn-primary pagebtn er\">第二页</button>&emsp;&emsp;" +
+                    // "<button class=\"btn btn-primary pagebtn san\">第三页</button>&emsp;&emsp;" +
+                    // "<button class=\"btn btn-primary pagebtn si\">第四页</button>&emsp;&emsp;" +
+                    // "<button class=\"btn btn-primary pagebtn wu\">第五页</button>&emsp;&emsp;" +
+                    // "<button class=\"btn btn-primary pagebtn liu\">第六页</button>&emsp;&emsp;" +
+                    // "<button class=\"btn btn-primary pagebtn qi\">第七页</button>&emsp;&emsp;" +
+                    // "<button class=\"btn btn-primary pagebtn ba\">第八页</button>&emsp;&emsp;" +
+                    // "<button class=\"btn btn-primary pagebtn jiu\">第九页</button>&emsp;&emsp;" +
+                    // "<button class=\"btn btn-primary pagebtn shi\">第十页</button>&emsp;&emsp;" +
+                    for (let i = 1; i <= lennum; i++) {
+                        splitpagebtn.append($("<button class='btn btn-primary pagebtn splbtn" + i + "' style='margin-right: 5px'>第" + i + "页</button>"))
+                    }
+                    innerdiv2New.append(splitpagebtn)
+
+                    $(".splbtn1").click(function () {
+                        splitPageFunction(tabledata, 1)
+                    })
+                    $(".splbtn2").click(function () {
+                        splitPageFunction(tabledata, 2)
+                    })
+                    $(".splbtn3").click(function () {
+                        splitPageFunction(tabledata, 3)
+                    })
+                    $(".splbtn4").click(function () {
+                        splitPageFunction(tabledata, 4)
+                    })
+                    $(".splbtn5").click(function () {
+                        splitPageFunction(tabledata, 5)
+                    })
+                    $(".splbtn6").click(function () {
+                        splitPageFunction(tabledata, 6)
+                    })
+                    $(".splbtn7").click(function () {
+                        splitPageFunction(tabledata, 7)
+                    })
+                    $(".splbtn8").click(function () {
+                        splitPageFunction(tabledata, 8)
+                    })
+                    $(".splbtn9").click(function () {
+                        splitPageFunction(tabledata, 9)
+                    })
+                    $(".splbtn10").click(function () {
+                        splitPageFunction(tabledata, 10)
+                    })
                 }
-                tableddd.append(tbody);
             }
 
             // 47-108   45-106
@@ -251,14 +318,45 @@ $(function () {
 
         })
 
-
-
+        function splitPageFunction(tableData, pagenum) {
+            tableddd.empty()
+            headerRow.empty()
+            // tabledata = []
+            var data1 = tableData.slice((pagenum - 1) * pagelenlen, Math.min(pagenum * pagelenlen, tableData.length))
+            // 添加表头
+            for (var j = 0; j < tabledata[0].length; j++) {
+                var headerCell = ''
+                if (j >= 45 && j <= 106)
+                    headerCell = $("<th style='width: 220px;font-style: italic'>" + tabledata[0][j] + "</th>");
+                else
+                    headerCell = $("<th style='width: 220px;'>" + tabledata[0][j] + "</th>");
+                headerRow.append(headerCell);
+            }
+            tableddd.append($("<thead style='position: sticky;top:0;z-index:1;background-color: #fff3cd'></thead>").append(headerRow));
+            // 将表头包在 thead 标签内
+            // 添加表格内容
+            var tbody = $("<tbody></tbody>");
+            var ii = 0
+            if(pagenum==1) ii=1
+            for (var i = ii; i < data1.length; i++) {
+                var row = $("<tr  class='table-success'></tr>");
+                for (var j = 0; j < data1[i].length; j++) {
+                    var cell = "<td style='width: 220px;'>" + data1[i][j] + "</td>";
+                    row.append(cell);
+                }
+                tbody.append(row);
+            }
+            tableddd.append(tbody);
+            tableBoder.append(tableddd)
+        }
 
         function alldataFunction(page) {
+            splitpagebtn.empty()
+
             tableddd.empty()
             headerRow.empty()
             tabledata = []
-
+            mypagebtn.css({display: "block"})
             page.forEach(function (value, index, array) {
                 tabledata.push(value)
             })
@@ -286,6 +384,12 @@ $(function () {
             tableddd.append(tbody);
             tableBoder.append(tableddd)
         }
+
+        function spiltPage(tableData) {
+            let totalLen = tableData.length
+            return Math.floor(totalLen / pagelenlen) + 1
+        }
+
 
         $(".yi").click(function () {
             alldataFunction(junzhudata1)
@@ -336,13 +440,15 @@ $(function () {
             headerRow.remove()
             headerCell.remove()
             tbody.remove()
+            mypagebtn.remove()
+            splitpagebtn.remove()
             console.log(innerdiv2New)
         });
         $("#checkbox0").on('change', function () {
             console.log(66666)
-            if (selectitem[0].val()=='Salmonella') {
-                $("#checkbox1").checked=true
-                $("#checkbox1").disabled =true
+            if (selectitem[0].val() == 'Salmonella') {
+                $("#checkbox1").checked = true
+                $("#checkbox1").disabled = true
             }
         })
     })
